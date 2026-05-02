@@ -1,0 +1,48 @@
+export const TIERS = [
+  {
+    id: 'carrd',
+    name: 'Carrd Landing Page',
+    price: '$500',
+    commitment: 'One-time · Yours forever',
+    desc: 'Get online fast without the headache. One sharp, focused page: who you are, what you do, how people reach you.',
+    features: [
+      'Single-page custom site on Carrd',
+      'Contact form + social links + SEO basics',
+      'Mobile-ready + SSL',
+      "Revisions until it's right",
+    ],
+    timeline: '5–7 day turnaround',
+    accent: 'rgba(16,185,129,0.4)',
+  },
+  {
+    id: 'wordpress',
+    name: 'WordPress Site',
+    price: '$1,800',
+    commitment: 'One-time · 1 year hosting included',
+    desc: 'More than one page can say. Multiple services, room to grow, built on the platform that powers 43% of the web.',
+    features: [
+      'Custom theme · 5–8 pages built',
+      'Contact forms + Google Analytics + SEO setup',
+      'Daily backups · SSL · malware scanning',
+      "Revisions until it's right",
+    ],
+    timeline: '2–3 week turnaround',
+    accent: 'rgba(59,130,246,0.4)',
+  },
+  {
+    id: 'custom',
+    name: 'Custom Build',
+    price: '$3,500',
+    commitment: 'One-time · 1 year hosting included',
+    desc: 'Built from scratch around what your business actually needs. Booking systems, third-party integrations, payments, AI tools — scoped to your specific situation.',
+    features: [
+      'Fully custom-coded · Next.js · no templates',
+      'Advanced SEO + e-commerce + integrations',
+      'Enterprise-grade security + post-launch support',
+      "Revisions until it's right",
+    ],
+    footnote: 'Complex integrations and custom functionality scoped individually.',
+    timeline: '3–4 week turnaround',
+    accent: 'rgba(245,158,11,0.4)',
+  },
+] as const;
