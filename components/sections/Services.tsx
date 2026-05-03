@@ -1,6 +1,7 @@
 import SectionLabel from '@/components/ui/SectionLabel';
 import PricingCard from '@/components/ui/PricingCard';
 import RevealWrapper from '@/components/ui/RevealWrapper';
+import MobilePricingCarousel from '@/components/sections/MobilePricingCarousel';
 
 const pricingCards = [
   {
@@ -98,39 +99,9 @@ export default function Services() {
           </p>
         </div>
 
-        {/* Pricing carousel — horizontal scroll snap, 260px fixed cards */}
-        <div
-          className="pricing-track"
-          style={{
-            display: 'flex',
-            overflowX: 'auto',
-            scrollSnapType: 'x mandatory',
-            gap: '12px',
-            padding: '20px 20px 32px 24px',
-            WebkitOverflowScrolling: 'touch',
-          }}
-        >
-          {pricingCards.map((card) => (
-            <div
-              key={card.id}
-              style={{
-                flex: '0 0 260px',
-                scrollSnapAlign: 'start',
-              }}
-            >
-              <PricingCard
-                tier={card.tier}
-                price={card.price}
-                commitment={card.commitment}
-                description={card.description}
-                features={card.features}
-                timeline={card.timeline}
-                finePrint={'finePrint' in card ? card.finePrint : undefined}
-                accentColor={card.accentColor}
-                accentGlow={card.accentGlow}
-              />
-            </div>
-          ))}
+        {/* Pricing carousel — GIO-style drag carousel, 88% wide cards */}
+        <div style={{ marginTop: '24px', marginBottom: '32px' }}>
+          <MobilePricingCarousel cards={pricingCards} />
         </div>
 
         {/* Maintenance strip — stacked, centered */}
