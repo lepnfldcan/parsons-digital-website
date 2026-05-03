@@ -65,32 +65,32 @@ export default function WhyMe() {
           </p>
         </RevealWrapper>
 
-        {/* Stats — inline flex with vertical dividers */}
+        {/* Stats — stacked vertically */}
         <RevealWrapper delay={300}>
           <div style={{
-            display: 'flex',
-            justifyContent: 'center',
             borderTop: '1px solid rgba(244,243,240,0.08)',
-            paddingTop: '32px',
             marginTop: '40px',
           }}>
-            <div style={{ padding: '0 20px', borderRight: '1px solid rgba(244,243,240,0.08)' }}>
+            {/* Stat 1 */}
+            <div style={{ padding: '24px 0', borderBottom: '1px solid rgba(244,243,240,0.08)' }}>
               <div style={{ fontSize: '32px', fontWeight: 800, color: '#f4f3f0', letterSpacing: '-0.02em', lineHeight: 1.1 }}>
                 6–12<span style={{ color: '#0891b2' }}>hr</span>
               </div>
-              <div style={{ fontSize: '11px', color: '#7a8494', lineHeight: 1.4, marginTop: '4px' }}>Support response</div>
+              <div style={{ fontSize: '12px', color: '#7a8494', lineHeight: 1.5, marginTop: '6px' }}>Support response time</div>
             </div>
-            <div style={{ padding: '0 20px', borderRight: '1px solid rgba(244,243,240,0.08)' }}>
+            {/* Stat 2 */}
+            <div style={{ padding: '24px 0', borderBottom: '1px solid rgba(244,243,240,0.08)' }}>
               <div style={{ fontSize: '32px', fontWeight: 800, color: '#f4f3f0', letterSpacing: '-0.02em', lineHeight: 1.1 }}>
                 100<span style={{ color: '#0891b2' }}>%</span>
               </div>
-              <div style={{ fontSize: '11px', color: '#7a8494', lineHeight: 1.4, marginTop: '4px' }}>Mobile-ready</div>
+              <div style={{ fontSize: '12px', color: '#7a8494', lineHeight: 1.5, marginTop: '6px' }}>Mobile-ready on every build</div>
             </div>
-            <div style={{ padding: '0 20px' }}>
+            {/* Stat 3 */}
+            <div style={{ padding: '24px 0' }}>
               <div style={{ fontSize: '32px', fontWeight: 800, color: '#f4f3f0', letterSpacing: '-0.02em', lineHeight: 1.1 }}>
                 Forever<span style={{ color: '#0891b2' }}>.</span>
               </div>
-              <div style={{ fontSize: '11px', color: '#7a8494', lineHeight: 1.4, marginTop: '4px' }}>You own it all</div>
+              <div style={{ fontSize: '12px', color: '#7a8494', lineHeight: 1.5, marginTop: '6px' }}>You own every file, every line of code</div>
             </div>
           </div>
         </RevealWrapper>
