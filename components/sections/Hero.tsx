@@ -1,9 +1,10 @@
 import ButtonPrimary from '@/components/ui/ButtonPrimary';
 import ButtonGhost from '@/components/ui/ButtonGhost';
 
+// Desktop only — MobileHero handles ≤ 768px
 export default function Hero() {
   return (
-    <section className="min-h-screen flex flex-col justify-center px-[60px] pt-[140px] pb-[100px] relative overflow-hidden bg-[#1e2530]">
+    <section className="min-h-screen hidden md:flex md:flex-col justify-center px-[60px] pt-[140px] pb-[100px] relative overflow-hidden bg-[#1e2530]">
       {/* Gradient backgrounds */}
       <div
         className="absolute inset-0 pointer-events-none"

@@ -1,5 +1,6 @@
 import { Metadata } from 'next';
 import Hero from '@/components/sections/Hero';
+import MobileHero from '@/components/sections/MobileHero';
 import Services from '@/components/sections/Services';
 import WhyMe from '@/components/sections/WhyMe';
 import HowItWorks from '@/components/sections/HowItWorks';
@@ -19,6 +20,7 @@ function Divider() {
 export default function Home() {
   return (
     <main className="bg-[#1e2530]">
+      <MobileHero />
       <Hero />
       <Services />
       <Divider />

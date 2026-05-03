@@ -16,7 +16,7 @@ export default function Nav() {
 
   return (
     <nav
-      className={`fixed top-0 left-0 right-0 z-[100] px-[60px] py-6 flex items-center justify-between transition-[background,padding] duration-[400ms] ${
+      className={`fixed top-0 left-0 right-0 z-[100] px-[60px] py-6 hidden md:flex items-center justify-between transition-[background,padding] duration-[400ms] ${
         isScrolled
           ? 'bg-[rgba(30,37,48,0.95)] backdrop-blur-md !py-4 border-b border-[rgba(244,243,240,0.08)]'
           : 'bg-transparent'

@@ -26,3 +26,75 @@ body {
 a {
   text-decoration: none;
 }
+
+/* ─── Mobile Hero Keyframes ─── */
+
+@keyframes markReveal {
+  from { opacity: 0; transform: scale(0.8); }
+  to   { opacity: 1; transform: scale(1); }
+}
+
+@keyframes wordmarkReveal {
+  from { opacity: 0; transform: translateY(12px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes taglineReveal {
+  from { opacity: 0; transform: translateY(8px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes scrollBounce {
+  0%, 100% { transform: translateY(0); opacity: 0.2; }
+  50%       { transform: translateY(6px); opacity: 0.6; }
+}
+
+@keyframes gleamSweep {
+  0%   { transform: rotate(-55deg) translateX(0%);   opacity: 0; }
+  6%   { opacity: 1; }
+  55%  { transform: rotate(-55deg) translateX(420%); opacity: 1; }
+  62%  { opacity: 0; }
+  100% { transform: rotate(-55deg) translateX(420%); opacity: 0; }
+}
+
+/* Hero gleam — sweeps along grid lines only via CSS mask */
+.hero-gleam {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  overflow: hidden;
+  -webkit-mask-image:
+    linear-gradient(rgba(244,243,240,1) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(244,243,240,1) 1px, transparent 1px);
+  -webkit-mask-size: 60px 60px;
+  mask-image:
+    linear-gradient(rgba(244,243,240,1) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(244,243,240,1) 1px, transparent 1px);
+  mask-size: 60px 60px;
+}
+
+.hero-gleam::after {
+  content: '';
+  position: absolute;
+  bottom: -20%;
+  left: -60%;
+  width: 50%;
+  height: 220%;
+  background: linear-gradient(
+    to right,
+    transparent 0%,
+    transparent 30%,
+    rgba(8,145,178,0.0) 38%,
+    rgba(8,145,178,0.6) 50%,
+    rgba(8,145,178,0.0) 62%,
+    transparent 70%,
+    transparent 100%
+  );
+  transform: rotate(-55deg) translateX(0%);
+  animation: gleamSweep 8s ease-in-out infinite;
+  transform-origin: bottom left;
+}
+
+/* Pricing carousel — hide scrollbar across all browsers */
+.pricing-track::-webkit-scrollbar { display: none; }
+.pricing-track { -ms-overflow-style: none; scrollbar-width: none; }

@@ -4,6 +4,7 @@ import {
   Syne,
 } from 'next/font/google';
 import Nav from '@/components/layout/Nav';
+import MobileNav from '@/components/layout/MobileNav';
 import Footer from '@/components/layout/Footer';
 import './globals.css';
 
@@ -44,6 +45,7 @@ export default function RootLayout({
       className={`${jakarta.variable} ${syne.variable} h-full antialiased scroll-smooth`}
     >
       <body className="min-h-full flex flex-col bg-[#1e2530] text-[#f4f3f0]">
+        <MobileNav />
         <Nav />
         {children}
         <Footer />
