@@ -132,12 +132,13 @@ export default function MobileHero() {
             animation: 'taglineReveal 0.6s cubic-bezier(0.22,1,0.36,1) 0.9s both',
           }}
         >
-          <span style={{ animation: 'wordCyanFlash 0.65s ease 1.5s' }}>Fast.</span>{' '}
-          <span style={{ animation: 'wordCyanFlash 0.65s ease 1.85s' }}>Beautiful.</span>{' '}
-          <span style={{ animation: 'wordCyanFlash 0.65s ease 2.2s' }}>Built</span>{' '}
-          <span style={{ animation: 'wordCyanFlash 0.65s ease 2.4s' }}>for</span>{' '}
+          <span style={{ animation: 'wordCyanFlash 0.65s ease 1.5s' }}>Fast,</span>{' '}
+          <span style={{ animation: 'wordCyanFlash 0.65s ease 1.72s' }}>beautiful</span>{' '}
+          <span style={{ animation: 'wordCyanFlash 0.65s ease 1.94s' }}>websites</span>{' '}
+          <span style={{ animation: 'wordCyanFlash 0.65s ease 2.16s' }}>built</span>{' '}
+          <span style={{ animation: 'wordCyanFlash 0.65s ease 2.38s' }}>for</span>{' '}
           <span style={{ animation: 'wordCyanFlash 0.65s ease 2.6s' }}>your</span>{' '}
-          <span style={{ animation: 'wordCyanFlash 0.65s ease 2.8s' }}>business.</span>
+          <span style={{ animation: 'wordCyanFlash 0.65s ease 2.82s' }}>business</span>
         </p>
 
         {/* Buttons — stacked, both ghost/glow style */}
