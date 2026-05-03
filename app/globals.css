@@ -37,10 +37,10 @@ a {
 
 /* MOBILE ONLY — subheading word sweep: each word flashes cyan once left-to-right */
 @keyframes wordCyanFlash {
-  0%   { color: rgba(244,243,240,0.5); }
+  0%   { color: #f4f3f0; }
   30%  { color: #0891b2; }
   70%  { color: #0891b2; }
-  100% { color: rgba(244,243,240,0.5); }
+  100% { color: #f4f3f0; }
 }
 
 @keyframes markReveal {

@@ -125,7 +125,7 @@ export default function MobileHero() {
             fontFamily: '"Plus Jakarta Sans", sans-serif',
             fontSize: '15px',
             fontWeight: 400,
-            color: 'rgba(244,243,240,0.5)',
+            color: '#f4f3f0',
             letterSpacing: '0.01em',
             lineHeight: 1.6,
             marginBottom: '48px',
