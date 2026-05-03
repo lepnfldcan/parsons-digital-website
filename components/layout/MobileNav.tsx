@@ -1,79 +1,65 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+// DEEPSEEK VERSION — white nav, logo left, slide-in overlay from right
+// To revert: git checkout main -- components/layout/MobileNav.tsx
+
+import { useState } from 'react';
 
 const navLinks = [
   { label: 'Pricing', href: '#services' },
   { label: 'Why Me', href: '#about' },
   { label: 'Process', href: '#process' },
   { label: 'Work', href: '#work' },
+  { label: 'Get in Touch', href: '#contact' },
 ];
 
+const SYS = "system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, sans-serif";
+
 export default function MobileNav() {
-  const [isScrolled, setIsScrolled] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
-
-  useEffect(() => {
-    const onScroll = () => setIsScrolled(window.scrollY > 40);
-    window.addEventListener('scroll', onScroll, { passive: true });
-    return () => window.removeEventListener('scroll', onScroll);
-  }, []);
-
-  // Lock body scroll when menu is open
-  useEffect(() => {
-    document.body.style.overflow = isOpen ? 'hidden' : '';
-    return () => { document.body.style.overflow = ''; };
-  }, [isOpen]);
-
   const close = () => setIsOpen(false);
 
   return (
     <>
-      {/* Nav bar — mobile only */}
+      {/* Nav bar — fixed, white */}
       <nav
         className="md:hidden"
         style={{
           position: 'fixed',
           top: 0, left: 0, right: 0,
           zIndex: 200,
-          padding: isScrolled ? '14px 24px' : '20px 24px',
+          padding: '0 24px',
+          height: '60px',
           display: 'flex',
           alignItems: 'center',
-          justifyContent: 'center',
-          background: isScrolled ? 'rgba(30,37,48,0.96)' : 'transparent',
-          backdropFilter: isScrolled ? 'blur(16px)' : 'none',
-          WebkitBackdropFilter: isScrolled ? 'blur(16px)' : 'none',
-          borderBottom: isScrolled ? '1px solid rgba(244,243,240,0.08)' : '1px solid transparent',
-          transition: 'background 0.4s, padding 0.4s, border-color 0.4s',
+          justifyContent: 'space-between',
+          background: 'rgba(255,255,255,0.96)',
+          backdropFilter: 'blur(12px)',
+          WebkitBackdropFilter: 'blur(12px)',
+          borderBottom: '1px solid rgba(0,0,0,0.06)',
         }}
       >
-        {/* MOBILE ONLY — Centered wordmark */}
-        <a href="/" style={{ textDecoration: 'none' }}>
-          <div style={{
-            display: 'flex',
-            alignItems: 'baseline',
-            fontFamily: '"Plus Jakarta Sans", sans-serif',
-            fontSize: '17px',
-            fontWeight: 800,
-            color: '#f4f3f0',
-            letterSpacing: '-0.02em',
-          }}>
-            Parsons
-            <span style={{ color: '#0891b2', margin: '0 2px' }}>/</span>
-            <em style={{ fontStyle: 'normal', fontWeight: 300, letterSpacing: '-0.01em' }}>Digital</em>
-          </div>
+        {/* Logo — left */}
+        <a href="/" style={{
+          fontFamily: SYS,
+          fontSize: '17px',
+          fontWeight: 600,
+          letterSpacing: '-0.02em',
+          color: '#111',
+          textDecoration: 'none',
+        }}>
+          Parsons Digital
         </a>
 
-        {/* Hamburger — 44×44px touch target, absolute right */}
+        {/* Hamburger — right */}
         <button
           onClick={() => setIsOpen(o => !o)}
           aria-label={isOpen ? 'Close menu' : 'Open menu'}
           aria-expanded={isOpen}
           style={{
-            position: 'absolute',
-            right: '24px',
-            top: '50%',
-            transform: 'translateY(-50%)',
+            background: 'none',
+            border: 'none',
+            cursor: 'pointer',
             width: '44px',
             height: '44px',
             display: 'flex',
@@ -81,118 +67,102 @@ export default function MobileNav() {
             alignItems: 'center',
             justifyContent: 'center',
             gap: '5px',
-            background: 'none',
-            border: 'none',
-            cursor: 'pointer',
             padding: 0,
           }}
         >
           <span style={{
-            display: 'block',
-            width: '22px',
-            height: '1.5px',
-            background: '#f4f3f0',
-            borderRadius: '2px',
-            transition: 'transform 0.3s ease',
-            transform: isOpen ? 'translateY(6.5px) rotate(45deg)' : 'none',
+            display: 'block', width: '22px', height: '2px',
+            background: '#111', borderRadius: '2px',
+            transition: 'transform 0.25s ease',
+            transform: isOpen ? 'translateY(7px) rotate(45deg)' : 'none',
           }} />
           <span style={{
-            display: 'block',
-            width: isOpen ? '0px' : '22px',
-            height: '1.5px',
-            background: '#f4f3f0',
-            borderRadius: '2px',
-            transition: 'opacity 0.3s ease, width 0.3s ease',
+            display: 'block', width: '22px', height: '2px',
+            background: '#111', borderRadius: '2px',
+            transition: 'opacity 0.25s ease',
             opacity: isOpen ? 0 : 1,
           }} />
           <span style={{
-            display: 'block',
-            width: '22px',
-            height: '1.5px',
-            background: '#f4f3f0',
-            borderRadius: '2px',
-            transition: 'transform 0.3s ease',
-            transform: isOpen ? 'translateY(-6.5px) rotate(-45deg)' : 'none',
+            display: 'block', width: '22px', height: '2px',
+            background: '#111', borderRadius: '2px',
+            transition: 'transform 0.25s ease',
+            transform: isOpen ? 'translateY(-7px) rotate(-45deg)' : 'none',
           }} />
         </button>
       </nav>
 
-      {/* Full-screen overlay — sits below nav bar (z-index: 150 < 200) */}
+      {/* Backdrop */}
       <div
         className="md:hidden"
+        onClick={close}
         style={{
           position: 'fixed',
           inset: 0,
           zIndex: 150,
-          background: 'rgba(30,37,48,0.98)',
-          backdropFilter: 'blur(24px)',
-          WebkitBackdropFilter: 'blur(24px)',
-          display: 'flex',
-          flexDirection: 'column',
-          alignItems: 'center',
-          justifyContent: 'center',
+          background: 'rgba(0,0,0,0.2)',
           opacity: isOpen ? 1 : 0,
           pointerEvents: isOpen ? 'all' : 'none',
-          transition: 'opacity 0.4s ease',
+          transition: 'opacity 0.3s ease',
+        }}
+      />
+
+      {/* Slide-in overlay — 75% width from right */}
+      <div
+        className="md:hidden"
+        style={{
+          position: 'fixed',
+          top: 0, right: 0,
+          width: '75%',
+          maxWidth: '280px',
+          height: '100%',
+          zIndex: 200,
+          background: '#fff',
+          boxShadow: '-4px 0 24px rgba(0,0,0,0.08)',
+          transform: isOpen ? 'translateX(0)' : 'translateX(100%)',
+          transition: 'transform 0.3s cubic-bezier(0.4,0,0.2,1)',
+          display: 'flex',
+          flexDirection: 'column',
+          padding: '24px',
         }}
       >
-        {/* Nav links */}
-        <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+        {/* Close button */}
+        <button
+          onClick={close}
+          style={{
+            background: 'none',
+            border: 'none',
+            cursor: 'pointer',
+            fontFamily: SYS,
+            fontSize: '20px',
+            color: '#111',
+            alignSelf: 'flex-end',
+            padding: '4px 8px',
+            marginBottom: '24px',
+          }}
+        >
+          ✕
+        </button>
+
+        {/* Links */}
+        <div style={{ display: 'flex', flexDirection: 'column' }}>
           {navLinks.map((link) => (
             <a
               key={link.href}
               href={link.href}
               onClick={close}
               style={{
-                fontFamily: '"Plus Jakarta Sans", sans-serif',
-                fontSize: '36px',
-                fontWeight: 800,
-                color: 'rgba(244,243,240,0.35)',
-                letterSpacing: '-0.02em',
-                lineHeight: 1.2,
+                fontFamily: SYS,
+                fontSize: '20px',
+                fontWeight: 500,
+                color: '#111',
                 textDecoration: 'none',
-                transition: 'color 0.2s',
-                padding: '8px 0',
+                padding: '14px 0',
+                borderBottom: '1px solid #eee',
               }}
-              onMouseEnter={e => (e.currentTarget.style.color = '#f4f3f0')}
-              onMouseLeave={e => (e.currentTarget.style.color = 'rgba(244,243,240,0.35)')}
             >
               {link.label}
             </a>
           ))}
-        </div>
-
-        {/* CTA button */}
-        <a
-          href="#contact"
-          onClick={close}
-          style={{
-            fontFamily: '"Plus Jakarta Sans", sans-serif',
-            background: '#0891b2',
-            color: '#fff',
-            fontWeight: 700,
-            fontSize: '15px',
-            padding: '16px 36px',
-            borderRadius: '8px',
-            marginTop: '16px',
-            textDecoration: 'none',
-          }}
-        >
-          Get in Touch
-        </a>
-
-        {/* Contact info */}
-        <div style={{
-          marginTop: '48px',
-          fontFamily: '"Plus Jakarta Sans", sans-serif',
-          fontSize: '12px',
-          color: 'rgba(244,243,240,0.25)',
-          letterSpacing: '0.06em',
-          textAlign: 'center',
-          lineHeight: 1.8,
-        }}>
-          liam@parsonsdigital.com<br />
-          liamparsonsdigital.com
         </div>
       </div>
     </>

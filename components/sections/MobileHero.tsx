@@ -1,4 +1,7 @@
-// Server Component — all animations are CSS keyframes defined in globals.css
+// DEEPSEEK VERSION — white hero, system fonts, single pill CTA
+// To revert: git checkout main -- components/sections/MobileHero.tsx
+
+const SYS = "system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, sans-serif";
 
 export default function MobileHero() {
   return (
@@ -8,221 +11,63 @@ export default function MobileHero() {
         minHeight: '100svh',
         display: 'flex',
         flexDirection: 'column',
-        alignItems: 'center',
         justifyContent: 'center',
-        padding: '120px 32px 80px',
-        position: 'relative',
-        overflow: 'hidden',
-        textAlign: 'center',
-        background: '#1e2530',
+        padding: '120px 24px 64px',  /* 120px top clears fixed nav + breathing room */
+        background: '#ffffff',
       }}
     >
-      {/* Layer 1: Radial glow (top + bottom) */}
-      <div
-        style={{
-          position: 'absolute',
-          inset: 0,
-          pointerEvents: 'none',
-          background: `
-            radial-gradient(ellipse 100% 40% at 50% 0%, rgba(8,145,178,0.12) 0%, transparent 70%),
-            radial-gradient(ellipse 80% 40% at 50% 100%, rgba(8,145,178,0.07) 0%, transparent 70%)
-          `,
-        }}
-      />
+      {/* MOBILE ONLY — hero content */}
+      <div style={{ maxWidth: '480px' }}>
 
-      {/* Layer 2: 60×60px grid */}
-      <div
-        style={{
-          position: 'absolute',
-          inset: 0,
-          pointerEvents: 'none',
-          backgroundImage: `
-            linear-gradient(rgba(244,243,240,0.025) 1px, transparent 1px),
-            linear-gradient(90deg, rgba(244,243,240,0.025) 1px, transparent 1px)
-          `,
-          backgroundSize: '60px 60px',
-        }}
-      />
-
-      {/* Layer 3: Diagonal gleam — sweeps along grid lines via CSS mask */}
-      <div className="hero-gleam" />
-
-      {/* Content */}
-      <div
-        style={{
-          position: 'relative',
-          zIndex: 10,
-          display: 'flex',
-          flexDirection: 'column',
-          alignItems: 'center',
-        }}
-      >
-        {/* PD Mark — 80px hero size */}
-        <div
-          style={{
-            width: '80px',
-            height: '80px',
-            background: '#3d4555',
-            borderRadius: '13px',
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'center',
-            marginBottom: '28px',
-            animation: 'markReveal 0.8s cubic-bezier(0.22,1,0.36,1) 0.2s both',
-          }}
-        >
-          <div
-            style={{
-              display: 'flex',
-              alignItems: 'center',
-              fontFamily: 'Syne, sans-serif',
-              fontWeight: 800,
-              fontSize: '34px',
-              color: '#f4f3f0',
-              letterSpacing: '-0.03em',
-              gap: '4px',
-              padding: '0 10px',
-            }}
-          >
-            <span>P</span>
-            <div
-              style={{
-                width: '4px',
-                height: '28px',
-                background: '#0891b2',
-                transform: 'rotate(14deg)',
-                borderRadius: '99px',
-                flexShrink: 0,
-              }}
-            />
-            <span>D</span>
-          </div>
-        </div>
-
-        {/* MOBILE ONLY — Main headline: Syne 700 (friendlier/bubblier), zooms in toward viewer */}
+        {/* Headline */}
         <h1
           style={{
-            fontFamily: 'var(--font-syne), sans-serif',
-            fontSize: 'clamp(36px, 10vw, 44px)',
+            fontFamily: SYS,
+            fontSize: 'clamp(2.2rem, 8vw, 3.2rem)',
             fontWeight: 700,
-            color: '#f4f3f0',
             letterSpacing: '-0.02em',
-            lineHeight: 1.18,
-            maxWidth: '300px',
-            marginBottom: '44px',
-            textWrap: 'balance',
-            animation: 'heroHeadlineReveal 0.9s cubic-bezier(0.22,1,0.36,1) 0.6s both',
-          } as React.CSSProperties}
+            lineHeight: 1.2,
+            color: '#111',
+            marginBottom: '1rem',
+          }}
         >
-          Your website should be{' '}
-          <span style={{ color: '#0891b2' }}>working</span>{' '}
-          while you sleep.
+          Your website works<br />while you sleep.
         </h1>
 
-        {/* MOBILE ONLY — Subheading: uniform muted, each word sweeps cyan once on load */}
+        {/* Subheadline */}
         <p
           style={{
-            fontFamily: '"Plus Jakarta Sans", sans-serif',
-            fontSize: '15px',
-            fontWeight: 400,
-            color: '#f4f3f0',
-            letterSpacing: '0.01em',
-            lineHeight: 1.6,
-            marginBottom: '48px',
-            animation: 'taglineReveal 0.6s cubic-bezier(0.22,1,0.36,1) 0.9s both',
+            fontFamily: SYS,
+            fontSize: 'clamp(1.05rem, 4vw, 1.2rem)',
+            color: '#3a3a3a',
+            lineHeight: 1.5,
+            marginBottom: '2.5rem',
           }}
         >
-          <span style={{ animation: 'wordCyanFlash 0.65s ease 1.5s' }}>Fast,</span>{' '}
-          <span style={{ animation: 'wordCyanFlash 0.65s ease 1.72s' }}>beautiful</span>{' '}
-          <span style={{ animation: 'wordCyanFlash 0.65s ease 1.94s' }}>websites</span>{' '}
-          <span style={{ animation: 'wordCyanFlash 0.65s ease 2.16s' }}>built</span>{' '}
-          <span style={{ animation: 'wordCyanFlash 0.65s ease 2.38s' }}>for</span>{' '}
-          <span style={{ animation: 'wordCyanFlash 0.65s ease 2.6s' }}>your</span>{' '}
-          <span style={{ animation: 'wordCyanFlash 0.65s ease 2.82s' }}>business</span>
+          Fast, beautiful websites built for your business.
         </p>
 
-        {/* Buttons — stacked, both ghost/glow style */}
-        <div
+        {/* Primary CTA — full-width pill, thumb-friendly */}
+        <a
+          href="#contact"
           style={{
-            display: 'flex',
-            flexDirection: 'column',
-            alignItems: 'center',
-            gap: '12px',
-            animation: 'taglineReveal 0.6s cubic-bezier(0.22,1,0.36,1) 1.2s both',
+            display: 'block',
+            fontFamily: SYS,
+            background: '#111',
+            color: '#fff',
+            fontWeight: 600,
+            fontSize: '1.1rem',
+            textAlign: 'center',
+            textDecoration: 'none',
+            padding: '16px 24px',
+            borderRadius: '60px',
+            width: '100%',
+            maxWidth: '320px',
+            boxShadow: '0 2px 12px rgba(0,0,0,0.1)',
           }}
         >
-          <a
-            href="#contact"
-            style={{
-              display: 'inline-flex',
-              alignItems: 'center',
-              justifyContent: 'center',
-              fontFamily: '"Plus Jakarta Sans", sans-serif',
-              background: 'rgba(8,145,178,0.12)',
-              color: '#0891b2',
-              fontWeight: 600,
-              fontSize: '13px',
-              padding: '11px 28px',
-              borderRadius: '8px',
-              border: '1px solid rgba(8,145,178,0.45)',
-              boxShadow: '0 0 20px rgba(8,145,178,0.18), inset 0 0 16px rgba(8,145,178,0.07)',
-              letterSpacing: '0.01em',
-              textDecoration: 'none',
-            }}
-          >
-            Get in Touch
-          </a>
-          <a
-            href="#services"
-            style={{
-              display: 'inline-flex',
-              alignItems: 'center',
-              justifyContent: 'center',
-              fontFamily: '"Plus Jakarta Sans", sans-serif',
-              background: 'transparent',
-              color: '#0891b2',
-              fontWeight: 600,
-              fontSize: '13px',
-              padding: '11px 28px',
-              borderRadius: '8px',
-              border: '1px solid rgba(8,145,178,0.4)',
-              boxShadow: '0 0 16px rgba(8,145,178,0.15), inset 0 0 12px rgba(8,145,178,0.05)',
-              textDecoration: 'none',
-            }}
-          >
-            Get a Quote
-          </a>
-        </div>
-      </div>
-
-      {/* Scroll hint — bouncing dot */}
-      <div
-        style={{
-          position: 'absolute',
-          bottom: '32px',
-          left: '50%',
-          transform: 'translateX(-50%)',
-          display: 'flex',
-          flexDirection: 'column',
-          alignItems: 'center',
-          gap: '6px',
-          fontFamily: '"Plus Jakarta Sans", sans-serif',
-          fontSize: '9px',
-          letterSpacing: '0.14em',
-          textTransform: 'uppercase',
-          color: 'rgba(244,243,240,0.2)',
-        }}
-      >
-        <div
-          style={{
-            width: '4px',
-            height: '4px',
-            borderRadius: '50%',
-            background: 'rgba(244,243,240,0.2)',
-            animation: 'scrollBounce 1.8s ease-in-out infinite',
-          }}
-        />
-        Scroll
+          Get a Quote →
+        </a>
       </div>
     </section>
   );
