@@ -35,6 +35,14 @@ a {
   to   { opacity: 1; transform: scale(1); }
 }
 
+/* MOBILE ONLY — subheading word sweep: each word flashes cyan once left-to-right */
+@keyframes wordCyanFlash {
+  0%   { color: rgba(244,243,240,0.5); }
+  30%  { color: #0891b2; }
+  70%  { color: #0891b2; }
+  100% { color: rgba(244,243,240,0.5); }
+}
+
 @keyframes markReveal {
   from { opacity: 0; transform: scale(0.8); }
   to   { opacity: 1; transform: scale(1); }

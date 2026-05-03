@@ -114,10 +114,12 @@ export default function MobileHero() {
             animation: 'heroHeadlineReveal 0.9s cubic-bezier(0.22,1,0.36,1) 0.6s both',
           } as React.CSSProperties}
         >
-          Your website should be working while you sleep.
+          Your website should be{' '}
+          <span style={{ color: '#0891b2' }}>working</span>{' '}
+          while you sleep.
         </h1>
 
-        {/* MOBILE ONLY — Subheading with amber accent on "Fast" */}
+        {/* MOBILE ONLY — Subheading: uniform muted, each word sweeps cyan once on load */}
         <p
           style={{
             fontFamily: '"Plus Jakarta Sans", sans-serif',
@@ -130,7 +132,12 @@ export default function MobileHero() {
             animation: 'taglineReveal 0.6s cubic-bezier(0.22,1,0.36,1) 0.9s both',
           }}
         >
-          <span style={{ color: '#f59e0b', fontWeight: 600 }}>Fast.</span>{' '}Beautiful. Built for your business.
+          <span style={{ animation: 'wordCyanFlash 0.65s ease 1.5s' }}>Fast.</span>{' '}
+          <span style={{ animation: 'wordCyanFlash 0.65s ease 1.85s' }}>Beautiful.</span>{' '}
+          <span style={{ animation: 'wordCyanFlash 0.65s ease 2.2s' }}>Built</span>{' '}
+          <span style={{ animation: 'wordCyanFlash 0.65s ease 2.4s' }}>for</span>{' '}
+          <span style={{ animation: 'wordCyanFlash 0.65s ease 2.6s' }}>your</span>{' '}
+          <span style={{ animation: 'wordCyanFlash 0.65s ease 2.8s' }}>business.</span>
         </p>
 
         {/* Buttons — stacked, both ghost/glow style */}
