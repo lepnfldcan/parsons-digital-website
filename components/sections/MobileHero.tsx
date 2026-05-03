@@ -162,7 +162,7 @@ export default function MobileHero() {
           }}
         >
           <a
-            href="mailto:liam@liamparsonsdigital.com"
+            href="mailto:liam@parsonsdigital.com"
             style={{
               display: 'inline-flex',
               alignItems: 'center',

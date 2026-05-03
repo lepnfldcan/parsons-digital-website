@@ -53,7 +53,7 @@ export default function Contact() {
             <div className="flex flex-col gap-3">
               {/* Primary: Email — full width */}
               <a
-                href="mailto:liam@liamparsonsdigital.com"
+                href="mailto:liam@parsonsdigital.com"
                 className="flex items-center justify-center gap-2 bg-[#0891b2] text-white font-bold text-[14px] tracking-[0.01em] px-7 py-[14px] rounded-[7px] no-underline transition-[background,transform] duration-200 hover:bg-[#0779a0]"
               >
                 <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
@@ -103,7 +103,7 @@ export default function Contact() {
           <div className="flex items-center justify-center gap-4 flex-wrap">
             {/* Primary: Email */}
             <a
-              href="mailto:liam@liamparsonsdigital.com"
+              href="mailto:liam@parsonsdigital.com"
               className="inline-flex items-center gap-2 bg-[#0891b2] text-white font-bold text-[14px] tracking-[0.01em] px-7 py-[14px] rounded-[7px] no-underline transition-[background,transform] duration-200 hover:bg-[#0779a0] hover:-translate-y-px"
             >
               <svg width="14" height="14" viewBox="0 0 14 14" fill="none">

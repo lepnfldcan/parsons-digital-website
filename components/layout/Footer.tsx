@@ -13,14 +13,14 @@ export default function Footer() {
 
         {/* Email button — mobile only */}
         <a
-          href="mailto:liam@liamparsonsdigital.com"
+          href="mailto:liam@parsonsdigital.com"
           className="inline-flex items-center gap-2 bg-[rgba(244,243,240,0.06)] text-[rgba(244,243,240,0.6)] font-semibold text-[12px] px-5 py-2.5 rounded-[7px] no-underline border border-[rgba(244,243,240,0.12)] transition-[border-color,color] duration-200 hover:border-[rgba(244,243,240,0.25)] hover:text-[#f4f3f0]"
         >
           <svg width="12" height="12" viewBox="0 0 14 14" fill="none">
             <path d="M2 3h10a1 1 0 0 1 1 1v6a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1z" stroke="currentColor" strokeWidth="1.2" />
             <path d="M1 4l6 4 6-4" stroke="currentColor" strokeWidth="1.2" />
           </svg>
-          liam@liamparsonsdigital.com
+          liam@parsonsdigital.com
         </a>
 
         {/* Mobile info */}
@@ -38,7 +38,7 @@ export default function Footer() {
         </div>
 
         <div className="text-[11px] text-[rgba(244,243,240,0.25)] tracking-[0.04em]">
-          liam@liamparsonsdigital.com &nbsp;·&nbsp; liamparsonsdigital.com &nbsp;·&nbsp; Remote · US & Canada
+          liam@parsonsdigital.com &nbsp;·&nbsp; liamparsonsdigital.com &nbsp;·&nbsp; Remote · US & Canada
         </div>
       </div>
     </footer>

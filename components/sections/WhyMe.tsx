@@ -59,8 +59,8 @@ export default function WhyMe() {
         <RevealWrapper delay={200}>
           <p className="text-[13px] text-[rgba(244,243,240,0.4)] leading-[1.7]">
             Got a project in mind? Reach out — I&apos;ll get back to you same day.<br />
-            <a href="mailto:liam@liamparsonsdigital.com" className="text-[#0891b2] no-underline hover:underline">
-              liam@liamparsonsdigital.com
+            <a href="mailto:liam@parsonsdigital.com" className="text-[#0891b2] no-underline hover:underline">
+              liam@parsonsdigital.com
             </a>
           </p>
         </RevealWrapper>
@@ -138,8 +138,8 @@ export default function WhyMe() {
             <RevealWrapper delay={200}>
               <p className="text-[13px] text-[rgba(244,243,240,0.4)] leading-[1.7]">
                 Got a project in mind? Reach out — I&apos;ll get back to you same day.<br />
-                <a href="mailto:liam@liamparsonsdigital.com" className="text-[#0891b2] no-underline hover:underline">
-                  liam@liamparsonsdigital.com
+                <a href="mailto:liam@parsonsdigital.com" className="text-[#0891b2] no-underline hover:underline">
+                  liam@parsonsdigital.com
                 </a>
               </p>
             </RevealWrapper>
