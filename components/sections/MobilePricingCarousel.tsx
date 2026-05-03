@@ -49,15 +49,19 @@ export default function MobilePricingCarousel({ cards }: Props) {
   };
 
   return (
-    <div style={{ overflow: 'hidden', cursor: 'grab' }}>
+    <div
+      onPointerDown={handlePointerDown}
+      onPointerUp={handlePointerUp}
+      onPointerCancel={() => { pointerStartX.current = null; }}
+      style={{ overflow: 'hidden', cursor: 'grab', touchAction: 'pan-y' }}
+    >
       {/* Track */}
       <div
-        onPointerDown={handlePointerDown}
-        onPointerUp={handlePointerUp}
         style={{
           display: 'flex',
+          alignItems: 'stretch',
           gap: `${GAP}px`,
-          padding: '20px 24px 8px',
+          padding: '20px 24px 16px',
           transform: `translateX(-${current * (cardWidth + GAP)}px)`,
           transition: 'transform 0.45s cubic-bezier(0.4, 0, 0.2, 1)',
           userSelect: 'none',
@@ -67,7 +71,7 @@ export default function MobilePricingCarousel({ cards }: Props) {
           <div
             key={card.id}
             ref={i === 0 ? cardRef : undefined}
-            style={{ flex: '0 0 88%' }}
+            style={{ flex: '0 0 88%', display: 'flex', flexDirection: 'column' }}
           >
             <MobileCard card={card} />
           </div>
@@ -75,7 +79,7 @@ export default function MobilePricingCarousel({ cards }: Props) {
       </div>
 
       {/* Dot indicators */}
-      <div style={{ display: 'flex', justifyContent: 'center', gap: '8px', marginTop: '20px', paddingBottom: '4px' }}>
+      <div style={{ display: 'flex', justifyContent: 'center', gap: '8px', marginTop: '16px', paddingBottom: '4px' }}>
         {cards.map((_, i) => (
           <button
             key={i}
@@ -102,6 +106,9 @@ function MobileCard({ card }: { card: CardData }) {
   return (
     <div
       style={{
+        flex: 1,
+        display: 'flex',
+        flexDirection: 'column',
         position: 'relative',
         overflow: 'hidden',
         background: 'rgba(244,243,240,0.03)',
@@ -156,8 +163,8 @@ function MobileCard({ card }: { card: CardData }) {
         {card.description}
       </p>
 
-      {/* Features */}
-      <ul style={{ listStyle: 'none', padding: 0, margin: '0 0 18px', display: 'flex', flexDirection: 'column', gap: '9px' }}>
+      {/* Features — flex:1 pushes timeline + CTA to bottom */}
+      <ul style={{ listStyle: 'none', padding: 0, margin: '0 0 18px', display: 'flex', flexDirection: 'column', gap: '9px', flex: 1 }}>
         {card.features.map((f) => (
           <li key={f} style={{ fontSize: '12.5px', color: 'rgba(244,243,240,0.65)', display: 'flex', alignItems: 'flex-start', gap: '8px', lineHeight: 1.35 }}>
             <svg width="11" height="11" viewBox="0 0 12 12" fill="none" stroke="#0891b2" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0, marginTop: '2px' }}>
