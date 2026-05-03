@@ -99,19 +99,20 @@ export default function MobileHero() {
           </div>
         </div>
 
-        {/* MOBILE ONLY — Main headline */}
+        {/* MOBILE ONLY — Main headline: Syne 700 (friendlier/bubblier), zooms in toward viewer */}
         <h1
           style={{
-            fontFamily: '"Plus Jakarta Sans", sans-serif',
-            fontSize: 'clamp(28px, 7.5vw, 36px)',
-            fontWeight: 800,
+            fontFamily: 'var(--font-syne), sans-serif',
+            fontSize: 'clamp(36px, 10vw, 44px)',
+            fontWeight: 700,
             color: '#f4f3f0',
-            letterSpacing: '-0.025em',
-            lineHeight: 1.15,
-            maxWidth: '320px',
-            marginBottom: '20px',
-            animation: 'wordmarkReveal 0.7s cubic-bezier(0.22,1,0.36,1) 0.6s both',
-          }}
+            letterSpacing: '-0.02em',
+            lineHeight: 1.18,
+            maxWidth: '300px',
+            marginBottom: '44px',
+            textWrap: 'balance',
+            animation: 'heroHeadlineReveal 0.9s cubic-bezier(0.22,1,0.36,1) 0.6s both',
+          } as React.CSSProperties}
         >
           Your website should be working while you sleep.
         </h1>
@@ -125,7 +126,7 @@ export default function MobileHero() {
             color: 'rgba(244,243,240,0.5)',
             letterSpacing: '0.01em',
             lineHeight: 1.6,
-            marginBottom: '40px',
+            marginBottom: '48px',
             animation: 'taglineReveal 0.6s cubic-bezier(0.22,1,0.36,1) 0.9s both',
           }}
         >
@@ -143,7 +144,7 @@ export default function MobileHero() {
           }}
         >
           <a
-            href="mailto:liam@parsonsdigital.com"
+            href="#contact"
             style={{
               display: 'inline-flex',
               alignItems: 'center',
@@ -161,7 +162,7 @@ export default function MobileHero() {
               textDecoration: 'none',
             }}
           >
-            Email me
+            Get in Touch
           </a>
           <a
             href="#services"
@@ -181,7 +182,7 @@ export default function MobileHero() {
               textDecoration: 'none',
             }}
           >
-            See pricing
+            Get a Quote
           </a>
         </div>
       </div>
