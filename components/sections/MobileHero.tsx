@@ -99,56 +99,37 @@ export default function MobileHero() {
           </div>
         </div>
 
-        {/* Wordmark — 28px */}
-        <div
+        {/* MOBILE ONLY — Main headline */}
+        <h1
           style={{
-            display: 'flex',
-            alignItems: 'baseline',
-            justifyContent: 'center',
             fontFamily: '"Plus Jakarta Sans", sans-serif',
-            fontSize: '28px',
+            fontSize: 'clamp(28px, 7.5vw, 36px)',
             fontWeight: 800,
             color: '#f4f3f0',
-            letterSpacing: '-0.02em',
-            marginBottom: '12px',
+            letterSpacing: '-0.025em',
+            lineHeight: 1.15,
+            maxWidth: '320px',
+            marginBottom: '20px',
             animation: 'wordmarkReveal 0.7s cubic-bezier(0.22,1,0.36,1) 0.6s both',
           }}
         >
-          Parsons
-          <span style={{ color: '#0891b2', margin: '0 3px' }}>/</span>
-          <em style={{ fontStyle: 'normal', fontWeight: 300, letterSpacing: '-0.01em' }}>Digital</em>
-        </div>
+          Your website should be working while you sleep.
+        </h1>
 
-        {/* Tagline */}
-        <div
+        {/* MOBILE ONLY — Subheading with amber accent on "Fast" */}
+        <p
           style={{
             fontFamily: '"Plus Jakarta Sans", sans-serif',
-            fontSize: '10px',
-            fontWeight: 500,
-            letterSpacing: '0.22em',
-            textTransform: 'uppercase',
-            color: '#7a8494',
+            fontSize: '15px',
+            fontWeight: 400,
+            color: 'rgba(244,243,240,0.5)',
+            letterSpacing: '0.01em',
+            lineHeight: 1.6,
             marginBottom: '40px',
             animation: 'taglineReveal 0.6s cubic-bezier(0.22,1,0.36,1) 0.9s both',
           }}
         >
-          Web Design for Small Business
-        </div>
-
-        {/* Subtext */}
-        <p
-          style={{
-            fontFamily: '"Plus Jakarta Sans", sans-serif',
-            fontSize: '16px',
-            fontWeight: 300,
-            color: 'rgba(244,243,240,0.5)',
-            maxWidth: '320px',
-            lineHeight: 1.7,
-            margin: '0 0 40px 0',
-            animation: 'taglineReveal 0.6s cubic-bezier(0.22,1,0.36,1) 1.05s both',
-          }}
-        >
-          Clean, fast websites for local businesses — from a landing page to a fully custom build.
+          <span style={{ color: '#f59e0b', fontWeight: 600 }}>Fast.</span>{' '}Beautiful. Built for your business.
         </p>
 
         {/* Buttons — stacked, both ghost/glow style */}

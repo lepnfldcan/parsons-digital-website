@@ -47,13 +47,13 @@ export default function MobileNav() {
           transition: 'background 0.4s, padding 0.4s, border-color 0.4s',
         }}
       >
-        {/* Centered wordmark */}
+        {/* MOBILE ONLY — Centered wordmark */}
         <a href="/" style={{ textDecoration: 'none' }}>
           <div style={{
             display: 'flex',
             alignItems: 'baseline',
             fontFamily: '"Plus Jakarta Sans", sans-serif',
-            fontSize: '15px',
+            fontSize: '17px',
             fontWeight: 800,
             color: '#f4f3f0',
             letterSpacing: '-0.02em',
