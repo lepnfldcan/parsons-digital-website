@@ -20,7 +20,9 @@ function Divider() {
 export default function Home() {
   return (
     <main className="bg-[#1e2530]">
-      <MobileHero />
+      <div className="md:hidden">
+        <MobileHero />
+      </div>
       <Hero />
       <Services />
       <Divider />

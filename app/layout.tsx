@@ -45,7 +45,9 @@ export default function RootLayout({
       className={`${jakarta.variable} ${syne.variable} h-full antialiased scroll-smooth`}
     >
       <body className="min-h-full flex flex-col bg-[#1e2530] text-[#f4f3f0]">
-        <MobileNav />
+        <div className="md:hidden">
+          <MobileNav />
+        </div>
         <Nav />
         {children}
         <Footer />
