@@ -22,9 +22,14 @@ export default function WhyMe() {
           02 — Why Me
         </span>
 
-        {/* Photo — Fix 2: edge treatment + accent box, Fix 3: tighter gap */}
+        {/* Photo — border + cyan offset shadow accent */}
         <RevealWrapper>
-          <div style={{ maxWidth: '280px', margin: '0 auto 24px', position: 'relative' }}>
+          <div style={{
+            maxWidth: '280px',
+            margin: '0 auto 32px',
+            borderRadius: '12px',
+            boxShadow: '10px 10px 0 rgba(8,145,178,0.4)',
+          }}>
             <div className="relative w-full aspect-[3/4] rounded-xl overflow-hidden" style={{ border: '1px solid rgba(244,243,240,0.18)' }}>
               <Image
                 src="/images/liam.jpg"
@@ -34,18 +39,6 @@ export default function WhyMe() {
                 sizes="(max-width: 768px) 280px, 40vw"
               />
             </div>
-            {/* Cyan accent box — offset bottom-right */}
-            <div style={{
-              position: 'absolute',
-              bottom: '-14px',
-              right: '-14px',
-              width: '56px',
-              height: '56px',
-              border: '2px solid rgba(8,145,178,0.5)',
-              borderRadius: '10px',
-              pointerEvents: 'none',
-              zIndex: 10,
-            }} />
           </div>
         </RevealWrapper>
 
