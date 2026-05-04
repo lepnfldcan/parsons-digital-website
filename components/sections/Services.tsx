@@ -57,13 +57,13 @@ const pricingCards = [
 
 const alaCarte = [
   { label: 'Extra pages', price: '$150 each' },
-  { label: 'CRM integration (HubSpot, Pipedrive)', price: '$400–600' },
-  { label: 'AI lead intake form', price: '$500' },
-  { label: 'Calendly + booking setup', price: '$150' },
-  { label: 'Google Analytics + Search Console', price: '$150' },
+  { label: 'CRM Integration', price: '$400–600' },
+  { label: 'AI lead form', price: '$500' },
+  { label: 'Calendly + booking', price: '$150' },
+  { label: 'Analytics setup', price: '$150' },
   { label: 'Content writing', price: '$75/hr' },
-  { label: 'Rush delivery (under 2 weeks)', price: '+25%' },
-  { label: 'White-label / partnership', price: "Let's talk" },
+  { label: 'Rush delivery', price: '+25%' },
+  { label: 'White-label', price: "Let's talk" },
 ] as const;
 
 const CARD_DELAYS = [0, 100, 200] as const;
@@ -116,62 +116,107 @@ export default function Services() {
           <MobilePricingCarousel cards={pricingCards} />
         </div>
 
-        {/* Maintenance strip — stacked, centered */}
-        <div style={{ margin: '0 32px' }}>
-          <RevealWrapper>
-            <div style={{
-              padding: '20px 24px',
-              border: '1px dashed rgba(244,243,240,0.12)',
-              borderRadius: '10px',
-              display: 'flex',
-              flexDirection: 'column',
-              alignItems: 'center',
-              gap: '16px',
-              textAlign: 'center',
-            }}>
-              <div>
-                <div style={{ fontSize: '13px', fontWeight: 600, color: '#f4f3f0', marginBottom: '4px' }}>
-                  Optional Add-On &nbsp;·&nbsp;{' '}
-                  <span style={{ color: '#0891b2' }}>Monthly Maintenance · $150/mo</span>
-                </div>
-                <div style={{ fontSize: '12px', color: 'rgba(244,243,240,0.45)', lineHeight: 1.5 }}>
-                  Entirely optional. Security updates, performance checks, minor content changes (up to 5/month), priority support.
-                </div>
+        {/* Maintenance strip — left-aligned, price as hero */}
+        <RevealWrapper>
+          <div style={{
+            margin: '0 24px',
+            padding: '20px 24px',
+            border: '1px solid rgba(244,243,240,0.1)',
+            borderRadius: '12px',
+            background: 'rgba(244,243,240,0.03)',
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'space-between',
+            gap: '16px',
+          }}>
+            <div>
+              <div style={{
+                fontSize: '10px',
+                fontWeight: 700,
+                letterSpacing: '0.12em',
+                textTransform: 'uppercase',
+                color: 'rgba(244,243,240,0.4)',
+                marginBottom: '4px',
+              }}>
+                Optional Add-On
               </div>
-              <a
-                href="#contact"
-                className="flex-shrink-0 whitespace-nowrap border border-[rgba(244,243,240,0.15)] text-[rgba(244,243,240,0.7)] hover:border-[#0891b2] hover:text-[#0891b2] px-6 py-[10px] rounded-[7px] font-semibold text-[13px] no-underline transition-[border-color,color] duration-200"
-              >
-                Add On
-              </a>
+              <div style={{
+                fontSize: '15px',
+                fontWeight: 700,
+                color: '#f4f3f0',
+                letterSpacing: '-0.01em',
+                marginBottom: '2px',
+              }}>
+                Monthly Maintenance
+              </div>
+              <div style={{
+                fontSize: '22px',
+                fontWeight: 800,
+                color: '#0891b2',
+                letterSpacing: '-0.02em',
+                lineHeight: 1,
+              }}>
+                $150<span style={{ fontSize: '13px', fontWeight: 400, color: '#7a8494' }}>/mo</span>
+              </div>
+            </div>
+            <a href="#contact" style={{
+              flexShrink: 0,
+              display: 'inline-flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+              padding: '11px 20px',
+              borderRadius: '8px',
+              border: '1px solid rgba(8,145,178,0.35)',
+              background: 'rgba(8,145,178,0.08)',
+              color: '#0891b2',
+              fontSize: '13px',
+              fontWeight: 600,
+              textDecoration: 'none',
+              boxShadow: '0 0 14px rgba(8,145,178,0.12)',
+              whiteSpace: 'nowrap',
+            }}>
+              Add On
+            </a>
+          </div>
+        </RevealWrapper>
+
+        {/* À La Carte */}
+        <div style={{ marginTop: '36px' }}>
+          <RevealWrapper>
+            <div style={{ padding: '0 24px', marginBottom: '16px' }}>
+              <span style={{
+                fontSize: '9px',
+                fontWeight: 800,
+                color: 'rgba(8,145,178,0.4)',
+                letterSpacing: '0.22em',
+                textTransform: 'uppercase',
+              }}>
+                À La Carte
+              </span>
             </div>
           </RevealWrapper>
-        </div>
-
-        {/* À La Carte — 2 columns */}
-        <div style={{ padding: '0 32px', marginTop: '20px' }}>
-          <SectionLabel>À La Carte</SectionLabel>
-          <div style={{
-            display: 'grid',
-            gridTemplateColumns: 'repeat(2, 1fr)',
-            gap: '1px',
-            background: 'rgba(244,243,240,0.08)',
-            borderRadius: '10px',
-            overflow: 'hidden',
-            marginTop: '16px',
-          }}>
-            {alaCarte.map((item) => (
-              <div key={item.label} style={{ background: '#1e2530', padding: '20px' }}>
-                <div style={{ fontWeight: 600, fontSize: '13px', color: '#f4f3f0', marginBottom: '4px', lineHeight: 1.4 }}>
-                  {item.label}
+          <RevealWrapper delay={100}>
+            <div style={{
+              display: 'grid',
+              gridTemplateColumns: '1fr 1fr',
+              gap: '1px',
+              background: 'rgba(244,243,240,0.08)',
+              borderRadius: '12px',
+              overflow: 'hidden',
+              margin: '0 24px',
+            }}>
+              {alaCarte.map((item) => (
+                <div key={item.label} style={{ background: '#1e2530', padding: '20px 18px' }}>
+                  <div style={{ fontSize: '13px', fontWeight: 600, color: '#f4f3f0', marginBottom: '4px', lineHeight: 1.3 }}>
+                    {item.label}
+                  </div>
+                  <div style={{ fontSize: '13px', fontWeight: 700, color: '#0891b2', letterSpacing: '-0.01em' }}>
+                    {item.price}
+                  </div>
                 </div>
-                <div style={{ fontSize: '12px', color: '#7a8494' }}>{item.price}</div>
-              </div>
-            ))}
-          </div>
-          <p className="mt-3 text-[11px] text-[rgba(244,243,240,0.25)] italic">
-            Agencies and consultants looking for white-label or partnership arrangements — let&apos;s talk.
-          </p>
+              ))}
+            </div>
+          </RevealWrapper>
         </div>
       </div>
 
