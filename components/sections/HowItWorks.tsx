@@ -33,19 +33,18 @@ export default function HowItWorks() {
       {/* MOBILE ONLY — vertical timeline */}
       <div className="md:hidden py-[80px] px-8">
 
-        {/* Section number */}
-        <div style={{
-          fontSize: '11px',
-          fontWeight: 700,
-          color: '#0891b2',
-          letterSpacing: '0.1em',
+        {/* Section label — Fix 1: single line */}
+        <span style={{
+          fontSize: '9px',
+          fontWeight: 800,
+          color: 'rgba(8,145,178,0.4)',
+          letterSpacing: '0.22em',
           textTransform: 'uppercase',
-          marginBottom: '12px',
+          display: 'block',
+          marginBottom: '24px',
         }}>
-          03
-        </div>
-
-        <SectionLabel>Process</SectionLabel>
+          03 — Process
+        </span>
         <RevealWrapper>
           <h2 className="text-[clamp(32px,4vw,52px)] font-extrabold leading-[1.1] tracking-[-0.02em] text-[#f4f3f0] mb-10">
             How it works
@@ -54,26 +53,27 @@ export default function HowItWorks() {
 
         {/* Vertical stack with left-side connecting line */}
         <div style={{ position: 'relative' }}>
-          {/* Vertical line — left side */}
+          {/* Vertical line — Fix 3: aligned to dot center, fades at bottom */}
           <div
             style={{
               position: 'absolute',
-              left: '13px',
-              top: '20px',
-              bottom: '20px',
+              left: '4px',
+              top: '8px',
+              bottom: '8px',
               width: '1px',
-              background: 'linear-gradient(180deg, rgba(8,145,178,0.3), rgba(8,145,178,0.3), transparent)',
+              background: 'linear-gradient(180deg, rgba(8,145,178,0.5) 0%, rgba(8,145,178,0.5) 85%, transparent 100%)',
             }}
           />
 
           {steps.map((step, index) => (
             <RevealWrapper key={step.num} delay={STEP_DELAYS[index]}>
-              <div style={{ padding: '0 0 36px 40px', position: 'relative' }}>
-                {/* Dot — absolute on left, center aligns with line */}
+              {/* Fix 2: tighter spacing; last step no bottom padding */}
+              <div style={{ padding: index === steps.length - 1 ? '0 0 0 40px' : '0 0 24px 40px', position: 'relative' }}>
+                {/* Dot — Fix 3: left: 0, top: 4px — center at 5px, line at 4px */}
                 <div
                   style={{
                     position: 'absolute',
-                    left: '9px',
+                    left: '0',
                     top: '4px',
                     width: '10px',
                     height: '10px',
@@ -94,7 +94,8 @@ export default function HowItWorks() {
                 <h3 className="text-[16px] font-bold text-[#f4f3f0] tracking-[-0.01em] mb-2.5">
                   {step.title}
                 </h3>
-                <p className="text-[13px] text-[rgba(244,243,240,0.45)] leading-[1.65]">
+                {/* Fix 4: full white, light weight — readable */}
+                <p style={{ fontSize: '13px', color: '#f4f3f0', fontWeight: 300, lineHeight: 1.65 }}>
                   {step.desc}
                 </p>
               </div>
