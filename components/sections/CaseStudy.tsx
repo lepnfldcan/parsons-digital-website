@@ -156,12 +156,7 @@ export default function CaseStudy() {
               <h3 className="text-[28px] font-extrabold tracking-[-0.02em] text-[#f4f3f0] leading-[1.2] mb-4">
                 Zero to live<br />in 30 days.
               </h3>
-              <p className="text-[14px] text-[rgba(244,243,240,0.5)] leading-[1.75] mb-5">
-                Angela Carley, MSN, APRN-BC, spent 20 years in traditional healthcare before founding Luminary Integrative Health — a membership-based direct primary care clinic built around one idea: that care should be between patient and provider, not filtered through insurance.
-              </p>
-              <p className="text-[14px] text-[rgba(244,243,240,0.5)] leading-[1.75] mb-6">
-                She came in with no website, no domain, and no digital presence — preparing to open her doors with a hard May 1st launch date. In 30 days: full brand design system, custom Next.js build, multi-page architecture, mobile-responsive design, booking integration, SEO setup, and Vercel deployment with custom domain.
-              </p>
+              <p className="text-[14px] font-light leading-[1.75] mb-6" style={{ color: '#f4f3f0' }}>Angela came in with no website, no domain, no digital presence — and a hard May 1st launch date. In 30 days: full brand system, custom Next.js build, booking integration, SEO, and Vercel deployment.</p>
 
               {/* Service tags */}
               <div className="flex flex-wrap gap-1.5 mb-6">
@@ -222,11 +217,11 @@ export default function CaseStudy() {
               <div className="grid grid-cols-2 gap-3 mt-4">
                 <div className="bg-[rgba(244,243,240,0.03)] border border-[rgba(244,243,240,0.08)] rounded-lg p-4">
                   <div className="text-[22px] font-extrabold text-[#f4f3f0] tracking-[-0.02em] mb-1">30</div>
-                  <div className="text-[11px] text-[#7a8494]">Days from brief to live</div>
+                  <div className="text-[11px] text-[#7a8494]">Brief to live</div>
                 </div>
                 <div className="bg-[rgba(244,243,240,0.03)] border border-[rgba(244,243,240,0.08)] rounded-lg p-4">
                   <div className="text-[22px] font-extrabold text-[#f4f3f0] tracking-[-0.02em] mb-1">Day 1</div>
-                  <div className="text-[11px] text-[#7a8494]">First patient inquiry received</div>
+                  <div className="text-[11px] text-[#7a8494]">First inquiry</div>
                 </div>
               </div>
             </div>
