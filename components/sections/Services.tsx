@@ -172,7 +172,7 @@ export default function Services() {
               fontSize: '13px',
               fontWeight: 600,
               textDecoration: 'none',
-              boxShadow: '0 0 14px rgba(8,145,178,0.12)',
+              boxShadow: '0 0 20px rgba(8,145,178,0.2), inset 0 0 12px rgba(8,145,178,0.06)',
               whiteSpace: 'nowrap',
             }}>
               Add On
@@ -206,7 +206,14 @@ export default function Services() {
               margin: '0 24px',
             }}>
               {alaCarte.map((item) => (
-                <div key={item.label} style={{ background: '#1e2530', padding: '20px 18px' }}>
+                <div key={item.label} style={{
+                  background: '#1e2530',
+                  padding: '20px 18px',
+                  display: 'flex',
+                  flexDirection: 'column',
+                  alignItems: 'flex-start',
+                  justifyContent: 'flex-start',
+                }}>
                   <div style={{ fontSize: '13px', fontWeight: 600, color: '#f4f3f0', marginBottom: '4px', lineHeight: 1.3 }}>
                     {item.label}
                   </div>
