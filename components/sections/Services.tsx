@@ -63,6 +63,7 @@ const alaCarte = [
   { label: 'Email newsletter', price: '$125' },
   { label: 'Content writing', price: '$75/hr' },
   { label: 'Rush delivery', price: '+25%' },
+  { label: 'Google Business Profile', price: '$300' },
 ] as const;
 
 const CARD_DELAYS = [0, 100, 200] as const;
