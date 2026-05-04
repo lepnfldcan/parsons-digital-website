@@ -20,7 +20,7 @@ export default function MobileHero() {
         background: '#1e2530',
       }}
     >
-      {/* Radial glow only — no grid, no gleam */}
+      {/* Radial ambient glow */}
       <div
         style={{
           position: 'absolute', inset: 0, pointerEvents: 'none',
@@ -30,6 +30,9 @@ export default function MobileHero() {
           `,
         }}
       />
+
+      {/* Top-down circuit gleam — masked to grid lines */}
+      <div className="mobile-hero-gleam" />
 
       {/* Content */}
       <div style={{ position: 'relative', zIndex: 10, display: 'flex', flexDirection: 'column', alignItems: 'center', width: '100%' }}>
@@ -42,6 +45,7 @@ export default function MobileHero() {
             borderRadius: '13px',
             display: 'flex', alignItems: 'center', justifyContent: 'center',
             marginBottom: '36px',
+            boxShadow: '0 0 28px rgba(8,145,178,0.38), 0 0 60px rgba(8,145,178,0.14)',
             animation: 'markReveal 0.8s cubic-bezier(0.22,1,0.36,1) 0.2s both',
           }}
         >

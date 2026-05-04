@@ -71,7 +71,49 @@ a {
   100% { transform: rotate(-55deg) translateX(420%); opacity: 0; }
 }
 
-/* Hero gleam — sweeps along grid lines only via CSS mask */
+/* Mobile hero gleam — sweeps top-to-bottom along grid lines */
+@keyframes mobileGleamTopDown {
+  0%   { transform: translateY(0);    opacity: 0; }
+  8%   { opacity: 1; }
+  60%  { transform: translateY(350%); opacity: 1; }
+  68%  { opacity: 0; }
+  100% { transform: translateY(350%); opacity: 0; }
+}
+
+.mobile-hero-gleam {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  overflow: hidden;
+  -webkit-mask-image:
+    linear-gradient(rgba(244,243,240,1) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(244,243,240,1) 1px, transparent 1px);
+  -webkit-mask-size: 60px 60px;
+  mask-image:
+    linear-gradient(rgba(244,243,240,1) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(244,243,240,1) 1px, transparent 1px);
+  mask-size: 60px 60px;
+}
+
+.mobile-hero-gleam::after {
+  content: '';
+  position: absolute;
+  left: -10%;
+  top: -30%;
+  width: 120%;
+  height: 40%;
+  background: linear-gradient(
+    to bottom,
+    transparent 0%,
+    rgba(8,145,178,0.0) 28%,
+    rgba(8,145,178,0.65) 50%,
+    rgba(8,145,178,0.0) 72%,
+    transparent 100%
+  );
+  animation: mobileGleamTopDown 8s ease-in-out infinite;
+}
+
+/* Desktop hero gleam — sweeps along grid lines only via CSS mask */
 .hero-gleam {
   position: absolute;
   inset: 0;
