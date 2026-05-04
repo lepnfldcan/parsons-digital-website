@@ -56,14 +56,13 @@ const pricingCards = [
 ] as const;
 
 const alaCarte = [
-  { label: 'Extra pages', price: '$150 each' },
-  { label: 'CRM Integration', price: '$400–600' },
-  { label: 'AI lead form', price: '$500' },
-  { label: 'Calendly + booking', price: '$150' },
-  { label: 'Analytics setup', price: '$150' },
+  { label: 'Calendly / booking', price: '$150' },
+  { label: '24/7 AI Chat', price: '$200' },
+  { label: 'WhatsApp button', price: '$75' },
+  { label: 'Review showcase', price: '$125' },
+  { label: 'Email newsletter', price: '$125' },
   { label: 'Content writing', price: '$75/hr' },
   { label: 'Rush delivery', price: '+25%' },
-  { label: 'White-label', price: "Let's talk" },
 ] as const;
 
 const CARD_DELAYS = [0, 100, 200] as const;
