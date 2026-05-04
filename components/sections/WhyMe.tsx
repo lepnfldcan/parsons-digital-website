@@ -55,9 +55,7 @@ export default function WhyMe() {
         </RevealWrapper>
 
         <RevealWrapper delay={100}>
-          <p style={{ fontSize: '15px', fontWeight: 300, color: '#f4f3f0', lineHeight: 1.75, marginBottom: '28px' }}>
-            Most web people disappear after launch. I don&apos;t. No account managers. No hand-offs. Direct line to me — before, during, and after launch.
-          </p>
+          <p style={{ fontSize: '15px', fontWeight: 300, color: '#f4f3f0', lineHeight: 1.75, marginBottom: '28px' }}>Most web people disappear after launch. I don&apos;t. No account managers. No hand-offs. Direct line to me — before, during, and after launch.</p>
         </RevealWrapper>
 
         <RevealWrapper delay={200}>
@@ -76,33 +74,35 @@ export default function WhyMe() {
           </a>
         </RevealWrapper>
 
-        {/* Stats — Fix 1: horizontal row, not stacked */}
+        {/* Stats — horizontal row, equal distribution */}
         <RevealWrapper delay={300}>
           <div style={{
-            borderTop: '1px solid rgba(244,243,240,0.08)',
-            marginTop: '36px',
-            paddingTop: '32px',
             display: 'flex',
             flexDirection: 'row',
-            alignItems: 'center',
+            alignItems: 'flex-start',
+            justifyContent: 'center',
+            width: '100%',
+            borderTop: '1px solid rgba(244,243,240,0.08)',
+            paddingTop: '32px',
+            marginTop: '36px',
           }}>
-            <div style={{ flex: 1, display: 'flex', flexDirection: 'column', alignItems: 'center', padding: '0 16px', borderRight: '1px solid rgba(244,243,240,0.08)' }}>
-              <div style={{ fontSize: '28px', fontWeight: 800, color: '#f4f3f0', letterSpacing: '-0.03em', lineHeight: 1, marginBottom: '6px', whiteSpace: 'nowrap' }}>
+            <div style={{ flex: 1, display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'flex-start', padding: '0 8px', borderRight: '1px solid rgba(244,243,240,0.08)', textAlign: 'center' }}>
+              <div style={{ fontSize: '26px', fontWeight: 800, color: '#f4f3f0', letterSpacing: '-0.03em', lineHeight: 1, marginBottom: '6px', whiteSpace: 'nowrap', textAlign: 'center' }}>
                 6–12<span style={{ color: '#0891b2' }}>hr</span>
               </div>
-              <div style={{ fontSize: '10px', color: '#7a8494', textAlign: 'center', lineHeight: 1.4, maxWidth: '72px' }}>Support response</div>
+              <div style={{ fontSize: '10px', color: '#7a8494', textAlign: 'center', lineHeight: 1.4, maxWidth: '64px' }}>Support response</div>
             </div>
-            <div style={{ flex: 1, display: 'flex', flexDirection: 'column', alignItems: 'center', padding: '0 16px', borderRight: '1px solid rgba(244,243,240,0.08)' }}>
-              <div style={{ fontSize: '28px', fontWeight: 800, color: '#f4f3f0', letterSpacing: '-0.03em', lineHeight: 1, marginBottom: '6px' }}>
+            <div style={{ flex: 1, display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'flex-start', padding: '0 8px', borderRight: '1px solid rgba(244,243,240,0.08)', textAlign: 'center' }}>
+              <div style={{ fontSize: '26px', fontWeight: 800, color: '#f4f3f0', letterSpacing: '-0.03em', lineHeight: 1, marginBottom: '6px', textAlign: 'center' }}>
                 100<span style={{ color: '#0891b2' }}>%</span>
               </div>
-              <div style={{ fontSize: '10px', color: '#7a8494', textAlign: 'center', lineHeight: 1.4, maxWidth: '72px' }}>Mobile-ready</div>
+              <div style={{ fontSize: '10px', color: '#7a8494', textAlign: 'center', lineHeight: 1.4, maxWidth: '64px' }}>Mobile-ready</div>
             </div>
-            <div style={{ flex: 1, display: 'flex', flexDirection: 'column', alignItems: 'center', padding: '0 16px' }}>
-              <div style={{ fontSize: '28px', fontWeight: 800, color: '#f4f3f0', letterSpacing: '-0.03em', lineHeight: 1, marginBottom: '6px' }}>
+            <div style={{ flex: 1, display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'flex-start', padding: '0 8px', textAlign: 'center' }}>
+              <div style={{ fontSize: '26px', fontWeight: 800, color: '#f4f3f0', letterSpacing: '-0.03em', lineHeight: 1, marginBottom: '6px', textAlign: 'center' }}>
                 Forever<span style={{ color: '#0891b2' }}>.</span>
               </div>
-              <div style={{ fontSize: '10px', color: '#7a8494', textAlign: 'center', lineHeight: 1.4, maxWidth: '72px' }}>You own the code</div>
+              <div style={{ fontSize: '10px', color: '#7a8494', textAlign: 'center', lineHeight: 1.4, maxWidth: '64px' }}>You own the code</div>
             </div>
           </div>
         </RevealWrapper>
