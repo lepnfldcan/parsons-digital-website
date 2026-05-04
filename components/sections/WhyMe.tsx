@@ -7,7 +7,7 @@ export default function WhyMe() {
     <section id="about" className="max-w-[1200px] mx-auto">
 
       {/* MOBILE ONLY — md and below */}
-      <div className="md:hidden py-[80px] px-8">
+      <div className="md:hidden py-[80px] px-8" style={{ overflow: 'visible' }}>
 
         {/* Section label — Fix 6: single line */}
         <span style={{
@@ -25,7 +25,7 @@ export default function WhyMe() {
         {/* Photo — Fix 2: edge treatment + accent box, Fix 3: tighter gap */}
         <RevealWrapper>
           <div style={{ maxWidth: '280px', margin: '0 auto 24px', position: 'relative' }}>
-            <div className="relative w-full aspect-[3/4] rounded-xl overflow-hidden" style={{ border: '1px solid rgba(244,243,240,0.08)' }}>
+            <div className="relative w-full aspect-[3/4] rounded-xl overflow-hidden" style={{ border: '1px solid rgba(244,243,240,0.18)' }}>
               <Image
                 src="/images/liam.jpg"
                 alt="Liam Parsons"
@@ -37,13 +37,14 @@ export default function WhyMe() {
             {/* Cyan accent box — offset bottom-right */}
             <div style={{
               position: 'absolute',
-              bottom: '-10px',
-              right: '-10px',
-              width: '64px',
-              height: '64px',
-              border: '2px solid rgba(8,145,178,0.3)',
+              bottom: '-14px',
+              right: '-14px',
+              width: '56px',
+              height: '56px',
+              border: '2px solid rgba(8,145,178,0.5)',
               borderRadius: '10px',
               pointerEvents: 'none',
+              zIndex: 10,
             }} />
           </div>
         </RevealWrapper>
