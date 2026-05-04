@@ -9,6 +9,13 @@ const tags = [
   { label: 'Vercel Deployment', highlight: false },
 ];
 
+// Mobile: 3 most legible tags in a scroll row
+const mobileTags = [
+  { label: 'Next.js', highlight: true },
+  { label: 'Booking Integration', highlight: false },
+  { label: 'SEO + OpenGraph', highlight: false },
+];
+
 export default function CaseStudy() {
   return (
     <section id="work" className="max-w-[1200px] mx-auto">
@@ -16,24 +23,18 @@ export default function CaseStudy() {
       {/* MOBILE ONLY — single column, preview hidden, inline stats */}
       <div className="md:hidden py-[80px] px-8">
 
-        {/* Section number */}
-        <div style={{
-          fontSize: '11px',
-          fontWeight: 700,
-          color: '#0891b2',
-          letterSpacing: '0.1em',
+        {/* Section label — Fix 2+6: single line, no rule, no redundant heading */}
+        <span style={{
+          fontSize: '9px',
+          fontWeight: 800,
+          color: 'rgba(8,145,178,0.4)',
+          letterSpacing: '0.22em',
           textTransform: 'uppercase',
-          marginBottom: '12px',
+          display: 'block',
+          marginBottom: '20px',
         }}>
-          04
-        </div>
-
-        <SectionLabel>Work</SectionLabel>
-        <RevealWrapper>
-          <h2 className="text-[clamp(32px,4vw,52px)] font-extrabold leading-[1.1] tracking-[-0.02em] text-[#f4f3f0] mb-8">
-            Case study
-          </h2>
-        </RevealWrapper>
+          04 — Work
+        </span>
 
         <RevealWrapper>
           <div
@@ -58,23 +59,24 @@ export default function CaseStudy() {
             <h3 className="text-[28px] font-extrabold tracking-[-0.02em] text-[#f4f3f0] leading-[1.2] mb-4">
               Zero to live<br />in 30 days.
             </h3>
-            <p className="text-[14px] text-[rgba(244,243,240,0.5)] leading-[1.75] mb-5">
-              Angela Carley, MSN, APRN-BC, spent 20 years in traditional healthcare before founding Luminary Integrative Health — a membership-based direct primary care clinic built around one idea: that care should be between patient and provider, not filtered through insurance.
-            </p>
-            <p className="text-[14px] text-[rgba(244,243,240,0.5)] leading-[1.75] mb-6">
-              She came in with no website, no domain, and no digital presence — preparing to open her doors with a hard May 1st launch date. In 30 days: full brand design system, custom Next.js build, multi-page architecture, mobile-responsive design, booking integration, SEO setup, and Vercel deployment with custom domain.
-            </p>
+            {/* Fix 1+4: one tight paragraph, full white at weight 300 */}
+            <p style={{ fontSize: '14px', fontWeight: 300, color: '#f4f3f0', lineHeight: 1.75, marginBottom: '20px' }}>Angela came in with no website, no domain, no digital presence — and a hard May 1st launch date. In 30 days: full brand system, custom Next.js build, booking integration, SEO, and Vercel deployment.</p>
 
-            {/* Service tags */}
-            <div className="flex flex-wrap gap-1.5 mb-6">
-              {tags.map((tag) => (
+            {/* Fix 3: 3 tags max, horizontal scroll row — no wrapping */}
+            <div style={{ display: 'flex', gap: '6px', overflowX: 'auto', scrollbarWidth: 'none', marginBottom: '24px', paddingBottom: '4px' }}>
+              {mobileTags.map((tag) => (
                 <span
                   key={tag.label}
-                  className={`text-[10.5px] px-2.5 py-[3px] rounded-full border ${
-                    tag.highlight
-                      ? 'bg-[rgba(8,145,178,0.1)] border-[rgba(8,145,178,0.2)] text-[#0891b2]'
-                      : 'bg-[rgba(244,243,240,0.05)] border-[rgba(244,243,240,0.08)] text-[#7a8494]'
-                  }`}
+                  style={{
+                    flexShrink: 0,
+                    fontSize: '10.5px',
+                    padding: '3px 10px',
+                    borderRadius: '9999px',
+                    border: tag.highlight ? '1px solid rgba(8,145,178,0.2)' : '1px solid rgba(244,243,240,0.08)',
+                    background: tag.highlight ? 'rgba(8,145,178,0.1)' : 'rgba(244,243,240,0.05)',
+                    color: tag.highlight ? '#0891b2' : '#7a8494',
+                    whiteSpace: 'nowrap',
+                  }}
                 >
                   {tag.label}
                 </span>
@@ -104,11 +106,13 @@ export default function CaseStudy() {
             >
               <div style={{ flex: 1, paddingRight: '16px', borderRight: '1px solid rgba(244,243,240,0.08)' }}>
                 <div style={{ fontSize: '22px', fontWeight: 800, color: '#f4f3f0', letterSpacing: '-0.02em', marginBottom: '2px' }}>30</div>
-                <div style={{ fontSize: '11px', color: '#7a8494' }}>Days from brief to live</div>
+                {/* Fix 5: shorter label */}
+                <div style={{ fontSize: '11px', color: '#7a8494' }}>Brief to live</div>
               </div>
               <div style={{ flex: 1, paddingLeft: '16px' }}>
                 <div style={{ fontSize: '22px', fontWeight: 800, color: '#f4f3f0', letterSpacing: '-0.02em', marginBottom: '2px' }}>Day 1</div>
-                <div style={{ fontSize: '11px', color: '#7a8494' }}>First patient inquiry</div>
+                {/* Fix 5: shorter label */}
+                <div style={{ fontSize: '11px', color: '#7a8494' }}>First inquiry</div>
               </div>
             </div>
 
