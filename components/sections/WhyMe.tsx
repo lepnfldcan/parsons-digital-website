@@ -56,27 +56,25 @@ export default function WhyMe() {
 
         <RevealWrapper delay={100}>
           <p className="text-[15px] font-light text-[rgba(244,243,240,0.55)] leading-[1.8] mb-9">
-            Most web people disappear after launch. I don&apos;t. You&apos;ll have my direct contact, and your site will get the attention it deserves. No account managers. No hand-offs. Just me.
+            Most web people disappear after launch. I don&apos;t.<br />
+            No account managers. No hand-offs.<br />
+            Direct line to me — before, during, and after launch.
           </p>
         </RevealWrapper>
 
-        {/* Fix 5: email as standalone tappable element */}
         <RevealWrapper delay={200}>
-          <p style={{ fontSize: '13px', color: 'rgba(244,243,240,0.4)', lineHeight: 1.7, marginBottom: '8px' }}>
-            Got a project in mind? Reach out — I&apos;ll get back to you same day.
-          </p>
           <a href="mailto:liam@parsonsdigital.com" style={{
-            display: 'inline-flex',
-            alignItems: 'center',
+            display: 'inline-block',
             fontSize: '13px',
             fontWeight: 600,
             color: '#0891b2',
             textDecoration: 'none',
+            marginTop: '20px',
             padding: '10px 0',
             minHeight: '44px',
             letterSpacing: '0.01em',
           }}>
-            liam@parsonsdigital.com
+            liam@parsonsdigital.com →
           </a>
         </RevealWrapper>
 
