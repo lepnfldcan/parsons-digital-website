@@ -77,20 +77,21 @@ export default function MobileHero() {
           while you sleep.
         </h1>
 
-        {/* Subheadline — simple, no animation gimmicks */}
+        {/* Subheadline — clean tagline with white glow */}
         <p
           style={{
             fontFamily: '"Plus Jakarta Sans", sans-serif',
             fontSize: '15px',
-            fontWeight: 400,
-            color: 'rgba(244,243,240,0.55)',
-            lineHeight: 1.65,
-            maxWidth: '280px',
-            marginBottom: '56px',
+            fontWeight: 500,
+            color: '#f4f3f0',
+            letterSpacing: '0.02em',
+            lineHeight: 1.6,
+            marginBottom: '48px',
+            textShadow: '0 0 18px rgba(255,255,255,0.45), 0 0 40px rgba(255,255,255,0.18)',
             animation: 'taglineReveal 0.6s cubic-bezier(0.22,1,0.36,1) 0.9s both',
           }}
         >
-          Fast, beautiful websites built for your business.
+          Fast. Beautiful. Built for your business.
         </p>
 
         {/* Single CTA — full-width cyan pill */}

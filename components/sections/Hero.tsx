@@ -40,8 +40,8 @@ export default function Hero() {
           <em className="text-[#0891b2] not-italic">hard</em> as you do.
         </h1>
 
-        <p className="text-[18px] font-light text-[rgba(244,243,240,0.55)] max-w-[480px] mb-12 leading-[1.7]">
-          I build clean, fast websites for local businesses — from a single landing page to a fully custom build with booking, payments, or a chatbot.
+        <p className="text-[18px] font-light text-[rgba(244,243,240,0.55)] max-w-[540px] mb-12 leading-[1.7]">
+          I build fast, beautiful websites for local businesses — from simple landing pages to fully custom sites with booking, payments, and AI — so you look great online and get real results.
         </p>
 
         <div className="flex items-center gap-5">
