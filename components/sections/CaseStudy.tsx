@@ -93,6 +93,29 @@ export default function CaseStudy() {
               </p>
             </div>
 
+            {/* Site preview — between quote and stats */}
+            <div style={{ borderRadius: '12px', overflow: 'hidden', position: 'relative', marginBottom: '20px' }}>
+              <img
+                src="/luminary-preview.png"
+                alt="Luminary Integrative Health"
+                style={{ width: '100%', display: 'block', objectFit: 'cover' }}
+              />
+              <a
+                href="https://www.luminaryihc.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                style={{
+                  position: 'absolute', bottom: '10px', right: '10px',
+                  fontSize: '11px', fontWeight: 600, color: '#0891b2',
+                  textDecoration: 'none', background: 'rgba(30,37,48,0.85)',
+                  padding: '5px 10px', borderRadius: '6px',
+                  backdropFilter: 'blur(8px)', letterSpacing: '0.04em',
+                }}
+              >
+                Visit the site ↗
+              </a>
+            </div>
+
             {/* Inline stats — flex row (replaces 2-col grid on mobile) */}
             <div
               style={{
@@ -199,17 +222,25 @@ export default function CaseStudy() {
 
             {/* Right: site preview + stats */}
             <div className="flex flex-col gap-4">
-              <div className="aspect-[16/10] bg-[rgba(244,243,240,0.03)] border border-[rgba(244,243,240,0.08)] rounded-[10px] flex flex-col items-center justify-center gap-3">
-                <div className="text-[32px] font-extrabold tracking-[-0.02em] text-[rgba(244,243,240,0.08)] leading-none">
-                  luminaryihc.com
-                </div>
+              <div style={{ aspectRatio: '16/10', borderRadius: '10px', overflow: 'hidden', position: 'relative' }}>
+                <img
+                  src="/luminary-preview.png"
+                  alt="Luminary Integrative Health"
+                  style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center top', display: 'block' }}
+                />
                 <a
                   href="https://www.luminaryihc.com"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-[12px] font-semibold text-[#0891b2] no-underline tracking-[0.04em] hover:underline"
+                  style={{
+                    position: 'absolute', bottom: '12px', right: '12px',
+                    fontSize: '11px', fontWeight: 600, color: '#0891b2',
+                    textDecoration: 'none', letterSpacing: '0.04em',
+                    background: 'rgba(30,37,48,0.8)', padding: '6px 12px',
+                    borderRadius: '6px', backdropFilter: 'blur(8px)',
+                  }}
                 >
-                  Visit the live site ↗
+                  Visit the site ↗
                 </a>
               </div>
 
