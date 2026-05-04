@@ -1,5 +1,10 @@
 'use client';
 
+// HYBRID VERSION — logo left, slide-in dark panel from right
+// Claude: centered wordmark + full-screen overlay
+// Deepseek: logo left + slide from right
+// Hybrid: logo left + slide from right, but dark brand aesthetic throughout
+
 import { useState, useEffect } from 'react';
 
 const navLinks = [
@@ -7,6 +12,7 @@ const navLinks = [
   { label: 'Why Me', href: '#about' },
   { label: 'Process', href: '#process' },
   { label: 'Work', href: '#work' },
+  { label: 'Contact', href: '#contact' },
 ];
 
 export default function MobileNav() {
@@ -19,7 +25,6 @@ export default function MobileNav() {
     return () => window.removeEventListener('scroll', onScroll);
   }, []);
 
-  // Lock body scroll when menu is open
   useEffect(() => {
     document.body.style.overflow = isOpen ? 'hidden' : '';
     return () => { document.body.style.overflow = ''; };
@@ -29,7 +34,7 @@ export default function MobileNav() {
 
   return (
     <>
-      {/* Nav bar — mobile only */}
+      {/* Nav bar */}
       <nav
         className="md:hidden"
         style={{
@@ -39,7 +44,7 @@ export default function MobileNav() {
           padding: isScrolled ? '14px 24px' : '20px 24px',
           display: 'flex',
           alignItems: 'center',
-          justifyContent: 'center',
+          justifyContent: 'space-between',
           background: isScrolled ? 'rgba(30,37,48,0.96)' : 'transparent',
           backdropFilter: isScrolled ? 'blur(16px)' : 'none',
           WebkitBackdropFilter: isScrolled ? 'blur(16px)' : 'none',
@@ -47,7 +52,7 @@ export default function MobileNav() {
           transition: 'background 0.4s, padding 0.4s, border-color 0.4s',
         }}
       >
-        {/* MOBILE ONLY — Centered wordmark */}
+        {/* Wordmark — LEFT */}
         <a href="/" style={{ textDecoration: 'none' }}>
           <div style={{
             display: 'flex',
@@ -64,80 +69,81 @@ export default function MobileNav() {
           </div>
         </a>
 
-        {/* Hamburger — 44×44px touch target, absolute right */}
+        {/* Hamburger — RIGHT */}
         <button
           onClick={() => setIsOpen(o => !o)}
           aria-label={isOpen ? 'Close menu' : 'Open menu'}
           aria-expanded={isOpen}
           style={{
-            position: 'absolute',
-            right: '24px',
-            top: '50%',
-            transform: 'translateY(-50%)',
-            width: '44px',
-            height: '44px',
-            display: 'flex',
-            flexDirection: 'column',
-            alignItems: 'center',
-            justifyContent: 'center',
-            gap: '5px',
-            background: 'none',
-            border: 'none',
-            cursor: 'pointer',
-            padding: 0,
+            width: '44px', height: '44px',
+            display: 'flex', flexDirection: 'column',
+            alignItems: 'center', justifyContent: 'center',
+            gap: '5px', background: 'none', border: 'none',
+            cursor: 'pointer', padding: 0,
           }}
         >
-          <span style={{
-            display: 'block',
-            width: '22px',
-            height: '1.5px',
-            background: '#f4f3f0',
-            borderRadius: '2px',
-            transition: 'transform 0.3s ease',
-            transform: isOpen ? 'translateY(6.5px) rotate(45deg)' : 'none',
-          }} />
-          <span style={{
-            display: 'block',
-            width: isOpen ? '0px' : '22px',
-            height: '1.5px',
-            background: '#f4f3f0',
-            borderRadius: '2px',
-            transition: 'opacity 0.3s ease, width 0.3s ease',
-            opacity: isOpen ? 0 : 1,
-          }} />
-          <span style={{
-            display: 'block',
-            width: '22px',
-            height: '1.5px',
-            background: '#f4f3f0',
-            borderRadius: '2px',
-            transition: 'transform 0.3s ease',
-            transform: isOpen ? 'translateY(-6.5px) rotate(-45deg)' : 'none',
-          }} />
+          {[
+            isOpen ? 'translateY(7px) rotate(45deg)' : 'none',
+            'none',
+            isOpen ? 'translateY(-7px) rotate(-45deg)' : 'none',
+          ].map((transform, i) => (
+            <span key={i} style={{
+              display: 'block', width: '22px', height: '1.5px',
+              background: '#f4f3f0', borderRadius: '2px',
+              transition: 'transform 0.3s ease, opacity 0.3s ease',
+              transform,
+              opacity: i === 1 && isOpen ? 0 : 1,
+            }} />
+          ))}
         </button>
       </nav>
 
-      {/* Full-screen overlay — sits below nav bar (z-index: 150 < 200) */}
+      {/* Backdrop */}
+      <div
+        className="md:hidden"
+        onClick={close}
+        style={{
+          position: 'fixed', inset: 0, zIndex: 190,
+          background: 'rgba(0,0,0,0.5)',
+          opacity: isOpen ? 1 : 0,
+          pointerEvents: isOpen ? 'all' : 'none',
+          transition: 'opacity 0.3s ease',
+        }}
+      />
+
+      {/* Slide-in panel — dark, from right */}
       <div
         className="md:hidden"
         style={{
           position: 'fixed',
-          inset: 0,
-          zIndex: 150,
-          background: 'rgba(30,37,48,0.98)',
-          backdropFilter: 'blur(24px)',
-          WebkitBackdropFilter: 'blur(24px)',
+          top: 0, right: 0,
+          width: '72%', maxWidth: '300px',
+          height: '100%',
+          zIndex: 200,
+          background: '#151c26',
+          borderLeft: '1px solid rgba(244,243,240,0.06)',
+          transform: isOpen ? 'translateX(0)' : 'translateX(100%)',
+          transition: 'transform 0.35s cubic-bezier(0.4,0,0.2,1)',
           display: 'flex',
           flexDirection: 'column',
-          alignItems: 'center',
-          justifyContent: 'center',
-          opacity: isOpen ? 1 : 0,
-          pointerEvents: isOpen ? 'all' : 'none',
-          transition: 'opacity 0.4s ease',
+          padding: '28px 28px 40px',
         }}
       >
-        {/* Nav links */}
-        <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+        {/* Close */}
+        <button
+          onClick={close}
+          style={{
+            background: 'none', border: 'none', cursor: 'pointer',
+            color: 'rgba(244,243,240,0.4)', fontSize: '20px',
+            alignSelf: 'flex-end', padding: '4px', marginBottom: '40px',
+            lineHeight: 1,
+          }}
+        >
+          ✕
+        </button>
+
+        {/* Links */}
+        <div style={{ display: 'flex', flexDirection: 'column', flex: 1 }}>
           {navLinks.map((link) => (
             <a
               key={link.href}
@@ -145,54 +151,32 @@ export default function MobileNav() {
               onClick={close}
               style={{
                 fontFamily: '"Plus Jakarta Sans", sans-serif',
-                fontSize: '36px',
-                fontWeight: 800,
-                color: 'rgba(244,243,240,0.35)',
-                letterSpacing: '-0.02em',
-                lineHeight: 1.2,
+                fontSize: '24px',
+                fontWeight: 700,
+                color: 'rgba(244,243,240,0.5)',
+                letterSpacing: '-0.01em',
                 textDecoration: 'none',
+                padding: '14px 0',
+                borderBottom: '1px solid rgba(244,243,240,0.06)',
                 transition: 'color 0.2s',
-                padding: '8px 0',
               }}
               onMouseEnter={e => (e.currentTarget.style.color = '#f4f3f0')}
-              onMouseLeave={e => (e.currentTarget.style.color = 'rgba(244,243,240,0.35)')}
+              onMouseLeave={e => (e.currentTarget.style.color = 'rgba(244,243,240,0.5)')}
             >
               {link.label}
             </a>
           ))}
         </div>
 
-        {/* CTA button */}
-        <a
-          href="#contact"
-          onClick={close}
-          style={{
-            fontFamily: '"Plus Jakarta Sans", sans-serif',
-            background: '#0891b2',
-            color: '#fff',
-            fontWeight: 700,
-            fontSize: '15px',
-            padding: '16px 36px',
-            borderRadius: '8px',
-            marginTop: '16px',
-            textDecoration: 'none',
-          }}
-        >
-          Get in Touch
-        </a>
-
-        {/* Contact info */}
+        {/* Email at bottom */}
         <div style={{
-          marginTop: '48px',
           fontFamily: '"Plus Jakarta Sans", sans-serif',
           fontSize: '12px',
-          color: 'rgba(244,243,240,0.25)',
-          letterSpacing: '0.06em',
-          textAlign: 'center',
-          lineHeight: 1.8,
+          color: 'rgba(244,243,240,0.2)',
+          letterSpacing: '0.04em',
+          marginTop: '32px',
         }}>
-          liam@parsonsdigital.com<br />
-          liamparsonsdigital.com
+          liam@parsonsdigital.com
         </div>
       </div>
     </>
