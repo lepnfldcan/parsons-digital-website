@@ -95,7 +95,7 @@ export default function MobilePricingCarousel({ cards }: Props) {
           display: 'flex',
           alignItems: 'stretch',
           gap: `${GAP}px`,
-          padding: '20px 24px 16px',
+          padding: '16px 24px 28px',
           transform: `translateX(-${current * (cardWidth + GAP)}px)`,
           transition: 'transform 0.45s cubic-bezier(0.4, 0, 0.2, 1)',
           userSelect: 'none',
@@ -105,7 +105,7 @@ export default function MobilePricingCarousel({ cards }: Props) {
           <div
             key={card.id}
             ref={i === 0 ? cardRef : undefined}
-            style={{ flex: '0 0 88%', display: 'flex', flexDirection: 'column' }}
+            style={{ flex: '0 0 300px', display: 'flex', flexDirection: 'column' }}
           >
             <MobileCard
               card={card}
@@ -147,26 +147,26 @@ interface MobileCardProps {
 function MobileCard({ card, isActive, isFlashing }: MobileCardProps) {
   const rgb = toRGB(card.accentGlow);
 
-  // Background: flashing → active → idle
+  // Background: flashing → active → idle (Fix 5: idle bumped to 0.05)
   const bg = isFlashing
     ? `rgba(${rgb}, 0.14)`
     : isActive
     ? `rgba(${rgb}, 0.07)`
-    : 'rgba(244,243,240,0.03)';
+    : 'rgba(244,243,240,0.05)';
 
-  // Inset glow — lives inside the card, never clipped by overflow:hidden
+  // Inset glow — never clipped by overflow:hidden (Fix 5: idle gets subtle glow)
   const insetShadow = isFlashing
     ? `inset 0 0 40px rgba(${rgb}, 0.28), inset 0 -1px 0 rgba(${rgb}, 0.4)`
     : isActive
     ? `inset 0 0 20px rgba(${rgb}, 0.12)`
-    : 'none';
+    : `inset 0 0 12px rgba(${rgb}, 0.06)`;
 
-  // Border-top brightens when active
+  // Border-top brightens when active (Fix 5: idle strengthened to 0.7)
   const borderTopColor = isFlashing
     ? `rgba(${rgb}, 1)`
     : isActive
     ? `rgba(${rgb}, 0.85)`
-    : card.accentColor;
+    : `rgba(${rgb}, 0.7)`;
 
   return (
     <div
@@ -177,42 +177,38 @@ function MobileCard({ card, isActive, isFlashing }: MobileCardProps) {
         position: 'relative',
         overflow: 'hidden',
         background: bg,
-        border: '1px solid rgba(244,243,240,0.09)',
+        border: '1px solid rgba(244,243,240,0.1)',
         borderTop: `2px solid ${borderTopColor}`,
         borderRadius: '14px',
         boxShadow: insetShadow,
-        padding: '24px 22px 22px',
-        // Smooth all three properties
+        padding: '22px 20px 20px',
+        backdropFilter: 'blur(8px)',
+        WebkitBackdropFilter: 'blur(8px)',
         transition: 'background 0.5s ease, box-shadow 0.5s ease, border-top-color 0.5s ease',
       }}
     >
-      {/* Tier */}
-      <div style={{ fontSize: '10px', fontWeight: 600, letterSpacing: '0.14em', textTransform: 'uppercase', color: '#7a8494', marginBottom: '12px' }}>
+      {/* Tier — Fix 3: more legible */}
+      <div style={{ fontSize: '10px', fontWeight: 700, letterSpacing: '0.12em', textTransform: 'uppercase', color: 'rgba(244,243,240,0.55)', marginBottom: '10px' }}>
         {card.tier}
       </div>
 
       {/* Price */}
-      <div style={{ fontWeight: 800, fontSize: '36px', color: '#f4f3f0', letterSpacing: '-0.02em', lineHeight: 1, marginBottom: '5px' }}>
+      <div style={{ fontWeight: 800, fontSize: '36px', color: '#f4f3f0', letterSpacing: '-0.02em', lineHeight: 1, marginBottom: '4px' }}>
         {card.price}
       </div>
 
       {/* Commitment */}
-      <div style={{ fontSize: '11.5px', color: '#7a8494', marginBottom: '18px' }}>
+      <div style={{ fontSize: '11.5px', color: '#7a8494', marginBottom: '12px' }}>
         {card.commitment}
       </div>
 
       {/* Divider */}
-      <div style={{ height: '1px', background: 'rgba(244,243,240,0.08)', marginBottom: '16px' }} />
+      <div style={{ height: '1px', background: 'rgba(244,243,240,0.08)', marginBottom: '12px' }} />
 
-      {/* Description */}
-      <p style={{ fontSize: '13px', color: 'rgba(244,243,240,0.5)', lineHeight: 1.6, marginBottom: '18px' }}>
-        {card.description}
-      </p>
-
-      {/* Features */}
-      <ul style={{ listStyle: 'none', padding: 0, margin: '0 0 18px', display: 'flex', flexDirection: 'column', gap: '9px', flex: 1 }}>
+      {/* Features — description removed (Fix 6A: keeps CTA visible) */}
+      <ul style={{ listStyle: 'none', padding: 0, margin: '0 0 14px', display: 'flex', flexDirection: 'column', gap: '7px', flex: 1 }}>
         {card.features.map((f) => (
-          <li key={f} style={{ fontSize: '12.5px', color: 'rgba(244,243,240,0.65)', display: 'flex', alignItems: 'flex-start', gap: '8px', lineHeight: 1.35 }}>
+          <li key={f} style={{ fontSize: '12px', color: 'rgba(244,243,240,0.65)', display: 'flex', alignItems: 'flex-start', gap: '8px', lineHeight: 1.35 }}>
             <svg width="11" height="11" viewBox="0 0 12 12" fill="none" stroke="#0891b2" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0, marginTop: '2px' }}>
               <polyline points="2,6 5,9 10,3" />
             </svg>
@@ -223,13 +219,13 @@ function MobileCard({ card, isActive, isFlashing }: MobileCardProps) {
 
       {/* Fine print */}
       {card.finePrint && (
-        <div style={{ fontSize: '11px', color: 'rgba(244,243,240,0.28)', marginBottom: '10px', lineHeight: 1.5 }}>
+        <div style={{ fontSize: '10.5px', color: 'rgba(244,243,240,0.28)', marginBottom: '8px', lineHeight: 1.5 }}>
           {card.finePrint}
         </div>
       )}
 
       {/* Timeline */}
-      <div style={{ fontSize: '11px', color: '#7a8494', marginBottom: '18px' }}>
+      <div style={{ fontSize: '11px', color: '#7a8494', marginBottom: '12px' }}>
         ⚡ {card.timeline}
       </div>
 

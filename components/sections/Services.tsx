@@ -75,38 +75,44 @@ export default function Services() {
       {/* MOBILE ONLY — md and below */}
       <div className="md:hidden py-[80px]">
 
-        {/* Section number */}
+        {/* Header — tight, no subtext */}
         <RevealWrapper>
-          <div style={{
-            fontSize: '11px',
-            fontWeight: 700,
-            color: '#0891b2',
-            letterSpacing: '0.1em',
-            textTransform: 'uppercase',
-            marginBottom: '12px',
-            paddingLeft: '32px',
-          }}>
-            01
+          <div style={{ padding: '0 24px', marginBottom: '20px' }}>
+            <span style={{
+              fontSize: '9px',
+              fontWeight: 800,
+              color: 'rgba(8,145,178,0.5)',
+              letterSpacing: '0.22em',
+              textTransform: 'uppercase',
+              display: 'block',
+              marginBottom: '10px',
+            }}>
+              01 — Pricing
+            </span>
+            <h2 style={{
+              fontSize: '32px',
+              fontWeight: 800,
+              letterSpacing: '-0.02em',
+              lineHeight: 1.1,
+              color: '#f4f3f0',
+              margin: 0,
+            }}>
+              Simple pricing.<br />No surprises.
+            </h2>
           </div>
         </RevealWrapper>
 
-        {/* Header — single column */}
-        <div style={{ padding: '0 32px', marginBottom: '8px' }}>
-          <RevealWrapper delay={100}>
-            <SectionLabel>Pricing</SectionLabel>
-            <h2 className="text-[clamp(32px,4vw,52px)] font-extrabold leading-[1.1] tracking-[-0.02em] text-[#f4f3f0]">
-              Simple pricing.<br />No surprises.
-            </h2>
-          </RevealWrapper>
-          <RevealWrapper delay={200}>
-            <p className="text-base font-light text-[rgba(244,243,240,0.5)] leading-[1.7] mt-4">
-              All sites are mobile-responsive, fully secured, and yours to keep. One-time payments — no subscriptions, no lock-in.
-            </p>
-          </RevealWrapper>
-        </div>
+        {/* Section separator — cyan gradient rule */}
+        <RevealWrapper delay={100}>
+          <div style={{
+            height: '1px',
+            background: 'linear-gradient(90deg, rgba(8,145,178,0.6) 0%, rgba(8,145,178,0.2) 50%, transparent 100%)',
+            margin: '0 24px 4px',
+          }} />
+        </RevealWrapper>
 
-        {/* Pricing carousel — GIO-style drag carousel, 88% wide cards */}
-        <div style={{ marginTop: '24px', marginBottom: '32px' }}>
+        {/* Pricing carousel */}
+        <div style={{ marginTop: '8px', marginBottom: '32px' }}>
           <MobilePricingCarousel cards={pricingCards} />
         </div>
 
