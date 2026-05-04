@@ -109,6 +109,13 @@ a {
   transform-origin: bottom left;
 }
 
+/* MOBILE ONLY — pricing card flash when it becomes the active/visible card */
+@keyframes cardActivate {
+  0%   { background: rgba(244,243,240,0.03); box-shadow: 0 -1px 14px var(--card-glow); }
+  30%  { background: var(--card-bg-flash);   box-shadow: 0 0 48px var(--card-glow-bright), 0 -1px 14px var(--card-glow); }
+  100% { background: rgba(244,243,240,0.03); box-shadow: 0 -1px 14px var(--card-glow); }
+}
+
 /* Pricing carousel — hide scrollbar across all browsers */
 .pricing-track::-webkit-scrollbar { display: none; }
 .pricing-track { -ms-overflow-style: none; scrollbar-width: none; }
