@@ -76,27 +76,33 @@ export default function Services() {
       <div className="md:hidden py-[80px]">
 
         {/* Section number */}
-        <div style={{
-          fontSize: '11px',
-          fontWeight: 700,
-          color: '#0891b2',
-          letterSpacing: '0.1em',
-          textTransform: 'uppercase',
-          marginBottom: '12px',
-          paddingLeft: '32px',
-        }}>
-          01
-        </div>
+        <RevealWrapper>
+          <div style={{
+            fontSize: '11px',
+            fontWeight: 700,
+            color: '#0891b2',
+            letterSpacing: '0.1em',
+            textTransform: 'uppercase',
+            marginBottom: '12px',
+            paddingLeft: '32px',
+          }}>
+            01
+          </div>
+        </RevealWrapper>
 
         {/* Header — single column */}
         <div style={{ padding: '0 32px', marginBottom: '8px' }}>
-          <SectionLabel>Pricing</SectionLabel>
-          <h2 className="text-[clamp(32px,4vw,52px)] font-extrabold leading-[1.1] tracking-[-0.02em] text-[#f4f3f0]">
-            Simple pricing.<br />No surprises.
-          </h2>
-          <p className="text-base font-light text-[rgba(244,243,240,0.5)] leading-[1.7] mt-4">
-            All sites are mobile-responsive, fully secured, and yours to keep. One-time payments — no subscriptions, no lock-in.
-          </p>
+          <RevealWrapper delay={100}>
+            <SectionLabel>Pricing</SectionLabel>
+            <h2 className="text-[clamp(32px,4vw,52px)] font-extrabold leading-[1.1] tracking-[-0.02em] text-[#f4f3f0]">
+              Simple pricing.<br />No surprises.
+            </h2>
+          </RevealWrapper>
+          <RevealWrapper delay={200}>
+            <p className="text-base font-light text-[rgba(244,243,240,0.5)] leading-[1.7] mt-4">
+              All sites are mobile-responsive, fully secured, and yours to keep. One-time payments — no subscriptions, no lock-in.
+            </p>
+          </RevealWrapper>
         </div>
 
         {/* Pricing carousel — GIO-style drag carousel, 88% wide cards */}
