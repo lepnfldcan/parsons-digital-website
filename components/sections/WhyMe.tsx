@@ -9,24 +9,23 @@ export default function WhyMe() {
       {/* MOBILE ONLY — md and below */}
       <div className="md:hidden py-[80px] px-8">
 
-        {/* Section number */}
-        <div style={{
-          fontSize: '11px',
-          fontWeight: 700,
-          color: '#0891b2',
-          letterSpacing: '0.1em',
+        {/* Section label — Fix 6: single line */}
+        <span style={{
+          fontSize: '9px',
+          fontWeight: 800,
+          color: 'rgba(8,145,178,0.4)',
+          letterSpacing: '0.22em',
           textTransform: 'uppercase',
-          marginBottom: '12px',
+          display: 'block',
+          marginBottom: '24px',
         }}>
-          02
-        </div>
+          02 — Why Me
+        </span>
 
-        <SectionLabel>Why Me</SectionLabel>
-
-        {/* Photo — centered, max 280px */}
+        {/* Photo — Fix 2: edge treatment + accent box, Fix 3: tighter gap */}
         <RevealWrapper>
-          <div style={{ maxWidth: '280px', margin: '0 auto 40px' }}>
-            <div className="relative w-full aspect-[3/4] rounded-xl overflow-hidden">
+          <div style={{ maxWidth: '280px', margin: '0 auto 24px', position: 'relative' }}>
+            <div className="relative w-full aspect-[3/4] rounded-xl overflow-hidden" style={{ border: '1px solid rgba(244,243,240,0.08)' }}>
               <Image
                 src="/images/liam.jpg"
                 alt="Liam Parsons"
@@ -35,6 +34,17 @@ export default function WhyMe() {
                 sizes="(max-width: 768px) 280px, 40vw"
               />
             </div>
+            {/* Cyan accent box — offset bottom-right */}
+            <div style={{
+              position: 'absolute',
+              bottom: '-10px',
+              right: '-10px',
+              width: '64px',
+              height: '64px',
+              border: '2px solid rgba(8,145,178,0.3)',
+              borderRadius: '10px',
+              pointerEvents: 'none',
+            }} />
           </div>
         </RevealWrapper>
 
@@ -56,42 +66,53 @@ export default function WhyMe() {
           </p>
         </RevealWrapper>
 
+        {/* Fix 5: email as standalone tappable element */}
         <RevealWrapper delay={200}>
-          <p className="text-[13px] text-[rgba(244,243,240,0.4)] leading-[1.7]">
-            Got a project in mind? Reach out — I&apos;ll get back to you same day.<br />
-            <a href="mailto:liam@parsonsdigital.com" className="text-[#0891b2] no-underline hover:underline">
-              liam@parsonsdigital.com
-            </a>
+          <p style={{ fontSize: '13px', color: 'rgba(244,243,240,0.4)', lineHeight: 1.7, marginBottom: '8px' }}>
+            Got a project in mind? Reach out — I&apos;ll get back to you same day.
           </p>
+          <a href="mailto:liam@parsonsdigital.com" style={{
+            display: 'inline-flex',
+            alignItems: 'center',
+            fontSize: '13px',
+            fontWeight: 600,
+            color: '#0891b2',
+            textDecoration: 'none',
+            padding: '10px 0',
+            minHeight: '44px',
+            letterSpacing: '0.01em',
+          }}>
+            liam@parsonsdigital.com
+          </a>
         </RevealWrapper>
 
-        {/* Stats — stacked vertically */}
+        {/* Stats — Fix 1: horizontal row, not stacked */}
         <RevealWrapper delay={300}>
           <div style={{
             borderTop: '1px solid rgba(244,243,240,0.08)',
-            marginTop: '40px',
-            textAlign: 'center',
+            marginTop: '36px',
+            paddingTop: '32px',
+            display: 'flex',
+            flexDirection: 'row',
+            alignItems: 'center',
           }}>
-            {/* Stat 1 */}
-            <div style={{ padding: '24px 0', borderBottom: '1px solid rgba(244,243,240,0.08)' }}>
-              <div style={{ fontSize: '32px', fontWeight: 800, color: '#f4f3f0', letterSpacing: '-0.02em', lineHeight: 1.1 }}>
+            <div style={{ flex: 1, display: 'flex', flexDirection: 'column', alignItems: 'center', padding: '0 16px', borderRight: '1px solid rgba(244,243,240,0.08)' }}>
+              <div style={{ fontSize: '28px', fontWeight: 800, color: '#f4f3f0', letterSpacing: '-0.03em', lineHeight: 1, marginBottom: '6px', whiteSpace: 'nowrap' }}>
                 6–12<span style={{ color: '#0891b2' }}>hr</span>
               </div>
-              <div style={{ fontSize: '12px', color: '#7a8494', lineHeight: 1.5, marginTop: '6px' }}>Support response time</div>
+              <div style={{ fontSize: '10px', color: '#7a8494', textAlign: 'center', lineHeight: 1.4, maxWidth: '72px' }}>Support response</div>
             </div>
-            {/* Stat 2 */}
-            <div style={{ padding: '24px 0', borderBottom: '1px solid rgba(244,243,240,0.08)' }}>
-              <div style={{ fontSize: '32px', fontWeight: 800, color: '#f4f3f0', letterSpacing: '-0.02em', lineHeight: 1.1 }}>
+            <div style={{ flex: 1, display: 'flex', flexDirection: 'column', alignItems: 'center', padding: '0 16px', borderRight: '1px solid rgba(244,243,240,0.08)' }}>
+              <div style={{ fontSize: '28px', fontWeight: 800, color: '#f4f3f0', letterSpacing: '-0.03em', lineHeight: 1, marginBottom: '6px' }}>
                 100<span style={{ color: '#0891b2' }}>%</span>
               </div>
-              <div style={{ fontSize: '12px', color: '#7a8494', lineHeight: 1.5, marginTop: '6px' }}>Mobile-ready on every build</div>
+              <div style={{ fontSize: '10px', color: '#7a8494', textAlign: 'center', lineHeight: 1.4, maxWidth: '72px' }}>Mobile-ready</div>
             </div>
-            {/* Stat 3 */}
-            <div style={{ padding: '24px 0' }}>
-              <div style={{ fontSize: '32px', fontWeight: 800, color: '#f4f3f0', letterSpacing: '-0.02em', lineHeight: 1.1 }}>
+            <div style={{ flex: 1, display: 'flex', flexDirection: 'column', alignItems: 'center', padding: '0 16px' }}>
+              <div style={{ fontSize: '28px', fontWeight: 800, color: '#f4f3f0', letterSpacing: '-0.03em', lineHeight: 1, marginBottom: '6px' }}>
                 Forever<span style={{ color: '#0891b2' }}>.</span>
               </div>
-              <div style={{ fontSize: '12px', color: '#7a8494', lineHeight: 1.5, marginTop: '6px' }}>You own every file, every line of code</div>
+              <div style={{ fontSize: '10px', color: '#7a8494', textAlign: 'center', lineHeight: 1.4, maxWidth: '72px' }}>You own the code</div>
             </div>
           </div>
         </RevealWrapper>
