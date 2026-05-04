@@ -55,10 +55,8 @@ export default function WhyMe() {
         </RevealWrapper>
 
         <RevealWrapper delay={100}>
-          <p className="text-[15px] font-light text-[rgba(244,243,240,0.55)] leading-[1.8] mb-9">
-            Most web people disappear after launch. I don&apos;t.<br />
-            No account managers. No hand-offs.<br />
-            Direct line to me — before, during, and after launch.
+          <p style={{ fontSize: '15px', fontWeight: 300, color: '#f4f3f0', lineHeight: 1.75, marginBottom: '28px' }}>
+            Most web people disappear after launch. I don&apos;t. No account managers. No hand-offs. Direct line to me — before, during, and after launch.
           </p>
         </RevealWrapper>
 
