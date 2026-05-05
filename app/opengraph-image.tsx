@@ -1,35 +1,15 @@
 import { ImageResponse } from 'next/og';
+import { readFileSync } from 'fs';
+import { join } from 'path';
 
-export const runtime = 'edge';
 export const alt = 'Parsons Digital — Web Design for Small Business';
 export const size = { width: 1200, height: 630 };
 export const contentType = 'image/png';
 
-async function loadSyne800(): Promise<ArrayBuffer> {
-  // Fetch the Google Fonts CSS for Syne 800
-  const css = await fetch(
-    'https://fonts.googleapis.com/css2?family=Syne:wght@800&display=swap',
-    {
-      headers: {
-        // Chrome UA so Google returns woff2
-        'User-Agent':
-          'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/121.0.0.0 Safari/537.36',
-      },
-    }
-  ).then((r) => r.text());
-
-  // Pull the woff2 URL out of the CSS
-  const woff2Url = css.match(
-    /url\((https:\/\/fonts\.gstatic\.com\/[^)]+)\)/
-  )?.[1];
-
-  if (!woff2Url) throw new Error('Syne woff2 URL not found');
-
-  return fetch(woff2Url).then((r) => r.arrayBuffer());
-}
-
 export default async function Image() {
-  const syneData = await loadSyne800();
+  const syneData = readFileSync(
+    join(process.cwd(), 'public/fonts/Syne-ExtraBold.woff2')
+  );
 
   return new ImageResponse(
     (
@@ -45,7 +25,7 @@ export default async function Image() {
           borderLeft: '6px solid #0891b2',
         }}
       >
-        {/* PD Mark — using actual Syne 800 font */}
+        {/* PD Mark */}
         <div
           style={{
             width: 80,
@@ -65,7 +45,6 @@ export default async function Image() {
                 fontSize: 32,
                 color: '#f4f3f0',
                 lineHeight: 1,
-                letterSpacing: '-1px',
               }}
             >
               P
@@ -86,7 +65,6 @@ export default async function Image() {
                 fontSize: 32,
                 color: '#f4f3f0',
                 lineHeight: 1,
-                letterSpacing: '-1px',
               }}
             >
               D
