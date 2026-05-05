@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import SectionLabel from '@/components/ui/SectionLabel';
 import RevealWrapper from '@/components/ui/RevealWrapper';
 
@@ -95,10 +96,13 @@ export default function CaseStudy() {
 
             {/* Site preview — between quote and stats */}
             <div style={{ borderRadius: '12px', overflow: 'hidden', position: 'relative', marginBottom: '20px' }}>
-              <img
+              <Image
                 src="/luminary-preview.png"
-                alt="Luminary Integrative Health"
-                style={{ width: '100%', display: 'block', objectFit: 'cover' }}
+                alt="Luminary Integrative Health website preview"
+                width={1170}
+                height={731}
+                sizes="(max-width: 768px) calc(100vw - 80px)"
+                style={{ width: '100%', height: 'auto', display: 'block' }}
               />
               <a
                 href="https://www.luminaryihc.com"
@@ -223,9 +227,12 @@ export default function CaseStudy() {
             {/* Right: site preview + stats */}
             <div className="flex flex-col gap-4">
               <div style={{ aspectRatio: '16/10', borderRadius: '10px', overflow: 'hidden', position: 'relative' }}>
-                <img
+                <Image
                   src="/luminary-preview.png"
-                  alt="Luminary Integrative Health"
+                  alt="Luminary Integrative Health website preview"
+                  width={1170}
+                  height={731}
+                  sizes="(max-width: 1200px) 50vw, 560px"
                   style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center top', display: 'block' }}
                 />
                 <a
