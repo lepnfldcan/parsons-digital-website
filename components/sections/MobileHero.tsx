@@ -56,7 +56,7 @@ export default function MobileHero() {
         alignItems: 'flex-start', width: '100%',
       }}>
 
-        {/* PD Mark — tight eyebrow, Change 3 */}
+        {/* PD Mark */}
         <div
           style={{
             width: '72px', height: '72px',
@@ -80,16 +80,29 @@ export default function MobileHero() {
           </div>
         </div>
 
-        {/* Cyan connector line — Change 3 */}
+        {/* Cyan connector line */}
         <div style={{
           width: '32px', height: '1px',
           background: '#0891b2',
-          margin: '0 0 20px',
+          margin: '0 0 12px',
           opacity: 0.6,
           animation: 'markReveal 0.8s cubic-bezier(0.22,1,0.36,1) 0.35s both',
         }} />
 
-        {/* Headline — Change 2: Plus Jakarta Sans 800, left, -0.03em */}
+        {/* Eyebrow — matches desktop hero */}
+        <div style={{
+          fontSize: '10px',
+          fontWeight: 600,
+          letterSpacing: '0.18em',
+          textTransform: 'uppercase',
+          color: '#0891b2',
+          marginBottom: '20px',
+          animation: 'markReveal 0.8s cubic-bezier(0.22,1,0.36,1) 0.45s both',
+        }}>
+          Web Design for Small Business
+        </div>
+
+        {/* Headline */}
         <h1
           style={{
             fontFamily: '"Plus Jakarta Sans", sans-serif',
@@ -97,9 +110,9 @@ export default function MobileHero() {
             fontWeight: 800,
             color: '#f4f3f0',
             letterSpacing: '-0.03em',
-            lineHeight: 1.08,
+            lineHeight: 1.1,
             maxWidth: '340px',
-            marginBottom: '32px',
+            marginBottom: '20px',
             textAlign: 'left',
             animation: 'heroHeadlineReveal 0.9s cubic-bezier(0.22,1,0.36,1) 0.55s both',
           } as React.CSSProperties}
@@ -109,7 +122,7 @@ export default function MobileHero() {
           while you sleep.
         </h1>
 
-        {/* Tagline */}
+        {/* Tagline — concrete, tells visitor exactly what you do */}
         <p
           style={{
             fontFamily: '"Plus Jakarta Sans", sans-serif',
@@ -122,13 +135,13 @@ export default function MobileHero() {
             animation: 'taglineReveal 0.6s cubic-bezier(0.22,1,0.36,1) 0.72s both',
           }}
         >
-          I build websites that work as hard as you do.
+          Custom builds, Carrd, and WordPress for small businesses across the US and Canada.
         </p>
 
-        {/* Buttons — Change 1: ghost, 8px radius, stacked left */}
+        {/* Buttons */}
         <div style={{
           display: 'flex', flexDirection: 'column',
-          alignItems: 'flex-start', gap: '12px',
+          alignItems: 'flex-start', gap: '16px',
           animation: 'taglineReveal 0.6s cubic-bezier(0.22,1,0.36,1) 0.85s both',
         }}>
 
@@ -181,14 +194,14 @@ export default function MobileHero() {
           </a>
         </div>
 
-        {/* Proof point — Change 4: below buttons, muted, left */}
+        {/* Proof point — trust builder, higher contrast, directly under CTAs */}
         <p style={{
           fontSize: '11px',
           fontWeight: 400,
-          color: 'rgba(244,243,240,0.35)',
+          color: 'rgba(244,243,240,0.55)',
           letterSpacing: '0.06em',
           textAlign: 'left',
-          marginTop: '16px',
+          marginTop: '20px',
           lineHeight: 1.6,
           animation: 'taglineReveal 0.6s cubic-bezier(0.22,1,0.36,1) 1.05s both',
         }}>
@@ -196,7 +209,7 @@ export default function MobileHero() {
         </p>
       </div>
 
-      {/* Scroll hint — absolute bottom center */}
+      {/* Scroll hint */}
       <div
         style={{
           position: 'absolute', bottom: '28px', left: '50%',
