@@ -109,6 +109,22 @@ export default function MobileHero() {
           while you sleep.
         </h1>
 
+        {/* Tagline */}
+        <p
+          style={{
+            fontFamily: '"Plus Jakarta Sans", sans-serif',
+            fontSize: '15px',
+            fontWeight: 300,
+            color: 'rgba(244,243,240,0.6)',
+            lineHeight: 1.65,
+            marginBottom: '32px',
+            textAlign: 'left',
+            animation: 'taglineReveal 0.6s cubic-bezier(0.22,1,0.36,1) 0.72s both',
+          }}
+        >
+          I build websites that work as hard as you do.
+        </p>
+
         {/* Buttons — Change 1: ghost, 8px radius, stacked left */}
         <div style={{
           display: 'flex', flexDirection: 'column',
