@@ -27,10 +27,12 @@ export const metadata: Metadata = {
     'I build websites for small businesses. Clean, mobile-ready, secure, and yours to keep.',
   metadataBase: new URL('https://parsonsdigital.com'),
   openGraph: {
+    url: 'https://parsonsdigital.com',
     title: 'Parsons Digital | Web Design & Digital Services',
     description:
       'I build websites for small businesses. Clean, mobile-ready, secure, and yours to keep.',
     type: 'website',
+    siteName: 'Parsons Digital',
   },
 };
 
