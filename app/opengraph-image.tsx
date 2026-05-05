@@ -5,7 +5,32 @@ export const alt = 'Parsons Digital — Web Design for Small Business';
 export const size = { width: 1200, height: 630 };
 export const contentType = 'image/png';
 
+async function loadSyne800(): Promise<ArrayBuffer> {
+  // Fetch the Google Fonts CSS for Syne 800
+  const css = await fetch(
+    'https://fonts.googleapis.com/css2?family=Syne:wght@800&display=swap',
+    {
+      headers: {
+        // Chrome UA so Google returns woff2
+        'User-Agent':
+          'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/121.0.0.0 Safari/537.36',
+      },
+    }
+  ).then((r) => r.text());
+
+  // Pull the woff2 URL out of the CSS
+  const woff2Url = css.match(
+    /url\((https:\/\/fonts\.gstatic\.com\/[^)]+)\)/
+  )?.[1];
+
+  if (!woff2Url) throw new Error('Syne woff2 URL not found');
+
+  return fetch(woff2Url).then((r) => r.arrayBuffer());
+}
+
 export default async function Image() {
+  const syneData = await loadSyne800();
+
   return new ImageResponse(
     (
       <div
@@ -20,29 +45,52 @@ export default async function Image() {
           borderLeft: '6px solid #0891b2',
         }}
       >
-        {/* PD Mark */}
+        {/* PD Mark — using actual Syne 800 font */}
         <div
           style={{
-            width: 72,
-            height: 72,
+            width: 80,
+            height: 80,
             background: '#3d4555',
-            borderRadius: 13,
+            borderRadius: 14,
             display: 'flex',
             alignItems: 'center',
             justifyContent: 'center',
           }}
         >
-          <div style={{ display: 'flex', alignItems: 'center', gap: 6 }}>
-            <span style={{ color: '#f4f3f0', fontSize: 28, fontWeight: 800, lineHeight: 1 }}>P</span>
+          <div style={{ display: 'flex', alignItems: 'center', gap: 4 }}>
+            <span
+              style={{
+                fontFamily: 'Syne',
+                fontWeight: 800,
+                fontSize: 32,
+                color: '#f4f3f0',
+                lineHeight: 1,
+                letterSpacing: '-1px',
+              }}
+            >
+              P
+            </span>
             <div
               style={{
-                width: 3,
-                height: 22,
+                width: 3.5,
+                height: 26,
                 background: '#0891b2',
                 borderRadius: 99,
+                transform: 'rotate(14deg)',
               }}
             />
-            <span style={{ color: '#f4f3f0', fontSize: 28, fontWeight: 800, lineHeight: 1 }}>D</span>
+            <span
+              style={{
+                fontFamily: 'Syne',
+                fontWeight: 800,
+                fontSize: 32,
+                color: '#f4f3f0',
+                lineHeight: 1,
+                letterSpacing: '-1px',
+              }}
+            >
+              D
+            </span>
           </div>
         </div>
 
@@ -104,6 +152,16 @@ export default async function Image() {
         </div>
       </div>
     ),
-    { ...size }
+    {
+      ...size,
+      fonts: [
+        {
+          name: 'Syne',
+          data: syneData,
+          style: 'normal',
+          weight: 800,
+        },
+      ],
+    }
   );
 }
