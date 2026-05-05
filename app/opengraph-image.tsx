@@ -8,7 +8,7 @@ export const contentType = 'image/png';
 
 export default async function Image() {
   const syneData = readFileSync(
-    join(process.cwd(), 'public/fonts/Syne-ExtraBold.woff2')
+    join(process.cwd(), 'public/fonts/Syne-ExtraBold-static.ttf')
   );
 
   return new ImageResponse(
