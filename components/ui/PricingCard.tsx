@@ -10,8 +10,9 @@ interface PricingCardProps {
   features: readonly string[];
   timeline: string;
   finePrint?: string;
-  accentColor: string;  // e.g. 'rgba(16,185,129,0.6)' — border-top color at rest
-  accentGlow: string;   // e.g. 'rgba(16,185,129,0.15)' — ambient shadow at rest
+  accentColor: string;
+  accentGlow: string;
+  isPopular?: boolean;
 }
 
 export default function PricingCard({
@@ -24,6 +25,7 @@ export default function PricingCard({
   finePrint,
   accentColor,
   accentGlow,
+  isPopular,
 }: PricingCardProps) {
   const [hovered, setHovered] = useState(false);
   const [btnHovered, setBtnHovered] = useState(false);
@@ -60,6 +62,26 @@ export default function PricingCard({
         transition: 'border-color 0.2s, background 0.2s, box-shadow 0.2s',
       }}
     >
+
+      {/* Most Popular badge */}
+      {isPopular && (
+        <div style={{
+          position: 'absolute',
+          top: '16px',
+          right: '16px',
+          fontSize: '9.5px',
+          fontWeight: 700,
+          letterSpacing: '0.1em',
+          textTransform: 'uppercase',
+          color: '#f59e0b',
+          background: 'rgba(245,158,11,0.1)',
+          border: '1px solid rgba(245,158,11,0.25)',
+          padding: '3px 9px',
+          borderRadius: '4px',
+        }}>
+          Most Popular
+        </div>
+      )}
 
       {/* 1. Tier label */}
       <div style={{

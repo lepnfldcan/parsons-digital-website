@@ -9,14 +9,16 @@ const pricingCards = [
     tier: 'Quick Launch',
     price: '$3,500',
     commitment: 'One-time · Yours forever',
-    description: "Get online fast with a sharp, professional site built for results — not a template.",
+    description: "A clean, credible online presence built fast — no templates, no shortcuts.",
     features: [
-      '4–5 page custom site · Next.js · no templates',
-      'Contact form + GA4 analytics + SEO basics',
-      'Mobile-optimised · deployed to Vercel',
-      "Revisions until it's right",
+      '5-page custom website',
+      'Mobile-responsive design',
+      'Contact form · spam-protected · email delivery',
+      'Basic local SEO · metadata, sitemap, structured data',
+      '1 revision round',
     ] as const,
-    timeline: '1–2 week turnaround',
+    timeline: '2 week turnaround',
+    isPopular: false,
     accentColor: 'rgba(16,185,129,0.6)',
     accentGlow: 'rgba(16,185,129,0.15)',
   },
@@ -25,14 +27,16 @@ const pricingCards = [
     tier: 'Professional',
     price: '$7,500',
     commitment: 'One-time · Yours forever',
-    description: "A complete web presence built to rank, convert, and grow with your business.",
+    description: "Built to look established and rank in local search. For service businesses that need more than a presence.",
     features: [
-      '5–7 pages · custom design · custom mobile',
-      'Full SEO — metadata, structured data, sitemap',
-      'Contact form · email routing · booking integration',
-      "Revisions until it's right",
+      'Everything in Quick Launch',
+      'Custom mobile experience · animations',
+      'Full SEO · structured data, FAQPage schema, GSC setup',
+      'GA4 + Tag Manager · Resend email integration',
+      'Lighthouse 90+ guaranteed · 2 revision rounds',
     ] as const,
-    timeline: '2–3 week turnaround',
+    timeline: '3–4 week turnaround',
+    isPopular: true,
     accentColor: 'rgba(59,130,246,0.6)',
     accentGlow: 'rgba(59,130,246,0.15)',
   },
@@ -41,29 +45,85 @@ const pricingCards = [
     tier: 'Premium',
     price: '$12,500',
     commitment: 'One-time · Yours forever',
-    description: "A fully custom build with no compromises — animations, integrations, Lighthouse 90+ guaranteed.",
+    description: "For professional services clients who need a site that competes with larger practices.",
     features: [
-      'Full custom build · animations · no templates',
-      'Advanced SEO + Lighthouse 90+ guaranteed',
-      'Backend integrations scoped to your needs',
-      "Revisions until it's right",
+      'Everything in Professional',
+      'Bespoke motion design · scroll reveals, transitions',
+      'Multi-page architecture · bio, booking, resources',
+      'FAQPage rich results · WCAG AA · Lighthouse 100',
+      '30 days post-launch support included',
     ] as const,
-    finePrint: 'Integrations and custom functionality scoped during discovery.',
-    timeline: '3–4 week turnaround',
+    timeline: '5–6 week turnaround',
+    isPopular: false,
     accentColor: 'rgba(245,158,11,0.6)',
     accentGlow: 'rgba(245,158,11,0.15)',
   },
 ] as const;
 
-const alaCarte = [
-  { label: 'Calendly / booking', price: '$150' },
-  { label: '24/7 AI Chat', price: '$200' },
-  { label: 'WhatsApp button', price: '$75' },
-  { label: 'Review showcase', price: '$125' },
-  { label: 'Email newsletter', price: '$125' },
-  { label: 'Content writing', price: '$75/hr' },
-  { label: 'Rush delivery', price: '+25%' },
-  { label: 'Google Business Profile', price: '$300' },
+const oneTimeAddOns = [
+  {
+    id: 'voice',
+    label: 'AI Voice Receptionist',
+    price: '$1,200',
+    description: 'Never miss a call. Your practice, represented professionally 24/7.',
+    detail: 'AI voice agent configured for your business, trained on your FAQs, call routing, after-hours handling.',
+    featured: true,
+  },
+  {
+    id: 'chatbot',
+    label: 'AI Chatbot',
+    price: '$600',
+    description: 'Answer the questions you get asked every day — automatically.',
+    detail: 'FAQ-trained chatbot, booking handoff flow, 30-day testing window.',
+    featured: false,
+  },
+  {
+    id: 'gbp-setup',
+    label: 'GBP Setup',
+    price: '$350',
+    description: 'Get found in local search and Google Maps from day one.',
+    detail: 'Profile creation, photo upload, category setup, Q&A seeding, review request template.',
+    featured: false,
+  },
+  {
+    id: 'booking',
+    label: 'Booking Integration',
+    price: '$200',
+    description: 'Connect Calendly, Jane, or your preferred scheduler to your site.',
+    detail: '',
+    featured: false,
+  },
+] as const;
+
+const monthlyAddOns = [
+  {
+    id: 'gbp-monthly',
+    label: 'GBP Management + Local SEO',
+    price: '$150/mo',
+    description: 'Keep your Google presence active and your rankings climbing.',
+    detail: 'Weekly posts, review response, Q&A updates, monthly performance report.',
+  },
+  {
+    id: 'voice-monthly',
+    label: 'AI Voice Agent Hosting',
+    price: '$150/mo',
+    description: 'Uptime, script updates, call log review, monthly performance summary.',
+    detail: '',
+  },
+  {
+    id: 'maintenance',
+    label: 'Site Maintenance',
+    price: '$100/mo',
+    description: 'Content edits, dependency updates, uptime monitoring, priority support.',
+    detail: '',
+  },
+  {
+    id: 'chatbot-monthly',
+    label: 'AI Chatbot Hosting',
+    price: '$75/mo',
+    description: 'Uptime, retraining when FAQs change, monthly usage report.',
+    detail: '',
+  },
 ] as const;
 
 const CARD_DELAYS = [0, 100, 200] as const;
@@ -116,109 +176,130 @@ export default function Services() {
           <MobilePricingCarousel cards={pricingCards} />
         </div>
 
-        {/* Maintenance strip — left-aligned, price as hero */}
-        <RevealWrapper>
-          <div style={{
-            margin: '0 24px',
-            padding: '20px 24px',
-            border: '1px solid rgba(244,243,240,0.1)',
-            borderRadius: '12px',
-            background: 'rgba(244,243,240,0.03)',
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'space-between',
-            gap: '16px',
-          }}>
-            <div>
-              <div style={{
-                fontSize: '10px',
-                fontWeight: 700,
-                letterSpacing: '0.12em',
-                textTransform: 'uppercase',
-                color: 'rgba(244,243,240,0.4)',
-                marginBottom: '4px',
-              }}>
-                Optional Add-On
-              </div>
-              <div style={{
-                fontSize: '15px',
-                fontWeight: 700,
-                color: '#f4f3f0',
-                letterSpacing: '-0.01em',
-                marginBottom: '2px',
-              }}>
-                Monthly Maintenance
-              </div>
-              <div style={{
-                fontSize: '22px',
+        {/* One-Time Setups */}
+        <div style={{ marginTop: '40px' }}>
+          <RevealWrapper>
+            <div style={{ padding: '0 24px', marginBottom: '16px' }}>
+              <span style={{
+                fontSize: '9px',
                 fontWeight: 800,
-                color: '#0891b2',
-                letterSpacing: '-0.02em',
-                lineHeight: 1,
+                color: 'rgba(8,145,178,0.5)',
+                letterSpacing: '0.22em',
+                textTransform: 'uppercase',
+                display: 'block',
               }}>
-                $150<span style={{ fontSize: '13px', fontWeight: 400, color: '#7a8494' }}>/mo</span>
-              </div>
+                One-Time Setups
+              </span>
             </div>
-            <a href="#contact" style={{
-              flexShrink: 0,
-              display: 'inline-flex',
-              alignItems: 'center',
-              justifyContent: 'center',
-              padding: '11px 20px',
-              borderRadius: '8px',
-              border: '1px solid rgba(8,145,178,0.35)',
-              background: 'rgba(8,145,178,0.08)',
-              color: '#0891b2',
-              fontSize: '13px',
-              fontWeight: 600,
-              textDecoration: 'none',
-              boxShadow: '0 0 20px rgba(8,145,178,0.2), inset 0 0 12px rgba(8,145,178,0.06)',
-              whiteSpace: 'nowrap',
-            }}>
-              Add On
-            </a>
-          </div>
-        </RevealWrapper>
+          </RevealWrapper>
 
-        {/* À La Carte */}
+          {/* Featured: AI Voice Receptionist */}
+          <RevealWrapper delay={100}>
+            <div style={{
+              margin: '0 24px 12px',
+              padding: '20px 22px',
+              border: '1px solid rgba(245,158,11,0.2)',
+              borderTop: '2px solid rgba(245,158,11,0.55)',
+              borderRadius: '12px',
+              background: 'rgba(245,158,11,0.04)',
+            }}>
+              <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', marginBottom: '6px' }}>
+                <div>
+                  <div style={{
+                    fontSize: '9px', fontWeight: 700, letterSpacing: '0.12em',
+                    textTransform: 'uppercase', color: '#f59e0b', marginBottom: '5px',
+                  }}>
+                    Featured
+                  </div>
+                  <div style={{ fontSize: '15px', fontWeight: 700, color: '#f4f3f0', letterSpacing: '-0.01em' }}>
+                    AI Voice Receptionist
+                  </div>
+                </div>
+                <div style={{ fontSize: '22px', fontWeight: 800, color: '#f4f3f0', letterSpacing: '-0.02em', lineHeight: 1 }}>
+                  $1,200
+                </div>
+              </div>
+              <div style={{ fontSize: '12.5px', color: 'rgba(244,243,240,0.55)', lineHeight: 1.55, marginBottom: '8px' }}>
+                Never miss a call. Your practice, represented professionally 24/7.
+              </div>
+              <div style={{ fontSize: '11px', color: 'rgba(244,243,240,0.3)', lineHeight: 1.5, marginBottom: '16px' }}>
+                AI voice agent configured for your business, trained on your FAQs, call routing, after-hours handling.
+              </div>
+              <a href="#contact" style={{
+                display: 'inline-flex', alignItems: 'center', justifyContent: 'center',
+                padding: '10px 18px', borderRadius: '7px',
+                border: '1px solid rgba(245,158,11,0.3)',
+                background: 'rgba(245,158,11,0.07)',
+                color: '#f59e0b', fontSize: '12px', fontWeight: 600,
+                textDecoration: 'none', whiteSpace: 'nowrap',
+              }}>
+                Add On
+              </a>
+            </div>
+          </RevealWrapper>
+
+          {/* Other one-time items — 2-col grid */}
+          <RevealWrapper delay={200}>
+            <div style={{
+              display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1px',
+              background: 'rgba(244,243,240,0.08)', borderRadius: '12px', overflow: 'hidden',
+              margin: '0 24px',
+            }}>
+              {oneTimeAddOns.filter(item => !item.featured).map(item => (
+                <div key={item.id} style={{
+                  background: '#1e2530', padding: '18px 16px',
+                  display: 'flex', flexDirection: 'column',
+                }}>
+                  <div style={{ fontSize: '12.5px', fontWeight: 600, color: '#f4f3f0', marginBottom: '4px', lineHeight: 1.3 }}>
+                    {item.label}
+                  </div>
+                  <div style={{ fontSize: '13px', fontWeight: 700, color: '#0891b2', letterSpacing: '-0.01em', marginBottom: '5px' }}>
+                    {item.price}
+                  </div>
+                  <div style={{ fontSize: '11px', color: 'rgba(244,243,240,0.4)', lineHeight: 1.4 }}>
+                    {item.description}
+                  </div>
+                </div>
+              ))}
+            </div>
+          </RevealWrapper>
+        </div>
+
+        {/* Monthly Plans */}
         <div style={{ marginTop: '36px' }}>
           <RevealWrapper>
             <div style={{ padding: '0 24px', marginBottom: '16px' }}>
               <span style={{
                 fontSize: '9px',
                 fontWeight: 800,
-                color: 'rgba(8,145,178,0.4)',
+                color: 'rgba(8,145,178,0.5)',
                 letterSpacing: '0.22em',
                 textTransform: 'uppercase',
+                display: 'block',
               }}>
-                À La Carte
+                Monthly Plans
               </span>
             </div>
           </RevealWrapper>
           <RevealWrapper delay={100}>
             <div style={{
-              display: 'grid',
-              gridTemplateColumns: '1fr 1fr',
-              gap: '1px',
-              background: 'rgba(244,243,240,0.08)',
-              borderRadius: '12px',
-              overflow: 'hidden',
+              display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1px',
+              background: 'rgba(244,243,240,0.08)', borderRadius: '12px', overflow: 'hidden',
               margin: '0 24px',
             }}>
-              {alaCarte.map((item) => (
-                <div key={item.label} style={{
-                  background: '#1e2530',
-                  padding: '20px 18px',
-                  display: 'flex',
-                  flexDirection: 'column',
-                  alignItems: 'flex-start',
-                  justifyContent: 'flex-start',
+              {monthlyAddOns.map(item => (
+                <div key={item.id} style={{
+                  background: '#1e2530', padding: '18px 16px',
+                  display: 'flex', flexDirection: 'column',
                 }}>
-                  <div style={{ fontSize: '13px', fontWeight: 600, color: '#f4f3f0', marginBottom: '4px', lineHeight: 1.3 }}>
+                  <div style={{ fontSize: '12.5px', fontWeight: 600, color: '#f4f3f0', marginBottom: '4px', lineHeight: 1.3 }}>
                     {item.label}
                   </div>
-                  <div style={{ fontSize: '13px', fontWeight: 700, color: '#0891b2', letterSpacing: '-0.01em' }}>
+                  <div style={{ fontSize: '13px', fontWeight: 700, color: '#0891b2', letterSpacing: '-0.01em', marginBottom: '5px' }}>
                     {item.price}
+                  </div>
+                  <div style={{ fontSize: '11px', color: 'rgba(244,243,240,0.4)', lineHeight: 1.4 }}>
+                    {item.description}
                   </div>
                 </div>
               ))}
@@ -254,7 +335,8 @@ export default function Services() {
                 description={card.description}
                 features={card.features}
                 timeline={card.timeline}
-                finePrint={'finePrint' in card ? card.finePrint : undefined}
+                finePrint={'finePrint' in card ? (card as { finePrint?: string }).finePrint : undefined}
+                isPopular={card.isPopular}
                 accentColor={card.accentColor}
                 accentGlow={card.accentGlow}
               />
@@ -262,57 +344,104 @@ export default function Services() {
           ))}
         </div>
 
-        {/* Maintenance strip */}
-        <RevealWrapper>
-          <div style={{
-            marginTop: '20px',
-            padding: '20px 28px',
-            border: '1px dashed rgba(244,243,240,0.12)',
-            borderRadius: '10px',
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'space-between',
-            gap: '20px',
-          }}>
-            <div>
-              <div style={{ fontSize: '13px', fontWeight: 600, color: '#f4f3f0', marginBottom: '4px' }}>
-                Optional Add-On &nbsp;·&nbsp;{' '}
-                <span style={{ color: '#0891b2' }}>Monthly Maintenance · $150/mo</span>
-              </div>
-              <div style={{ fontSize: '12px', color: 'rgba(244,243,240,0.45)', lineHeight: 1.5, maxWidth: '500px' }}>
-                Entirely optional. Security updates, performance checks, minor content changes (up to 5/month), priority support.
-              </div>
-            </div>
-            <a
-              href="#contact"
-              className="flex-shrink-0 whitespace-nowrap border border-[rgba(244,243,240,0.15)] text-[rgba(244,243,240,0.7)] hover:border-[#0891b2] hover:text-[#0891b2] px-6 py-[10px] rounded-[7px] font-semibold text-[13px] no-underline transition-[border-color,color] duration-200"
-            >
-              Add On
-            </a>
-          </div>
-        </RevealWrapper>
+        {/* One-Time Setups */}
+        <div className="mt-12">
+          <SectionLabel>One-Time Setups</SectionLabel>
 
-        {/* À La Carte — no reveal per spec */}
-        <div className="mt-5">
-          <SectionLabel>À La Carte</SectionLabel>
-          <div style={{
-            display: 'grid',
-            gridTemplateColumns: 'repeat(4, 1fr)',
-            gap: '1px',
-            background: 'rgba(244,243,240,0.08)',
-            borderRadius: '10px',
-            overflow: 'hidden',
-            marginTop: '16px',
-          }}>
-            {alaCarte.map((item) => (
-              <div key={item.label} style={{ background: '#1e2530', padding: '24px 28px' }}>
-                <div style={{ fontWeight: 600, fontSize: '13px', color: '#f4f3f0', marginBottom: '4px', lineHeight: 1.4 }}>
-                  {item.label}
+          {/* Featured: AI Voice Receptionist */}
+          <RevealWrapper>
+            <div style={{
+              marginTop: '16px',
+              padding: '28px 32px',
+              border: '1px solid rgba(245,158,11,0.2)',
+              borderTop: '2px solid rgba(245,158,11,0.55)',
+              borderRadius: '10px',
+              background: 'rgba(245,158,11,0.04)',
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'space-between',
+              gap: '40px',
+            }}>
+              <div style={{ flex: 1 }}>
+                <div style={{
+                  fontSize: '9px', fontWeight: 700, letterSpacing: '0.14em',
+                  textTransform: 'uppercase', color: '#f59e0b', marginBottom: '6px',
+                }}>
+                  Featured Add-On
                 </div>
-                <div style={{ fontSize: '12px', color: '#7a8494' }}>{item.price}</div>
+                <div style={{ fontSize: '16px', fontWeight: 700, color: '#f4f3f0', marginBottom: '6px', letterSpacing: '-0.01em' }}>
+                  AI Voice Receptionist
+                  <span style={{ fontWeight: 600, fontSize: '14px', color: '#f59e0b', marginLeft: '14px' }}>$1,200</span>
+                </div>
+                <div style={{ fontSize: '13px', color: 'rgba(244,243,240,0.55)', lineHeight: 1.6, marginBottom: '4px' }}>
+                  Never miss a call. Your practice, represented professionally 24/7.
+                </div>
+                <div style={{ fontSize: '11.5px', color: 'rgba(244,243,240,0.3)', lineHeight: 1.5 }}>
+                  AI voice agent configured for your business, trained on your FAQs, call routing, after-hours handling.
+                </div>
               </div>
-            ))}
-          </div>
+              <a
+                href="#contact"
+                className="flex-shrink-0 whitespace-nowrap px-6 py-[10px] rounded-[7px] font-semibold text-[13px] no-underline transition-[border-color,color,background] duration-200 hover:border-[rgba(245,158,11,0.5)] hover:bg-[rgba(245,158,11,0.1)]"
+                style={{
+                  border: '1px solid rgba(245,158,11,0.3)',
+                  color: '#f59e0b',
+                  background: 'rgba(245,158,11,0.06)',
+                }}
+              >
+                Add On
+              </a>
+            </div>
+          </RevealWrapper>
+
+          {/* Other one-time items — 3-col grid */}
+          <RevealWrapper delay={100}>
+            <div style={{
+              display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '1px',
+              background: 'rgba(244,243,240,0.08)', borderRadius: '10px', overflow: 'hidden',
+              marginTop: '12px',
+            }}>
+              {oneTimeAddOns.filter(item => !item.featured).map(item => (
+                <div key={item.id} style={{ background: '#1e2530', padding: '24px 28px' }}>
+                  <div style={{ fontWeight: 600, fontSize: '13px', color: '#f4f3f0', marginBottom: '4px', lineHeight: 1.4 }}>
+                    {item.label}
+                  </div>
+                  <div style={{ fontSize: '13px', fontWeight: 700, color: '#0891b2', marginBottom: '8px' }}>
+                    {item.price}
+                  </div>
+                  <div style={{ fontSize: '12px', color: '#7a8494', lineHeight: 1.5 }}>
+                    {item.description}
+                  </div>
+                </div>
+              ))}
+            </div>
+          </RevealWrapper>
+        </div>
+
+        {/* Monthly Plans */}
+        <div className="mt-8">
+          <SectionLabel>Monthly Plans</SectionLabel>
+          <RevealWrapper delay={100}>
+            <div style={{
+              display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: '1px',
+              background: 'rgba(244,243,240,0.08)', borderRadius: '10px', overflow: 'hidden',
+              marginTop: '16px',
+            }}>
+              {monthlyAddOns.map(item => (
+                <div key={item.id} style={{ background: '#1e2530', padding: '24px 28px' }}>
+                  <div style={{ fontWeight: 600, fontSize: '13px', color: '#f4f3f0', marginBottom: '4px', lineHeight: 1.4 }}>
+                    {item.label}
+                  </div>
+                  <div style={{ fontSize: '12px', fontWeight: 700, color: '#0891b2', marginBottom: '8px' }}>
+                    {item.price}
+                  </div>
+                  <div style={{ fontSize: '12px', color: '#7a8494', lineHeight: 1.5 }}>
+                    {item.description}
+                  </div>
+                </div>
+              ))}
+            </div>
+          </RevealWrapper>
           <p className="mt-3 text-[11px] text-[rgba(244,243,240,0.25)] italic">
             Agencies and consultants looking for white-label or partnership arrangements — let&apos;s talk.
           </p>

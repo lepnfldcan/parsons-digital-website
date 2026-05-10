@@ -13,6 +13,7 @@ interface CardData {
   finePrint?: string;
   accentColor: string;
   accentGlow: string;
+  isPopular?: boolean;
 }
 
 interface Props {
@@ -111,6 +112,7 @@ export default function MobilePricingCarousel({ cards }: Props) {
               card={card}
               isActive={i === current}
               isFlashing={i === current && isFlashing}
+              isPopular={card.isPopular}
             />
           </div>
         ))}
@@ -142,9 +144,10 @@ interface MobileCardProps {
   card: CardData;
   isActive: boolean;
   isFlashing: boolean;
+  isPopular?: boolean;
 }
 
-function MobileCard({ card, isActive, isFlashing }: MobileCardProps) {
+function MobileCard({ card, isActive, isFlashing, isPopular }: MobileCardProps) {
   const rgb = toRGB(card.accentGlow);
 
   // Background: flashing → active → idle (Fix 5: idle bumped to 0.05)
@@ -187,7 +190,21 @@ function MobileCard({ card, isActive, isFlashing }: MobileCardProps) {
         transition: 'background 0.5s ease, box-shadow 0.5s ease, border-top-color 0.5s ease',
       }}
     >
-      {/* Tier — Fix 3: more legible */}
+      {/* Most Popular badge */}
+      {isPopular && (
+        <div style={{
+          position: 'absolute', top: '14px', right: '14px',
+          fontSize: '9px', fontWeight: 700, letterSpacing: '0.1em',
+          textTransform: 'uppercase', color: '#f59e0b',
+          background: 'rgba(245,158,11,0.1)',
+          border: '1px solid rgba(245,158,11,0.25)',
+          padding: '2px 7px', borderRadius: '4px',
+        }}>
+          Most Popular
+        </div>
+      )}
+
+      {/* Tier */}
       <div style={{ fontSize: '10px', fontWeight: 700, letterSpacing: '0.12em', textTransform: 'uppercase', color: 'rgba(244,243,240,0.55)', marginBottom: '10px' }}>
         {card.tier}
       </div>
