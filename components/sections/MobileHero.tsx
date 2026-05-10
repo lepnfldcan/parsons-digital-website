@@ -135,7 +135,7 @@ export default function MobileHero() {
             animation: 'taglineReveal 0.6s cubic-bezier(0.22,1,0.36,1) 0.72s both',
           }}
         >
-          Custom builds, Carrd, and WordPress for small businesses across the US and Canada.
+          Custom-built websites for small businesses across the US and Canada. Fast, fully yours, no lock-in.
         </p>
 
         {/* Buttons */}
