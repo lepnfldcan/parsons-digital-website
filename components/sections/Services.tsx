@@ -307,6 +307,29 @@ export default function Services() {
             </div>
           </RevealWrapper>
         </div>
+
+        {/* White-label note */}
+        <RevealWrapper>
+          <p style={{
+            margin: '28px 24px 0',
+            fontSize: '13px',
+            color: 'rgba(244,243,240,0.45)',
+            textAlign: 'center',
+            lineHeight: 1.6,
+          }}>
+            Agency or consultant?{' '}
+            <a
+              href="#contact"
+              style={{
+                color: 'rgba(244,243,240,0.65)',
+                textDecoration: 'underline',
+                textDecorationColor: 'rgba(244,243,240,0.2)',
+              }}
+            >
+              White-label arrangements available.
+            </a>
+          </p>
+        </RevealWrapper>
       </div>
 
       {/* DESKTOP ONLY — never touch this */}
@@ -443,8 +466,14 @@ export default function Services() {
               ))}
             </div>
           </RevealWrapper>
-          <p className="mt-3 text-[11px] text-[rgba(244,243,240,0.25)] italic">
-            Agencies and consultants looking for white-label or partnership arrangements — let&apos;s talk.
+          <p className="mt-5 text-[13px] text-[rgba(244,243,240,0.45)]">
+            Agency or consultant?{' '}
+            <a
+              href="#contact"
+              className="text-[rgba(244,243,240,0.65)] underline underline-offset-2 decoration-[rgba(244,243,240,0.2)] hover:text-[#f4f3f0] hover:decoration-[rgba(244,243,240,0.4)] transition-colors duration-150"
+            >
+              White-label and partnership arrangements available.
+            </a>
           </p>
         </div>
       </div>
