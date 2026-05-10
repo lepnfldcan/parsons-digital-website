@@ -245,10 +245,11 @@ export default function Services() {
               background: 'rgba(244,243,240,0.08)', borderRadius: '12px', overflow: 'hidden',
               margin: '0 24px',
             }}>
-              {oneTimeAddOns.filter(item => !item.featured).map(item => (
+              {oneTimeAddOns.filter(item => !item.featured).map((item, index, arr) => (
                 <div key={item.id} style={{
                   background: '#1e2530', padding: '18px 16px',
                   display: 'flex', flexDirection: 'column',
+                  gridColumn: arr.length % 2 !== 0 && index === arr.length - 1 ? 'span 2' : undefined,
                 }}>
                   <div style={{ fontSize: '12.5px', fontWeight: 600, color: '#f4f3f0', marginBottom: '4px', lineHeight: 1.3 }}>
                     {item.label}
