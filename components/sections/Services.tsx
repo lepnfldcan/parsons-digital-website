@@ -7,7 +7,7 @@ const pricingCards = [
   {
     id: 'quick-launch',
     tier: 'Quick Launch',
-    price: '$3,500',
+    price: '$2,500',
     commitment: 'One-time · Yours forever',
     description: "A clean, credible online presence built fast — no templates, no shortcuts.",
     features: [
