@@ -7,7 +7,7 @@ const pricingCards = [
   {
     id: 'quick-launch',
     tier: 'Quick Launch',
-    price: '$2,500',
+    price: '$3,500',
     commitment: 'One-time · Yours forever',
     description: "A clean, credible online presence built fast — no templates, no shortcuts.",
     features: [
@@ -43,7 +43,7 @@ const pricingCards = [
   {
     id: 'premium',
     tier: 'Premium',
-    price: '$12,500',
+    price: '$9,500',
     commitment: 'One-time · Yours forever',
     description: "For professional services clients who need a site that competes with larger practices.",
     features: [
