@@ -43,7 +43,7 @@ const pricingCards = [
   {
     id: 'premium',
     tier: 'Premium',
-    price: '$9,500',
+    price: '$11,500',
     commitment: 'One-time · Yours forever',
     description: "For professional services clients who need a site that competes with larger practices.",
     features: [

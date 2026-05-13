@@ -2,7 +2,7 @@ import { ImageResponse } from 'next/og';
 import { readFileSync } from 'fs';
 import { join } from 'path';
 
-export const alt = 'Parsons Digital — Web Design for Small Business';
+export const alt = 'Parsons Digital — Web Design for Service Businesses';
 export const size = { width: 1200, height: 630 };
 export const contentType = 'image/png';
 
@@ -115,7 +115,7 @@ export default async function Image() {
         {/* Bottom: tagline + URL */}
         <div style={{ display: 'flex', flexDirection: 'column', gap: 12 }}>
           <div style={{ display: 'flex', fontSize: 22, color: '#7a8494' }}>
-            Web design · Local SEO · AI tools for small business
+            Web design · Local SEO · AI tools for service businesses
           </div>
           <div
             style={{

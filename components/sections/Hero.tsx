@@ -32,7 +32,7 @@ export default function Hero() {
       <div className="relative z-10">
         <div className="flex items-center gap-2.5 mb-7 text-[#0891b2] text-[11px] font-medium tracking-[0.18em] uppercase">
           <div className="w-7 h-px bg-[#0891b2]" />
-          Web Design for Small Business
+          Web Design for Service Businesses
         </div>
 
         <h1 className="mb-8 max-w-[900px] text-[clamp(48px,7vw,88px)] font-extrabold leading-[1.04] tracking-[-0.03em] text-[#f4f3f0]">

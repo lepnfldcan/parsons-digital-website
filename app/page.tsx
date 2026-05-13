@@ -8,7 +8,7 @@ import CaseStudy from '@/components/sections/CaseStudy';
 import Contact from '@/components/sections/Contact';
 
 export const metadata: Metadata = {
-  title: 'Parsons Digital — Web Design for Small Business',
+  title: 'Parsons Digital — Web Design for Service Businesses',
   description:
     'I build clean, fast websites for local businesses — from a single landing page to a fully custom build with booking, payments, or a chatbot.',
 };

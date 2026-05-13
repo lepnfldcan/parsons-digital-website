@@ -8,7 +8,7 @@ const SERVICE_OPTIONS = [
   { value: '', label: 'What are you looking for?' },
   { value: 'Quick Launch ($2,500)', label: 'Quick Launch — $2,500' },
   { value: 'Professional ($7,500)', label: 'Professional — $7,500' },
-  { value: 'Premium ($12,500)', label: 'Premium — $12,500' },
+  { value: 'Premium ($11,500)', label: 'Premium — $11,500' },
   { value: 'Add-on / other', label: 'Add-on or other' },
   { value: 'Not sure yet', label: 'Not sure yet' },
 ];
