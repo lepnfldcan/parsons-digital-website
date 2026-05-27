@@ -19,6 +19,7 @@ const pricingCards = [
     ] as const,
     timeline: '2 week turnaround',
     isPopular: false,
+    classLabel: 'Market Ready',
     accentColor: 'rgba(16,185,129,0.6)',
     accentGlow: 'rgba(16,185,129,0.15)',
   },
@@ -37,6 +38,7 @@ const pricingCards = [
     ] as const,
     timeline: '3–4 week turnaround',
     isPopular: true,
+    classLabel: 'Market Leading',
     accentColor: 'rgba(59,130,246,0.6)',
     accentGlow: 'rgba(59,130,246,0.15)',
   },
@@ -55,6 +57,7 @@ const pricingCards = [
     ] as const,
     timeline: '5–6 week turnaround',
     isPopular: false,
+    classLabel: 'Category Defining',
     accentColor: 'rgba(245,158,11,0.6)',
     accentGlow: 'rgba(245,158,11,0.15)',
   },
@@ -361,6 +364,7 @@ export default function Services() {
                 timeline={card.timeline}
                 finePrint={'finePrint' in card ? (card as { finePrint?: string }).finePrint : undefined}
                 isPopular={card.isPopular}
+                classLabel={'classLabel' in card ? (card as { classLabel?: string }).classLabel : undefined}
                 accentColor={card.accentColor}
                 accentGlow={card.accentGlow}
               />

@@ -13,6 +13,7 @@ interface PricingCardProps {
   accentColor: string;
   accentGlow: string;
   isPopular?: boolean;
+  classLabel?: string;
 }
 
 export default function PricingCard({
@@ -26,6 +27,7 @@ export default function PricingCard({
   accentColor,
   accentGlow,
   isPopular,
+  classLabel,
 }: PricingCardProps) {
   const [hovered, setHovered] = useState(false);
   const [btnHovered, setBtnHovered] = useState(false);
@@ -90,10 +92,30 @@ export default function PricingCard({
         letterSpacing: '0.14em',
         textTransform: 'uppercase',
         color: '#7a8494',
-        marginBottom: '16px',
+        marginBottom: classLabel ? '10px' : '16px',
       }}>
         {tier}
       </div>
+
+      {/* 1b. Class label chip */}
+      {classLabel && (
+        <div style={{
+          display: 'inline-block',
+          alignSelf: 'flex-start',
+          fontSize: '9px',
+          fontWeight: 700,
+          letterSpacing: '0.12em',
+          textTransform: 'uppercase',
+          color: accentColor.replace(/[\d.]+\)$/, '1)'),
+          background: accentGlow,
+          border: `1px solid ${accentColor}`,
+          padding: '3px 9px',
+          borderRadius: '4px',
+          marginBottom: '14px',
+        }}>
+          {classLabel}
+        </div>
+      )}
 
       {/* 2. Price */}
       <div style={{
