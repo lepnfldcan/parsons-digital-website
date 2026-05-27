@@ -215,9 +215,9 @@ function MobileCard({ card, isActive, isFlashing, isPopular }: MobileCardProps) 
         {card.price}
       </div>
 
-      {/* Commitment */}
+      {/* Commitment / class label */}
       <div style={{ fontSize: '11.5px', color: '#7a8494', marginBottom: '12px' }}>
-        {card.commitment}
+        {card.classLabel ?? card.commitment}
       </div>
 
       {/* Divider */}
