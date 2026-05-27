@@ -206,29 +206,9 @@ function MobileCard({ card, isActive, isFlashing, isPopular }: MobileCardProps) 
       )}
 
       {/* Tier */}
-      <div style={{ fontSize: '10px', fontWeight: 700, letterSpacing: '0.12em', textTransform: 'uppercase', color: 'rgba(244,243,240,0.55)', marginBottom: card.classLabel ? '6px' : '10px' }}>
+      <div style={{ fontSize: '10px', fontWeight: 700, letterSpacing: '0.12em', textTransform: 'uppercase', color: 'rgba(244,243,240,0.55)', marginBottom: '10px' }}>
         {card.tier}
       </div>
-
-      {/* Class label chip */}
-      {card.classLabel && (
-        <div style={{
-          display: 'inline-block',
-          alignSelf: 'flex-start',
-          fontSize: '8px',
-          fontWeight: 700,
-          letterSpacing: '0.12em',
-          textTransform: 'uppercase',
-          color: card.accentColor.replace(/[\d.]+\)$/, '1)'),
-          background: card.accentGlow,
-          border: `1px solid ${card.accentColor}`,
-          padding: '2px 8px',
-          borderRadius: '4px',
-          marginBottom: '10px',
-        }}>
-          {card.classLabel}
-        </div>
-      )}
 
       {/* Price */}
       <div style={{ fontWeight: 800, fontSize: '36px', color: '#f4f3f0', letterSpacing: '-0.02em', lineHeight: 1, marginBottom: '4px' }}>

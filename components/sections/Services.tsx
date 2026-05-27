@@ -9,7 +9,7 @@ const pricingCards = [
     tier: 'Quick Launch',
     price: '$3,500',
     commitment: 'One-time · Yours forever',
-    description: "A clean, professional presence built fast. Responsive on every device, optimised for Google, ready to convert.",
+    description: "Market-ready in two weeks. A clean, responsive site built from scratch — optimised for Google and ready to convert from day one.",
     features: [
       '5 custom-designed pages — built from scratch, never from templates',
       'Responsive on every screen — looks professional on phones, tablets, laptops',
@@ -28,7 +28,7 @@ const pricingCards = [
     tier: 'Professional',
     price: '$7,500',
     commitment: 'One-time · Yours forever',
-    description: "Built to win business. A custom mobile experience, local SEO that actually works, and the data to track every lead.",
+    description: "Built to lead in local search. A custom mobile experience, real SEO, and the analytics to track every lead.",
     features: [
       'Everything in Quick Launch, plus:',
       'Custom mobile experience — purpose-built for phones, not just resized',
@@ -47,7 +47,7 @@ const pricingCards = [
     tier: 'Premium',
     price: '$11,500',
     commitment: 'One-time · Yours forever',
-    description: "For practices that need to compete at the top. The complete build — custom motion, full structure, ADA compliant, 30 days of support.",
+    description: "Category-defining. For practices competing at the top — custom motion throughout, full structure, ADA compliant, 30 days of support.",
     features: [
       'Everything in Professional, plus:',
       'Custom motion design throughout — not just key moments, everywhere',
