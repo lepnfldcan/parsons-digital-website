@@ -47,7 +47,7 @@ const pricingCards = [
     tier: 'Premium',
     price: '$11,500',
     commitment: 'One-time · Yours forever',
-    description: "Category-defining. For practices competing at the top — custom motion throughout, full structure, ADA compliant, 30 days of support.",
+    description: "Market-defining. For practices competing at the top — custom motion throughout, full structure, ADA compliant, 30 days of support.",
     features: [
       'Everything in Professional, plus:',
       'Custom motion design throughout — not just key moments, everywhere',
@@ -57,7 +57,7 @@ const pricingCards = [
     ] as const,
     timeline: '5–6 week turnaround',
     isPopular: false,
-    classLabel: 'Category Defining',
+    classLabel: 'Market Defining',
     accentColor: 'rgba(245,158,11,0.6)',
     accentGlow: 'rgba(245,158,11,0.15)',
   },
