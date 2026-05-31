@@ -26,7 +26,7 @@ const pricingCards = [
   {
     id: 'professional',
     tier: 'Professional',
-    price: '$7,500',
+    price: '$6,500',
     commitment: 'One-time · Yours forever',
     description: "Built to lead in local search. A custom mobile experience, real SEO, and the analytics to track every lead.",
     features: [
@@ -45,7 +45,7 @@ const pricingCards = [
   {
     id: 'premium',
     tier: 'Premium',
-    price: '$11,500',
+    price: '$9,500',
     commitment: 'One-time · Yours forever',
     description: "Market-defining. For practices competing at the top — custom motion throughout, full structure, ADA compliant, 30 days of support.",
     features: [
