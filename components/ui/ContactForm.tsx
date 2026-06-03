@@ -1,19 +1,21 @@
 'use client';
 
 import { useState } from 'react';
+import { useRouter } from 'next/navigation';
 
-type FormState = 'idle' | 'loading' | 'success' | 'error';
+type FormState = 'idle' | 'loading' | 'error';
 
 const SERVICE_OPTIONS = [
   { value: '', label: 'What are you looking for?' },
-  { value: 'Quick Launch ($2,500)', label: 'Quick Launch — $2,500' },
-  { value: 'Professional ($7,500)', label: 'Professional — $7,500' },
-  { value: 'Premium ($11,500)', label: 'Premium — $11,500' },
+  { value: 'Quick Launch ($3,500)', label: 'Quick Launch — $3,500' },
+  { value: 'Professional ($6,500)', label: 'Professional — $6,500' },
+  { value: 'Premium ($9,500)', label: 'Premium — $9,500' },
   { value: 'Add-on / other', label: 'Add-on or other' },
   { value: 'Not sure yet', label: 'Not sure yet' },
 ];
 
 export default function ContactForm() {
+  const router = useRouter();
   const [state, setState] = useState<FormState>('idle');
   const [errorMsg, setErrorMsg] = useState('');
   const [form, setForm] = useState({
@@ -49,37 +51,12 @@ export default function ContactForm() {
         return;
       }
 
-      setState('success');
+      router.push('/thank-you');
     } catch {
       setErrorMsg('Network error. Please try emailing directly.');
       setState('error');
     }
   };
-
-  if (state === 'success') {
-    return (
-      <div style={{ textAlign: 'center', padding: '48px 24px' }}>
-        <div style={{
-          width: '52px', height: '52px', borderRadius: '50%',
-          background: 'rgba(16,185,129,0.1)',
-          border: '1px solid rgba(16,185,129,0.25)',
-          display: 'flex', alignItems: 'center', justifyContent: 'center',
-          margin: '0 auto 16px',
-        }}>
-          <svg width="22" height="22" viewBox="0 0 22 22" fill="none"
-            stroke="#10b981" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
-            <polyline points="4,11 9,16 18,6" />
-          </svg>
-        </div>
-        <div style={{ fontSize: '18px', fontWeight: 700, color: '#f4f3f0', marginBottom: '8px' }}>
-          Message sent.
-        </div>
-        <div style={{ fontSize: '14px', color: 'rgba(244,243,240,0.45)', lineHeight: 1.6 }}>
-          I&apos;ll get back to you today.
-        </div>
-      </div>
-    );
-  }
 
   const inputBase: React.CSSProperties = {
     width: '100%',
