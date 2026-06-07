@@ -86,8 +86,8 @@ export default function CaseStudy() {
 
             {/* Quote */}
             <div className="border-l-2 border-[#0891b2] pl-5 mb-6">
-              <p className="text-[15px] font-medium text-[#f4f3f0] leading-[1.6] italic mb-2">
-                &ldquo;Working with Liam was like working with a friend. It was easy and fun.&rdquo;
+              <p className="text-[14px] font-medium text-[#f4f3f0] leading-[1.65] italic mb-2">
+                &ldquo;I was overwhelmed with decisions and unable to see the forest through the trees. Liam built my website, Google Workspace to be HIPAA compliant, all the integrations, my logo, branding — and handled every &lsquo;can you help me with&hellip;?&rsquo; along the way. I don&rsquo;t know where I would be without him.&rdquo;
               </p>
               <p className="text-[12px] text-[#7a8494]">
                 Angela Carley, MSN, APRN-BC · Founder, Luminary Integrative Health
@@ -203,8 +203,8 @@ export default function CaseStudy() {
 
               {/* Quote */}
               <div className="border-l-2 border-[#0891b2] pl-5 mb-6">
-                <p className="text-[15px] font-medium text-[#f4f3f0] leading-[1.6] italic mb-2">
-                  &ldquo;Working with Liam was like working with a friend. It was easy and fun.&rdquo;
+                <p className="text-[15px] font-medium text-[#f4f3f0] leading-[1.65] italic mb-2">
+                  &ldquo;I was overwhelmed with decisions and unable to see the forest through the trees. Liam built my website, Google Workspace to be HIPAA compliant, all the integrations, my logo, branding — and handled every &lsquo;can you help me with&hellip;?&rsquo; along the way. I don&rsquo;t know where I would be without him.&rdquo;
                 </p>
                 <p className="text-[12px] text-[#7a8494]">
                   Angela Carley, MSN, APRN-BC · Founder, Luminary Integrative Health
