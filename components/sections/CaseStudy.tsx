@@ -131,27 +131,26 @@ export default function CaseStudy() {
               </div>
             </div>
 
-            {/* Inline stats — flex row (replaces 2-col grid on mobile) */}
+            {/* Proof points — two clean checkmark lines */}
             <div
               style={{
                 display: 'flex',
-                gap: '0',
-                marginBottom: '20px',
+                flexDirection: 'column',
+                gap: '12px',
+                marginBottom: '24px',
                 borderTop: '1px solid rgba(244,243,240,0.08)',
                 borderBottom: '1px solid rgba(244,243,240,0.08)',
-                padding: '16px 0',
+                padding: '18px 0',
               }}
             >
-              <div style={{ flex: 1, paddingRight: '16px', borderRight: '1px solid rgba(244,243,240,0.08)' }}>
-                <div style={{ fontSize: '22px', fontWeight: 800, color: '#f4f3f0', letterSpacing: '-0.02em', marginBottom: '2px' }}>8 wks</div>
-                {/* Fix 5: shorter label */}
-                <div style={{ fontSize: '11px', color: '#7a8494' }}>Brief to live</div>
-              </div>
-              <div style={{ flex: 1, paddingLeft: '16px' }}>
-                <div style={{ fontSize: '22px', fontWeight: 800, color: '#f4f3f0', letterSpacing: '-0.02em', marginBottom: '2px' }}>Week 1</div>
-                {/* Fix 5: shorter label */}
-                <div style={{ fontSize: '11px', color: '#7a8494' }}>Booking patients</div>
-              </div>
+              {['Entire digital footprint in 8 weeks', 'Booking patients in week 1'].map((point) => (
+                <div key={point} style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
+                  <svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="#0891b2" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0 }}>
+                    <polyline points="3,7 6,10 11,4" />
+                  </svg>
+                  <span style={{ fontSize: '13.5px', fontWeight: 500, color: '#f4f3f0' }}>{point}</span>
+                </div>
+              ))}
             </div>
 
             <a
@@ -271,16 +270,16 @@ export default function CaseStudy() {
                 </a>
               </div>
 
-              {/* Stat boxes */}
-              <div className="grid grid-cols-2 gap-3 mt-4">
-                <div className="bg-[rgba(244,243,240,0.03)] border border-[rgba(244,243,240,0.08)] rounded-lg p-4">
-                  <div className="text-[22px] font-extrabold text-[#f4f3f0] tracking-[-0.02em] mb-1">8 wks</div>
-                  <div className="text-[11px] text-[#7a8494]">Brief to live</div>
-                </div>
-                <div className="bg-[rgba(244,243,240,0.03)] border border-[rgba(244,243,240,0.08)] rounded-lg p-4">
-                  <div className="text-[22px] font-extrabold text-[#f4f3f0] tracking-[-0.02em] mb-1">Week 1</div>
-                  <div className="text-[11px] text-[#7a8494]">Booking patients</div>
-                </div>
+              {/* Proof points */}
+              <div className="flex flex-col gap-3 mt-4 w-full max-w-[240px]">
+                {['Entire digital footprint in 8 weeks', 'Booking patients in week 1'].map((point) => (
+                  <div key={point} className="flex items-center gap-2.5">
+                    <svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="#0891b2" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0 }}>
+                      <polyline points="3,7 6,10 11,4" />
+                    </svg>
+                    <span className="text-[13.5px] font-medium text-[#f4f3f0]">{point}</span>
+                  </div>
+                ))}
               </div>
             </div>
           </div>
