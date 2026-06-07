@@ -94,30 +94,41 @@ export default function CaseStudy() {
               </p>
             </div>
 
-            {/* Site preview — between quote and stats */}
-            <div style={{ borderRadius: '12px', overflow: 'hidden', position: 'relative', marginBottom: '20px' }}>
-              <Image
-                src="/luminary-preview.png"
-                alt="Luminary Integrative Health website preview"
-                width={1170}
-                height={731}
-                sizes="(max-width: 768px) calc(100vw - 80px)"
-                style={{ width: '100%', height: 'auto', display: 'block' }}
-              />
-              <a
-                href="https://www.luminaryihc.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                style={{
-                  position: 'absolute', bottom: '10px', right: '10px',
-                  fontSize: '11px', fontWeight: 600, color: '#0891b2',
-                  textDecoration: 'none', background: 'rgba(30,37,48,0.85)',
-                  padding: '5px 10px', borderRadius: '6px',
-                  backdropFilter: 'blur(8px)', letterSpacing: '0.04em',
-                }}
-              >
-                Visit the site ↗
-              </a>
+            {/* Mobile site preview — between quote and stats */}
+            <div style={{ display: 'flex', justifyContent: 'center', marginBottom: '20px' }}>
+              <div style={{
+                width: '200px',
+                borderRadius: '24px',
+                overflow: 'hidden',
+                position: 'relative',
+                border: '3px solid rgba(244,243,240,0.12)',
+                boxShadow: '0 8px 32px rgba(0,0,0,0.3)',
+                background: '#fff',
+              }}>
+                <Image
+                  src="/luminary-mobile-preview.png"
+                  alt="Luminary Integrative Health mobile website"
+                  width={390}
+                  height={844}
+                  sizes="200px"
+                  style={{ width: '100%', height: 'auto', display: 'block' }}
+                />
+                <a
+                  href="https://www.luminaryihc.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  style={{
+                    position: 'absolute', bottom: '10px', left: '50%', transform: 'translateX(-50%)',
+                    fontSize: '10px', fontWeight: 600, color: '#0891b2',
+                    textDecoration: 'none', background: 'rgba(30,37,48,0.9)',
+                    padding: '5px 10px', borderRadius: '6px',
+                    backdropFilter: 'blur(8px)', letterSpacing: '0.04em',
+                    whiteSpace: 'nowrap',
+                  }}
+                >
+                  Visit the site ↗
+                </a>
+              </div>
             </div>
 
             {/* Inline stats — flex row (replaces 2-col grid on mobile) */}
@@ -224,27 +235,36 @@ export default function CaseStudy() {
               </a>
             </div>
 
-            {/* Right: site preview + stats */}
-            <div className="flex flex-col gap-4">
-              <div style={{ aspectRatio: '16/10', borderRadius: '10px', overflow: 'hidden', position: 'relative' }}>
+            {/* Right: mobile preview + stats */}
+            <div className="flex flex-col gap-4 items-center">
+              <div style={{
+                width: '240px',
+                borderRadius: '28px',
+                overflow: 'hidden',
+                position: 'relative',
+                border: '3px solid rgba(244,243,240,0.12)',
+                boxShadow: '0 12px 40px rgba(0,0,0,0.3)',
+                background: '#fff',
+              }}>
                 <Image
-                  src="/luminary-preview.png"
-                  alt="Luminary Integrative Health website preview"
-                  width={1170}
-                  height={731}
-                  sizes="(max-width: 1200px) 50vw, 560px"
-                  style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center top', display: 'block' }}
+                  src="/luminary-mobile-preview.png"
+                  alt="Luminary Integrative Health mobile website"
+                  width={390}
+                  height={844}
+                  sizes="240px"
+                  style={{ width: '100%', height: 'auto', display: 'block' }}
                 />
                 <a
                   href="https://www.luminaryihc.com"
                   target="_blank"
                   rel="noopener noreferrer"
                   style={{
-                    position: 'absolute', bottom: '12px', right: '12px',
+                    position: 'absolute', bottom: '14px', left: '50%', transform: 'translateX(-50%)',
                     fontSize: '11px', fontWeight: 600, color: '#0891b2',
                     textDecoration: 'none', letterSpacing: '0.04em',
-                    background: 'rgba(30,37,48,0.8)', padding: '6px 12px',
+                    background: 'rgba(30,37,48,0.85)', padding: '6px 12px',
                     borderRadius: '6px', backdropFilter: 'blur(8px)',
+                    whiteSpace: 'nowrap',
                   }}
                 >
                   Visit the site ↗
