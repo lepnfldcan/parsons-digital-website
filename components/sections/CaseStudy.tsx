@@ -58,10 +58,10 @@ export default function CaseStudy() {
               Custom Next.js · Direct Primary Care · St. Petersburg, FL
             </div>
             <h3 className="text-[28px] font-extrabold tracking-[-0.02em] text-[#f4f3f0] leading-[1.2] mb-4">
-              Zero to live<br />in 30 days.
+              An entire digital<br />footprint. 8 weeks.
             </h3>
             {/* Fix 1+4: one tight paragraph, full white at weight 300 */}
-            <p style={{ fontSize: '14px', fontWeight: 300, color: '#f4f3f0', lineHeight: 1.75, marginBottom: '20px' }}>Angela came in with no website, no domain, no digital presence — and a hard May 1st launch date. In 30 days: full brand system, custom Next.js build, booking integration, SEO, and Vercel deployment.</p>
+            <p style={{ fontSize: '14px', fontWeight: 300, color: '#f4f3f0', lineHeight: 1.75, marginBottom: '20px' }}>Angela came in with no website, no domain, no digital presence. In 8 weeks I built it all from scratch: full brand system, custom Next.js site, booking, SEO, HIPAA-compliant Google Workspace, and Vercel deployment.</p>
 
             {/* Fix 3: 3 tags max, horizontal scroll row — no wrapping */}
             <div style={{ display: 'flex', gap: '6px', overflowX: 'auto', scrollbarWidth: 'none', marginBottom: '24px', paddingBottom: '4px' }}>
@@ -143,14 +143,14 @@ export default function CaseStudy() {
               }}
             >
               <div style={{ flex: 1, paddingRight: '16px', borderRight: '1px solid rgba(244,243,240,0.08)' }}>
-                <div style={{ fontSize: '22px', fontWeight: 800, color: '#f4f3f0', letterSpacing: '-0.02em', marginBottom: '2px' }}>30</div>
+                <div style={{ fontSize: '22px', fontWeight: 800, color: '#f4f3f0', letterSpacing: '-0.02em', marginBottom: '2px' }}>8 wks</div>
                 {/* Fix 5: shorter label */}
                 <div style={{ fontSize: '11px', color: '#7a8494' }}>Brief to live</div>
               </div>
               <div style={{ flex: 1, paddingLeft: '16px' }}>
-                <div style={{ fontSize: '22px', fontWeight: 800, color: '#f4f3f0', letterSpacing: '-0.02em', marginBottom: '2px' }}>Day 1</div>
+                <div style={{ fontSize: '22px', fontWeight: 800, color: '#f4f3f0', letterSpacing: '-0.02em', marginBottom: '2px' }}>Week 1</div>
                 {/* Fix 5: shorter label */}
-                <div style={{ fontSize: '11px', color: '#7a8494' }}>First inquiry</div>
+                <div style={{ fontSize: '11px', color: '#7a8494' }}>Booking patients</div>
               </div>
             </div>
 
@@ -192,9 +192,9 @@ export default function CaseStudy() {
                 Custom Next.js · Direct Primary Care · St. Petersburg, FL
               </div>
               <h3 className="text-[28px] font-extrabold tracking-[-0.02em] text-[#f4f3f0] leading-[1.2] mb-4">
-                Zero to live<br />in 30 days.
+                An entire digital<br />footprint. 8 weeks.
               </h3>
-              <p className="text-[14px] font-light leading-[1.75] mb-6" style={{ color: '#f4f3f0' }}>Angela came in with no website, no domain, no digital presence — and a hard May 1st launch date. In 30 days: full brand system, custom Next.js build, booking integration, SEO, and Vercel deployment.</p>
+              <p className="text-[14px] font-light leading-[1.75] mb-6" style={{ color: '#f4f3f0' }}>Angela came in with no website, no domain, no digital presence. In 8 weeks I built it all from scratch: full brand system, custom Next.js site, booking, SEO, HIPAA-compliant Google Workspace, and Vercel deployment.</p>
 
               {/* Service tags */}
               <div className="flex flex-wrap gap-1.5 mb-6">
@@ -274,12 +274,12 @@ export default function CaseStudy() {
               {/* Stat boxes */}
               <div className="grid grid-cols-2 gap-3 mt-4">
                 <div className="bg-[rgba(244,243,240,0.03)] border border-[rgba(244,243,240,0.08)] rounded-lg p-4">
-                  <div className="text-[22px] font-extrabold text-[#f4f3f0] tracking-[-0.02em] mb-1">30</div>
+                  <div className="text-[22px] font-extrabold text-[#f4f3f0] tracking-[-0.02em] mb-1">8 wks</div>
                   <div className="text-[11px] text-[#7a8494]">Brief to live</div>
                 </div>
                 <div className="bg-[rgba(244,243,240,0.03)] border border-[rgba(244,243,240,0.08)] rounded-lg p-4">
-                  <div className="text-[22px] font-extrabold text-[#f4f3f0] tracking-[-0.02em] mb-1">Day 1</div>
-                  <div className="text-[11px] text-[#7a8494]">First inquiry</div>
+                  <div className="text-[22px] font-extrabold text-[#f4f3f0] tracking-[-0.02em] mb-1">Week 1</div>
+                  <div className="text-[11px] text-[#7a8494]">Booking patients</div>
                 </div>
               </div>
             </div>
