@@ -225,7 +225,7 @@ export default function CaseStudy() {
                 <div style={{
                   position: 'relative',
                   width: '280px',
-                  height: '692px',
+                  height: '640px',
                   transition: 'transform 0.3s cubic-bezier(0.16, 1, 0.3, 1)',
                 }} className="group-hover:scale-[1.02]">
                   {/* Cyan glow halo behind phone */}
@@ -235,7 +235,7 @@ export default function CaseStudy() {
                     left: '50%',
                     transform: 'translate(-50%, -50%)',
                     width: '380px',
-                    height: '799px',
+                    height: '740px',
                     borderRadius: '160px',
                     background: 'radial-gradient(circle, rgba(8,145,178,0.32) 0%, rgba(8,145,178,0.12) 40%, transparent 70%)',
                     filter: 'blur(60px)',
@@ -249,7 +249,7 @@ export default function CaseStudy() {
                     position: 'relative',
                     zIndex: 1,
                     width: '280px',
-                    height: '692px',
+                    height: '640px',
                     borderRadius: '32px',
                     overflow: 'hidden',
                     border: '3px solid rgba(244,243,240,0.15)',
