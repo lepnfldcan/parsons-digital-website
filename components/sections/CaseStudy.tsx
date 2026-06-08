@@ -97,14 +97,35 @@ export default function CaseStudy() {
             {/* Mobile site preview — between quote and stats */}
             <div style={{ display: 'flex', justifyContent: 'center', marginBottom: '20px' }}>
               <div style={{
-                width: '200px',
-                borderRadius: '24px',
-                overflow: 'hidden',
                 position: 'relative',
-                border: '3px solid rgba(244,243,240,0.12)',
-                boxShadow: '0 8px 32px rgba(0,0,0,0.3)',
-                background: '#fff',
+                width: '200px',
+                height: '380px',
               }}>
+                {/* Cyan glow halo behind phone */}
+                <div style={{
+                  position: 'absolute',
+                  top: '50%',
+                  left: '50%',
+                  transform: 'translate(-50%, -50%)',
+                  width: '280px',
+                  height: '420px',
+                  borderRadius: '120px',
+                  background: 'radial-gradient(circle, rgba(8,145,178,0.25) 0%, rgba(8,145,178,0.08) 40%, transparent 70%)',
+                  filter: 'blur(40px)',
+                  pointerEvents: 'none',
+                  zIndex: 0,
+                }} />
+                {/* Phone mockup */}
+                <div style={{
+                  position: 'relative',
+                  zIndex: 1,
+                  width: '200px',
+                  borderRadius: '24px',
+                  overflow: 'hidden',
+                  border: '3px solid rgba(244,243,240,0.12)',
+                  boxShadow: '0 8px 32px rgba(0,0,0,0.3)',
+                  background: '#fff',
+                }}>
                 <Image
                   src="/luminary-mobile-preview.png"
                   alt="Luminary Integrative Health mobile website"
@@ -128,6 +149,7 @@ export default function CaseStudy() {
                 >
                   Visit the site ↗
                 </a>
+              </div>
               </div>
             </div>
 
@@ -237,14 +259,35 @@ export default function CaseStudy() {
             {/* Right: mobile preview + stats */}
             <div className="flex flex-col gap-4 items-center">
               <div style={{
-                width: '240px',
-                borderRadius: '28px',
-                overflow: 'hidden',
                 position: 'relative',
-                border: '3px solid rgba(244,243,240,0.12)',
-                boxShadow: '0 12px 40px rgba(0,0,0,0.3)',
-                background: '#fff',
+                width: '240px',
+                height: '450px',
               }}>
+                {/* Cyan glow halo behind phone */}
+                <div style={{
+                  position: 'absolute',
+                  top: '50%',
+                  left: '50%',
+                  transform: 'translate(-50%, -50%)',
+                  width: '340px',
+                  height: '520px',
+                  borderRadius: '140px',
+                  background: 'radial-gradient(circle, rgba(8,145,178,0.28) 0%, rgba(8,145,178,0.1) 40%, transparent 70%)',
+                  filter: 'blur(50px)',
+                  pointerEvents: 'none',
+                  zIndex: 0,
+                }} />
+                {/* Phone mockup */}
+                <div style={{
+                  position: 'relative',
+                  zIndex: 1,
+                  width: '240px',
+                  borderRadius: '28px',
+                  overflow: 'hidden',
+                  border: '3px solid rgba(244,243,240,0.12)',
+                  boxShadow: '0 12px 40px rgba(0,0,0,0.3)',
+                  background: '#fff',
+                }}>
                 <Image
                   src="/luminary-mobile-preview.png"
                   alt="Luminary Integrative Health mobile website"
@@ -268,6 +311,7 @@ export default function CaseStudy() {
                 >
                   Visit the site ↗
                 </a>
+              </div>
               </div>
 
               {/* Proof points */}
