@@ -249,6 +249,7 @@ export default function CaseStudy() {
                     position: 'relative',
                     zIndex: 1,
                     width: '280px',
+                    height: '692px',
                     borderRadius: '32px',
                     overflow: 'hidden',
                     border: '3px solid rgba(244,243,240,0.15)',
