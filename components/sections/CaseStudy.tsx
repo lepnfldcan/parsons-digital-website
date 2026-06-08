@@ -134,58 +134,9 @@ export default function CaseStudy() {
                   sizes="200px"
                   style={{ width: '100%', height: 'auto', display: 'block' }}
                 />
-                <a
-                  href="https://www.luminaryihc.com"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  style={{
-                    position: 'absolute', bottom: '10px', left: '50%', transform: 'translateX(-50%)',
-                    fontSize: '10px', fontWeight: 600, color: '#0891b2',
-                    textDecoration: 'none', background: 'rgba(30,37,48,0.9)',
-                    padding: '5px 10px', borderRadius: '6px',
-                    backdropFilter: 'blur(8px)', letterSpacing: '0.04em',
-                    whiteSpace: 'nowrap',
-                  }}
-                >
-                  Visit the site ↗
-                </a>
               </div>
               </div>
             </div>
-
-            {/* Proof points — two clean checkmark lines */}
-            <div
-              style={{
-                display: 'flex',
-                flexDirection: 'column',
-                gap: '12px',
-                marginBottom: '24px',
-                borderTop: '1px solid rgba(244,243,240,0.08)',
-                borderBottom: '1px solid rgba(244,243,240,0.08)',
-                padding: '18px 0',
-              }}
-            >
-              {['Entire digital footprint in 8 weeks', 'Booking patients in week 1'].map((point) => (
-                <div key={point} style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
-                  <svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="#0891b2" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0 }}>
-                    <polyline points="3,7 6,10 11,4" />
-                  </svg>
-                  <span style={{ fontSize: '13.5px', fontWeight: 500, color: '#f4f3f0' }}>{point}</span>
-                </div>
-              ))}
-            </div>
-
-            <a
-              href="https://www.luminaryihc.com"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 text-[13px] font-semibold text-[#0891b2] no-underline hover:underline"
-            >
-              Visit the site
-              <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
-                <path d="M2 10L10 2M10 2H5M10 2v5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
-              </svg>
-            </a>
           </div>
         </RevealWrapper>
       </div>
@@ -296,34 +247,7 @@ export default function CaseStudy() {
                   sizes="240px"
                   style={{ width: '100%', height: 'auto', display: 'block' }}
                 />
-                <a
-                  href="https://www.luminaryihc.com"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  style={{
-                    position: 'absolute', bottom: '14px', left: '50%', transform: 'translateX(-50%)',
-                    fontSize: '11px', fontWeight: 600, color: '#0891b2',
-                    textDecoration: 'none', letterSpacing: '0.04em',
-                    background: 'rgba(30,37,48,0.85)', padding: '6px 12px',
-                    borderRadius: '6px', backdropFilter: 'blur(8px)',
-                    whiteSpace: 'nowrap',
-                  }}
-                >
-                  Visit the site ↗
-                </a>
               </div>
-              </div>
-
-              {/* Proof points */}
-              <div className="flex flex-col gap-3 mt-4 w-full max-w-[240px]">
-                {['Entire digital footprint in 8 weeks', 'Booking patients in week 1'].map((point) => (
-                  <div key={point} className="flex items-center gap-2.5">
-                    <svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="#0891b2" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0 }}>
-                      <polyline points="3,7 6,10 11,4" />
-                    </svg>
-                    <span className="text-[13.5px] font-medium text-[#f4f3f0]">{point}</span>
-                  </div>
-                ))}
               </div>
             </div>
           </div>
