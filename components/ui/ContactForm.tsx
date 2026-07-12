@@ -7,9 +7,9 @@ type FormState = 'idle' | 'loading' | 'error';
 
 const SERVICE_OPTIONS = [
   { value: '', label: 'What are you looking for?' },
-  { value: 'Quick Launch ($3,500)', label: 'Quick Launch — $3,500' },
-  { value: 'Professional ($6,500)', label: 'Professional — $6,500' },
-  { value: 'Premium ($9,500)', label: 'Premium — $9,500' },
+  { value: 'Quick Launch ($1,899)', label: 'Quick Launch — $1,899' },
+  { value: 'Professional ($3,500)', label: 'Professional — $3,500' },
+  { value: 'Premium ($5,500)', label: 'Premium — $5,500' },
   { value: 'Add-on / other', label: 'Add-on or other' },
   { value: 'Not sure yet', label: 'Not sure yet' },
 ];

@@ -7,7 +7,7 @@ const pricingCards = [
   {
     id: 'quick-launch',
     tier: 'Quick Launch',
-    price: '$3,500',
+    price: '$1,899',
     commitment: 'One-time · Yours forever',
     description: "Market-ready in two weeks. A clean, responsive site built from scratch — optimised for Google and ready to convert from day one.",
     features: [
@@ -26,7 +26,7 @@ const pricingCards = [
   {
     id: 'professional',
     tier: 'Professional',
-    price: '$6,500',
+    price: '$3,500',
     commitment: 'One-time · Yours forever',
     description: "Built to lead in local search. A custom mobile experience, real SEO, and the analytics to track every lead.",
     features: [
@@ -45,7 +45,7 @@ const pricingCards = [
   {
     id: 'premium',
     tier: 'Premium',
-    price: '$9,500',
+    price: '$5,500',
     commitment: 'One-time · Yours forever',
     description: "Market-defining. For practices competing at the top — custom motion throughout, full structure, ADA compliant, 30 days of support.",
     features: [
