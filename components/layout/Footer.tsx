@@ -23,22 +23,39 @@ export default function Footer() {
           liam@parsonsdigital.com
         </a>
 
-        {/* Mobile info */}
+        {/* Mobile info — business contact details */}
+        <div className="text-[11px] text-[rgba(244,243,240,0.35)] tracking-[0.03em] leading-[1.9]">
+          <div className="text-[rgba(244,243,240,0.55)] font-semibold">Liam Parsons</div>
+          <div>La Canasta 32, San Cristóbal de las Casas</div>
+          <div>Chiapas 29256, Mexico</div>
+          <a href="tel:+525545402582" className="text-[rgba(244,243,240,0.35)] no-underline hover:text-[#f4f3f0]">
+            +52 55 4540 2582
+          </a>
+        </div>
+
+        {/* Mobile info — positioning */}
         <div className="text-[11px] text-[rgba(244,243,240,0.2)] tracking-[0.04em] leading-[1.7]">
           parsonsdigital.com &nbsp;·&nbsp; Remote · US & Canada
         </div>
       </div>
 
-      {/* DESKTOP ONLY — never touch this */}
-      <div className="hidden md:flex items-center justify-between px-[60px] py-8">
+      {/* DESKTOP ONLY */}
+      <div className="hidden md:flex items-start justify-between px-[60px] py-8">
         <div className="flex items-baseline gap-0 text-[13px] font-extrabold text-[#f4f3f0] tracking-[-0.02em]">
           <span>Parsons</span>
           <span className="text-[#0891b2] mx-0.5">/</span>
           <em className="font-light not-italic">Digital</em>
         </div>
 
-        <div className="text-[11px] text-[rgba(244,243,240,0.25)] tracking-[0.04em]">
-          liam@parsonsdigital.com &nbsp;·&nbsp; liamparsonsdigital.com &nbsp;·&nbsp; Remote · US & Canada
+        <div className="text-right text-[11px] text-[rgba(244,243,240,0.3)] tracking-[0.04em] leading-[1.9]">
+          <div className="text-[rgba(244,243,240,0.55)] font-semibold">Liam Parsons</div>
+          <div>La Canasta 32, San Cristóbal de las Casas, Chiapas 29256, Mexico</div>
+          <div>
+            <a href="tel:+525545402582" className="text-[rgba(244,243,240,0.3)] no-underline hover:text-[#f4f3f0]">+52 55 4540 2582</a>
+            &nbsp;·&nbsp;
+            <a href="mailto:liam@parsonsdigital.com" className="text-[rgba(244,243,240,0.3)] no-underline hover:text-[#f4f3f0]">liam@parsonsdigital.com</a>
+          </div>
+          <div className="text-[rgba(244,243,240,0.2)]">parsonsdigital.com &nbsp;·&nbsp; Remote · US & Canada</div>
         </div>
       </div>
     </footer>
