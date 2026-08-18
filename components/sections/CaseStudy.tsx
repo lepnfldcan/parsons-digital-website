@@ -151,7 +151,11 @@ export default function CaseStudy() {
         </RevealWrapper>
 
         <RevealWrapper>
-          <div className="relative bg-[rgba(244,243,240,0.03)] border border-[rgba(244,243,240,0.08)] rounded-2xl p-[60px] overflow-hidden">
+          <div className="relative bg-[rgba(244,243,240,0.03)] border border-[rgba(244,243,240,0.08)] rounded-2xl p-[60px] grid overflow-hidden" style={{
+            gridTemplateColumns: '1fr 1.1fr',
+            gap: '48px',
+            alignItems: 'flex-start',
+          }}>
             {/* Top gradient line */}
             <div
               className="absolute top-0 left-0 right-0 h-0.5 pointer-events-none"
@@ -204,6 +208,61 @@ export default function CaseStudy() {
                 <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
                   <path d="M2 10L10 2M10 2H5M10 2v5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
                 </svg>
+              </a>
+            </div>
+
+            {/* Right: clickable mobile preview → Luminary site */}
+            <div className="flex justify-center pt-2">
+              <a
+                href="https://www.luminaryihc.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="block group cursor-pointer"
+                style={{ textDecoration: 'none' }}
+              >
+                <div style={{
+                  position: 'relative',
+                  width: '280px',
+                  transition: 'transform 0.3s cubic-bezier(0.16, 1, 0.3, 1)',
+                }} className="group-hover:scale-[1.02]">
+                  {/* Cyan glow halo behind phone */}
+                  <div style={{
+                    position: 'absolute',
+                    top: '50%',
+                    left: '50%',
+                    transform: 'translate(-50%, -50%)',
+                    width: '360px',
+                    height: '560px',
+                    borderRadius: '160px',
+                    background: 'radial-gradient(circle, rgba(8,145,178,0.32) 0%, rgba(8,145,178,0.12) 40%, transparent 70%)',
+                    filter: 'blur(60px)',
+                    pointerEvents: 'none',
+                    zIndex: 0,
+                    transition: 'opacity 0.3s cubic-bezier(0.16, 1, 0.3, 1)',
+                  }} className="group-hover:opacity-150" />
+
+                  {/* Phone mockup card */}
+                  <div style={{
+                    position: 'relative',
+                    zIndex: 1,
+                    width: '280px',
+                    borderRadius: '32px',
+                    overflow: 'hidden',
+                    border: '3px solid rgba(244,243,240,0.15)',
+                    boxShadow: '0 16px 48px rgba(8,145,178,0.15)',
+                    background: '#fff',
+                    transition: 'box-shadow 0.3s cubic-bezier(0.16, 1, 0.3, 1)',
+                  }} className="group-hover:shadow-2xl">
+                    <Image
+                      src="/luminary-mobile-preview.png"
+                      alt="Luminary Integrative Health mobile website"
+                      width={390}
+                      height={640}
+                      sizes="280px"
+                      style={{ width: '100%', height: 'auto', display: 'block' }}
+                    />
+                  </div>
+                </div>
               </a>
             </div>
           </div>

@@ -26,8 +26,6 @@ export default function Footer() {
         {/* Mobile info — business contact details */}
         <div className="text-[11px] text-[rgba(244,243,240,0.35)] tracking-[0.03em] leading-[1.9]">
           <div className="text-[rgba(244,243,240,0.55)] font-semibold">Liam Parsons</div>
-          <div>La Canasta 32, San Cristóbal de las Casas</div>
-          <div>Chiapas 29256, Mexico</div>
           <a href="tel:+525545402582" className="text-[rgba(244,243,240,0.35)] no-underline hover:text-[#f4f3f0]">
             +52 55 4540 2582
           </a>
@@ -49,7 +47,6 @@ export default function Footer() {
 
         <div className="text-right text-[11px] text-[rgba(244,243,240,0.3)] tracking-[0.04em] leading-[1.9]">
           <div className="text-[rgba(244,243,240,0.55)] font-semibold">Liam Parsons</div>
-          <div>La Canasta 32, San Cristóbal de las Casas, Chiapas 29256, Mexico</div>
           <div>
             <a href="tel:+525545402582" className="text-[rgba(244,243,240,0.3)] no-underline hover:text-[#f4f3f0]">+52 55 4540 2582</a>
             &nbsp;·&nbsp;
