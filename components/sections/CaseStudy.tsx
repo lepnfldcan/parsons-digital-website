@@ -271,7 +271,7 @@ export default function CaseStudy() {
                         src="/luminary-mobile-preview.png"
                         alt="Luminary Integrative Health mobile website"
                         width={390}
-                        height={640}
+                        height={687}
                         sizes="280px"
                         style={{ width: '100%', height: 'auto', display: 'block' }}
                       />
