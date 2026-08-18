@@ -241,26 +241,54 @@ export default function CaseStudy() {
                     transition: 'opacity 0.3s cubic-bezier(0.16, 1, 0.3, 1)',
                   }} className="group-hover:opacity-150" />
 
-                  {/* Phone mockup card */}
+                  {/* Phone mockup frame */}
                   <div style={{
                     position: 'relative',
                     zIndex: 1,
                     width: '280px',
-                    borderRadius: '32px',
-                    overflow: 'hidden',
-                    border: '3px solid rgba(244,243,240,0.15)',
-                    boxShadow: '0 16px 48px rgba(8,145,178,0.15)',
-                    background: '#fff',
+                    padding: '11px',
+                    borderRadius: '46px',
+                    background: 'linear-gradient(150deg, #33383f 0%, #1a1d23 48%, #0b0c0f 100%)',
+                    boxShadow: '0 30px 70px rgba(0,0,0,0.6), 0 18px 44px rgba(8,145,178,0.20), inset 0 0 0 1px rgba(244,243,240,0.10), inset 0 1.5px 1px rgba(255,255,255,0.22), inset 0 -2px 3px rgba(0,0,0,0.5)',
                     transition: 'box-shadow 0.3s cubic-bezier(0.16, 1, 0.3, 1)',
                   }} className="group-hover:shadow-2xl">
-                    <Image
-                      src="/luminary-mobile-preview.png"
-                      alt="Luminary Integrative Health mobile website"
-                      width={390}
-                      height={640}
-                      sizes="280px"
-                      style={{ width: '100%', height: 'auto', display: 'block' }}
-                    />
+                    {/* Side buttons */}
+                    <span style={{ position: 'absolute', right: '-2px', top: '150px', width: '3px', height: '56px', borderRadius: '0 2px 2px 0', background: 'linear-gradient(90deg,#2a2e37,#0b0c0f)' }} />
+                    <span style={{ position: 'absolute', left: '-2px', top: '120px', width: '3px', height: '30px', borderRadius: '2px 0 0 2px', background: 'linear-gradient(90deg,#2a2e37,#0b0c0f)' }} />
+                    <span style={{ position: 'absolute', left: '-2px', top: '162px', width: '3px', height: '52px', borderRadius: '2px 0 0 2px', background: 'linear-gradient(90deg,#2a2e37,#0b0c0f)' }} />
+
+                    {/* Screen */}
+                    <div style={{
+                      position: 'relative',
+                      borderRadius: '36px',
+                      overflow: 'hidden',
+                      background: '#fbf9f5',
+                      boxShadow: 'inset 0 0 0 1px rgba(0,0,0,0.08)',
+                    }}>
+                      {/* Status bar strip */}
+                      <div style={{ height: '34px', background: '#fbf9f5' }} />
+                      <Image
+                        src="/luminary-mobile-preview.png"
+                        alt="Luminary Integrative Health mobile website"
+                        width={390}
+                        height={640}
+                        sizes="280px"
+                        style={{ width: '100%', height: 'auto', display: 'block' }}
+                      />
+                      {/* Dynamic island */}
+                      <div style={{
+                        position: 'absolute',
+                        top: '9px',
+                        left: '50%',
+                        transform: 'translateX(-50%)',
+                        width: '84px',
+                        height: '23px',
+                        borderRadius: '14px',
+                        background: '#05060a',
+                        zIndex: 3,
+                        boxShadow: 'inset 0 0 0 1px rgba(255,255,255,0.04)',
+                      }} />
+                    </div>
                   </div>
                 </div>
               </a>
